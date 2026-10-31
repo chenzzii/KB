@@ -1,7 +1,7 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.1.0",
-  "sourceCommit": "c23fca60118d62572f5d0e7bf027b0bef122d914",
+  "version": "1.1.1",
+  "sourceCommit": "d58a95984a530b75d722eb73889b86d6d34d4411",
   "mapSize": "32x32",
   "visualAssets": "assets/painted/manifest.json"
 }
