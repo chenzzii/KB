@@ -1,0 +1,2212 @@
+{
+  "schema": "kb-cht-parameter-research-v1",
+  "source_archive": "KingsBounty-CHT-full-windows-x64.zip",
+  "provenance": "Extracted from data/free/*.ini and land.tmx (the CHT fork free module), not verified against KB.EXE",
+  "counts": {
+    "troops": 25,
+    "spells": 14,
+    "artifacts": 8,
+    "villains": 17,
+    "castles": 26,
+    "towns": 26,
+    "world_layers": 4
+  },
+  "troops": [
+    {
+      "id": 0,
+      "name": "農夫",
+      "sprite": "peas",
+      "skill": 1,
+      "moves": 1,
+      "hp": 1,
+      "melee_min": 1,
+      "melee_max": 1,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "A",
+      "dwelling": null,
+      "gold": 1,
+      "spoils": 1,
+      "spoils_raw": "1",
+      "source": "data/free/troops.ini#troop0"
+    },
+    {
+      "id": 1,
+      "name": "小妖精",
+      "sprite": "spri",
+      "skill": 1,
+      "moves": 1,
+      "hp": 1,
+      "melee_min": 1,
+      "melee_max": 2,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "fly"
+      ],
+      "group": "A",
+      "dwelling": null,
+      "gold": 15,
+      "spoils": 1,
+      "spoils_raw": "1",
+      "source": "data/free/troops.ini#troop1"
+    },
+    {
+      "id": 2,
+      "name": "義勇軍",
+      "sprite": "mili",
+      "skill": 2,
+      "moves": 2,
+      "hp": 2,
+      "melee_min": 1,
+      "melee_max": 2,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "A",
+      "dwelling": null,
+      "gold": 50,
+      "spoils": 5,
+      "spoils_raw": "5",
+      "source": "data/free/troops.ini#troop2"
+    },
+    {
+      "id": 3,
+      "name": "野狼",
+      "sprite": "wolf",
+      "skill": 2,
+      "moves": 3,
+      "hp": 3,
+      "melee_min": 1,
+      "melee_max": 3,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "D",
+      "dwelling": "plains",
+      "gold": 40,
+      "spoils": 4,
+      "spoils_raw": "4",
+      "source": "data/free/troops.ini#troop3"
+    },
+    {
+      "id": 4,
+      "name": "骷髏兵",
+      "sprite": "skel",
+      "skill": 2,
+      "moves": 2,
+      "hp": 3,
+      "melee_min": 1,
+      "melee_max": 2,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "undead"
+      ],
+      "group": "E",
+      "dwelling": "dungeon",
+      "gold": 40,
+      "spoils": 4,
+      "spoils_raw": "4",
+      "source": "data/free/troops.ini#troop4"
+    },
+    {
+      "id": 5,
+      "name": "僵屍",
+      "sprite": "zomb",
+      "skill": 2,
+      "moves": 1,
+      "hp": 5,
+      "melee_min": 2,
+      "melee_max": 2,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "undead"
+      ],
+      "group": "E",
+      "dwelling": "dungeon",
+      "gold": 50,
+      "spoils": 5,
+      "spoils_raw": "5",
+      "source": "data/free/troops.ini#troop5"
+    },
+    {
+      "id": 6,
+      "name": "地精",
+      "sprite": "gnom",
+      "skill": 2,
+      "moves": 1,
+      "hp": 5,
+      "melee_min": 1,
+      "melee_max": 3,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "forest",
+      "gold": 60,
+      "spoils": 6,
+      "spoils_raw": "6",
+      "source": "data/free/troops.ini#troop6"
+    },
+    {
+      "id": 7,
+      "name": "牛獸人",
+      "sprite": null,
+      "skill": 2,
+      "moves": 2,
+      "hp": 5,
+      "melee_min": 2,
+      "melee_max": 3,
+      "ammo": 10,
+      "ranged_min": 1,
+      "ranged_max": 2,
+      "abilities": [],
+      "group": "D",
+      "dwelling": "hill",
+      "gold": 75,
+      "spoils": 7,
+      "spoils_raw": "7",
+      "source": "data/free/troops.ini#troop7"
+    },
+    {
+      "id": 8,
+      "name": "弓箭手",
+      "sprite": "arcr",
+      "skill": 2,
+      "moves": 2,
+      "hp": 10,
+      "melee_min": 1,
+      "melee_max": 2,
+      "ammo": 12,
+      "ranged_min": 1,
+      "ranged_max": 3,
+      "abilities": [],
+      "group": "B",
+      "dwelling": "castle",
+      "gold": 250,
+      "spoils": 25,
+      "spoils_raw": "25",
+      "source": "data/free/troops.ini#troop8"
+    },
+    {
+      "id": 9,
+      "name": "精靈族",
+      "sprite": "elfs",
+      "skill": 3,
+      "moves": 3,
+      "hp": 10,
+      "melee_min": 1,
+      "melee_max": 2,
+      "ammo": 24,
+      "ranged_min": 2,
+      "ranged_max": 4,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "forest",
+      "gold": 200,
+      "spoils": 20,
+      "spoils_raw": "20",
+      "source": "data/free/troops.ini#troop9"
+    },
+    {
+      "id": 10,
+      "name": "槍兵",
+      "sprite": "pike",
+      "skill": 3,
+      "moves": 2,
+      "hp": 10,
+      "melee_min": 2,
+      "melee_max": 4,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "B",
+      "dwelling": "castle",
+      "gold": 800,
+      "spoils": 30,
+      "spoils_raw": "30",
+      "source": "data/free/troops.ini#troop10"
+    },
+    {
+      "id": 11,
+      "name": "流浪者",
+      "sprite": "noma",
+      "skill": 3,
+      "moves": 2,
+      "hp": 15,
+      "melee_min": 2,
+      "melee_max": 4,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "plains",
+      "gold": 300,
+      "spoils": 30,
+      "spoils_raw": "30",
+      "source": "data/free/troops.ini#troop11"
+    },
+    {
+      "id": 12,
+      "name": "矮人",
+      "sprite": "dwar",
+      "skill": 3,
+      "moves": 1,
+      "hp": 20,
+      "melee_min": 2,
+      "melee_max": 4,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "hill",
+      "gold": 350,
+      "spoils": 30,
+      "spoils_raw": "30",
+      "source": "data/free/troops.ini#troop12"
+    },
+    {
+      "id": 13,
+      "name": "鬼",
+      "sprite": "ghos",
+      "skill": 4,
+      "moves": 3,
+      "hp": 10,
+      "melee_min": 3,
+      "melee_max": 4,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "absorb",
+        "undead"
+      ],
+      "group": "E",
+      "dwelling": "dungeon",
+      "gold": 400,
+      "spoils": 40,
+      "spoils_raw": "40",
+      "source": "data/free/troops.ini#troop13"
+    },
+    {
+      "id": 14,
+      "name": "武士",
+      "sprite": "kght",
+      "skill": 5,
+      "moves": 1,
+      "hp": 35,
+      "melee_min": 6,
+      "melee_max": 10,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "B",
+      "dwelling": "castle",
+      "gold": 1000,
+      "spoils": null,
+      "spoils_raw": "10s0",
+      "source": "data/free/troops.ini#troop14"
+    },
+    {
+      "id": 15,
+      "name": "食人怪",
+      "sprite": "ogre",
+      "skill": 4,
+      "moves": 1,
+      "hp": 40,
+      "melee_min": 3,
+      "melee_max": 5,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "D",
+      "dwelling": "hill",
+      "gold": 750,
+      "spoils": 75,
+      "spoils_raw": "75",
+      "source": "data/free/troops.ini#troop15"
+    },
+    {
+      "id": 16,
+      "name": "野人",
+      "sprite": "brbn",
+      "skill": 4,
+      "moves": 3,
+      "hp": 40,
+      "melee_min": 1,
+      "melee_max": 6,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "plains",
+      "gold": 750,
+      "spoils": 75,
+      "spoils_raw": "75",
+      "source": "data/free/troops.ini#troop16"
+    },
+    {
+      "id": 17,
+      "name": "洞穴巨人",
+      "sprite": "troll",
+      "skill": 4,
+      "moves": 1,
+      "hp": 50,
+      "melee_min": 2,
+      "melee_max": 5,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "regen"
+      ],
+      "group": "D",
+      "dwelling": "forest",
+      "gold": 1000,
+      "spoils": 100,
+      "spoils_raw": "100",
+      "source": "data/free/troops.ini#troop17"
+    },
+    {
+      "id": 18,
+      "name": "騎兵",
+      "sprite": "cavl",
+      "skill": 4,
+      "moves": 4,
+      "hp": 20,
+      "melee_min": 3,
+      "melee_max": 5,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [],
+      "group": "B",
+      "dwelling": "castle",
+      "gold": 800,
+      "spoils": 80,
+      "spoils_raw": "80",
+      "source": "data/free/troops.ini#troop18"
+    },
+    {
+      "id": 19,
+      "name": "德魯依",
+      "sprite": "drui",
+      "skill": 5,
+      "moves": 2,
+      "hp": 25,
+      "melee_min": 2,
+      "melee_max": 3,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "magic"
+      ],
+      "group": "C",
+      "dwelling": "forest",
+      "gold": 700,
+      "spoils": 70,
+      "spoils_raw": "70",
+      "source": "data/free/troops.ini#troop19"
+    },
+    {
+      "id": 20,
+      "name": "法師",
+      "sprite": "arcm",
+      "skill": 5,
+      "moves": 1,
+      "hp": 25,
+      "melee_min": 2,
+      "melee_max": 3,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "fly",
+        "magic"
+      ],
+      "group": "C",
+      "dwelling": "plains",
+      "gold": 1200,
+      "spoils": 120,
+      "spoils_raw": "120",
+      "source": "data/free/troops.ini#troop20"
+    },
+    {
+      "id": 21,
+      "name": "吸血鬼",
+      "sprite": "vamp",
+      "skill": 5,
+      "moves": 1,
+      "hp": 30,
+      "melee_min": 3,
+      "melee_max": 6,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "leech",
+        "fly",
+        "undead"
+      ],
+      "group": "E",
+      "dwelling": "dungeon",
+      "gold": 1500,
+      "spoils": 150,
+      "spoils_raw": "150",
+      "source": "data/free/troops.ini#troop21"
+    },
+    {
+      "id": 22,
+      "name": "巨人",
+      "sprite": "gian",
+      "skill": 5,
+      "moves": 3,
+      "hp": 60,
+      "melee_min": 10,
+      "melee_max": 20,
+      "ammo": 6,
+      "ranged_min": 5,
+      "ranged_max": 10,
+      "abilities": [],
+      "group": "C",
+      "dwelling": "hill",
+      "gold": 2000,
+      "spoils": 200,
+      "spoils_raw": "200",
+      "source": "data/free/troops.ini#troop22"
+    },
+    {
+      "id": 23,
+      "name": "惡魔",
+      "sprite": "demo",
+      "skill": 6,
+      "moves": 1,
+      "hp": 50,
+      "melee_min": 5,
+      "melee_max": 7,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "fly",
+        "scythe"
+      ],
+      "group": "E",
+      "dwelling": "dungeon",
+      "gold": 3000,
+      "spoils": 300,
+      "spoils_raw": "300",
+      "source": "data/free/troops.ini#troop23"
+    },
+    {
+      "id": 24,
+      "name": "火龍",
+      "sprite": "drag",
+      "skill": 6,
+      "moves": 1,
+      "hp": 200,
+      "melee_min": 25,
+      "melee_max": 50,
+      "ammo": 0,
+      "ranged_min": null,
+      "ranged_max": null,
+      "abilities": [
+        "fly",
+        "immune"
+      ],
+      "group": "D",
+      "dwelling": "hill",
+      "gold": 5000,
+      "spoils": 500,
+      "spoils_raw": "500",
+      "source": "data/free/troops.ini#troop24"
+    }
+  ],
+  "spells": [
+    {
+      "id": 0,
+      "name": "複製術",
+      "type": "clone",
+      "effect_value_raw": "10",
+      "effect_value": 10,
+      "gold_raw": "2000",
+      "gold": 2000,
+      "filter": null,
+      "all_gold_assignments": [
+        "2000"
+      ],
+      "source": "data/free/spells.ini#spell0"
+    },
+    {
+      "id": 1,
+      "name": "傳送術",
+      "type": "teleport",
+      "effect_value_raw": null,
+      "effect_value": null,
+      "gold_raw": "500",
+      "gold": 500,
+      "filter": null,
+      "all_gold_assignments": [
+        "500"
+      ],
+      "source": "data/free/spells.ini#spell1"
+    },
+    {
+      "id": 2,
+      "name": "火球術",
+      "type": "magic_damage",
+      "effect_value_raw": "25",
+      "effect_value": 25,
+      "gold_raw": "1500",
+      "gold": 1500,
+      "filter": null,
+      "all_gold_assignments": [
+        "1500"
+      ],
+      "source": "data/free/spells.ini#spell2"
+    },
+    {
+      "id": 3,
+      "name": "閃電術",
+      "type": "magic_damage",
+      "effect_value_raw": "10",
+      "effect_value": 10,
+      "gold_raw": "500",
+      "gold": 500,
+      "filter": null,
+      "all_gold_assignments": [
+        "500"
+      ],
+      "source": "data/free/spells.ini#spell3"
+    },
+    {
+      "id": 4,
+      "name": "凝滯術",
+      "type": "freeze",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "300",
+      "gold": 300,
+      "filter": null,
+      "all_gold_assignments": [
+        "300"
+      ],
+      "source": "data/free/spells.ini#spell4"
+    },
+    {
+      "id": 5,
+      "name": "復活術",
+      "type": "resurrect",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "5000",
+      "gold": 5000,
+      "filter": null,
+      "all_gold_assignments": [
+        "5000"
+      ],
+      "source": "data/free/spells.ini#spell5"
+    },
+    {
+      "id": 6,
+      "name": "超渡術",
+      "type": "holy_damage",
+      "effect_value_raw": "50",
+      "effect_value": 50,
+      "gold_raw": "2000",
+      "gold": 2000,
+      "filter": "undead",
+      "all_gold_assignments": [
+        "250",
+        "2000"
+      ],
+      "source": "data/free/spells.ini#spell6"
+    },
+    {
+      "id": 7,
+      "name": "造橋術",
+      "type": "bridge",
+      "effect_value_raw": "2",
+      "effect_value": 2,
+      "gold_raw": "100",
+      "gold": 100,
+      "filter": null,
+      "all_gold_assignments": [
+        "100"
+      ],
+      "source": "data/free/spells.ini#spell7"
+    },
+    {
+      "id": 8,
+      "name": "停時術",
+      "type": "time_stop",
+      "effect_value_raw": "40",
+      "effect_value": 40,
+      "gold_raw": "200",
+      "gold": 200,
+      "filter": null,
+      "all_gold_assignments": [
+        "200"
+      ],
+      "source": "data/free/spells.ini#spell8"
+    },
+    {
+      "id": 9,
+      "name": "尋兇術",
+      "type": "find_villain",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "1000",
+      "gold": 1000,
+      "filter": null,
+      "all_gold_assignments": [
+        "1000"
+      ],
+      "source": "data/free/spells.ini#spell9"
+    },
+    {
+      "id": 10,
+      "name": "入城術",
+      "type": "castle_gate",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "1000",
+      "gold": 1000,
+      "filter": null,
+      "all_gold_assignments": [
+        "1000"
+      ],
+      "source": "data/free/spells.ini#spell10"
+    },
+    {
+      "id": 11,
+      "name": "入鄉術",
+      "type": "town_gate",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "500",
+      "gold": 500,
+      "filter": null,
+      "all_gold_assignments": [
+        "500"
+      ],
+      "source": "data/free/spells.ini#spell11"
+    },
+    {
+      "id": 12,
+      "name": "召兵術",
+      "type": "instant_army",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "1000",
+      "gold": 1000,
+      "filter": null,
+      "all_gold_assignments": [
+        "1000"
+      ],
+      "source": "data/free/spells.ini#spell12"
+    },
+    {
+      "id": 13,
+      "name": "增控術",
+      "type": "raise_control",
+      "effect_value_raw": "1",
+      "effect_value": 1,
+      "gold_raw": "500",
+      "gold": 500,
+      "filter": null,
+      "all_gold_assignments": [
+        "500"
+      ],
+      "source": "data/free/spells.ini#spell13"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 0,
+      "name": "王者之劍",
+      "power": "increased_damage",
+      "description": "你啃著殘羹冷飯,率領\\n大軍深入遙遠而冷酷的\\n異域。就在此地,你尋\\n得了一柄附魔的寶劍……",
+      "invert_id": 7,
+      "source": "data/free/artifacts.ini#artifact0"
+    },
+    {
+      "id": 1,
+      "name": "護身盾牌",
+      "power": "quarter_protection",
+      "description": "你與一名來路不明的術\\n士立下契約,自此獲得\\n更強的防護……",
+      "invert_id": 2,
+      "source": "data/free/artifacts.ini#artifact1"
+    },
+    {
+      "id": 2,
+      "name": "指揮王冠",
+      "power": "double_leadership",
+      "description": "你在戰場上證明了自己\\n的價值,贏得麾下將士\\n的一致推崇……",
+      "invert_id": 4,
+      "source": "data/free/artifacts.ini#artifact2"
+    },
+    {
+      "id": 3,
+      "name": "貴族契約",
+      "power": "increase_commission",
+      "description": "你身為一方領主的血統\\n獲得確認。從此你可領\\n取更豐厚的俸祿……",
+      "invert_id": 1,
+      "source": "data/free/artifacts.ini#artifact3"
+    },
+    {
+      "id": 4,
+      "name": "強力護身符",
+      "power": "double_spell_power",
+      "description": "你從邪惡惡棍的魔掌中\\n救出一名佳人,獲贈一\\n件小小的謝禮……",
+      "invert_id": 6,
+      "source": "data/free/artifacts.ini#artifact4"
+    },
+    {
+      "id": 5,
+      "name": "英雄指環",
+      "power": "unknown",
+      "description": "你在一處遠古寶藏中翻\\n找,赫然發現一枚神祕\\n的指環……",
+      "invert_id": 0,
+      "source": "data/free/artifacts.ini#artifact5"
+    },
+    {
+      "id": 6,
+      "name": "尼克羅斯之書",
+      "power": "double_max_spells",
+      "description": "你在一間廢棄的小屋裡\\n查探,發現一本名為\\n《死靈之書》的典籍……",
+      "invert_id": 5,
+      "source": "data/free/artifacts.ini#artifact6"
+    },
+    {
+      "id": 7,
+      "name": "海權之錨",
+      "power": "cheaper_boat_rental",
+      "description": "你掃蕩海上的險阻與海\\n怪,尋得一只魔法之\\n錨……",
+      "invert_id": 3,
+      "source": "data/free/artifacts.ini#artifact7"
+    }
+  ],
+  "villains": [
+    {
+      "id": 0,
+      "name": "騙徒莫里斯",
+      "portrait": "mury",
+      "reward": 5000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 50,
+          "troop_name": "農夫"
+        },
+        {
+          "slot": 1,
+          "count": 20,
+          "troop_name": "野狼"
+        },
+        {
+          "slot": 2,
+          "count": 25,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 3,
+          "count": 30,
+          "troop_name": "農夫"
+        },
+        {
+          "slot": 4,
+          "count": 25,
+          "troop_name": "農夫"
+        }
+      ],
+      "source": "data/free/villains.ini#villain0"
+    },
+    {
+      "id": 1,
+      "name": "盜賊亞當",
+      "portrait": "hack",
+      "reward": 6000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 10,
+          "troop_name": "流浪者"
+        },
+        {
+          "slot": 1,
+          "count": 30,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 2,
+          "count": 20,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 3,
+          "count": 60,
+          "troop_name": "農夫"
+        },
+        {
+          "slot": 4,
+          "count": 40,
+          "troop_name": "農夫"
+        }
+      ],
+      "source": "data/free/villains.ini#villain1"
+    },
+    {
+      "id": 2,
+      "name": "蜜雅公主",
+      "portrait": "ammi",
+      "reward": 7000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 70,
+          "troop_name": "小妖精"
+        },
+        {
+          "slot": 1,
+          "count": 50,
+          "troop_name": "小妖精"
+        },
+        {
+          "slot": 2,
+          "count": 20,
+          "troop_name": "骷髏兵"
+        },
+        {
+          "slot": 3,
+          "count": 20,
+          "troop_name": "僵屍"
+        },
+        {
+          "slot": 4,
+          "count": 4,
+          "troop_name": "食人怪"
+        }
+      ],
+      "source": "data/free/villains.ini#villain2"
+    },
+    {
+      "id": 3,
+      "name": "鐵拳領主",
+      "portrait": "baro",
+      "reward": 8000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 30,
+          "troop_name": "野狼"
+        },
+        {
+          "slot": 1,
+          "count": 20,
+          "troop_name": "牛獸人"
+        },
+        {
+          "slot": 2,
+          "count": 10,
+          "troop_name": "弓箭手"
+        },
+        {
+          "slot": 3,
+          "count": 2,
+          "troop_name": "洞穴巨人"
+        },
+        {
+          "slot": 4,
+          "count": 6,
+          "troop_name": "矮人"
+        }
+      ],
+      "source": "data/free/villains.ini#villain3"
+    },
+    {
+      "id": 4,
+      "name": "海盜羅賓",
+      "portrait": "drea",
+      "reward": 9000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 50,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 1,
+          "count": 50,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 2,
+          "count": 10,
+          "troop_name": "弓箭手"
+        },
+        {
+          "slot": 3,
+          "count": 10,
+          "troop_name": "精靈族"
+        },
+        {
+          "slot": 4,
+          "count": 5,
+          "troop_name": "野人"
+        }
+      ],
+      "source": "data/free/villains.ini#villain4"
+    },
+    {
+      "id": 5,
+      "name": "巫師卡恩",
+      "portrait": "cane",
+      "reward": 10000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 250,
+          "troop_name": "小妖精"
+        },
+        {
+          "slot": 1,
+          "count": 10,
+          "troop_name": "鬼"
+        },
+        {
+          "slot": 2,
+          "count": 10,
+          "troop_name": "武士"
+        },
+        {
+          "slot": 3,
+          "count": 4,
+          "troop_name": "法師"
+        },
+        {
+          "slot": 4,
+          "count": 4,
+          "troop_name": "法師"
+        }
+      ],
+      "source": "data/free/villains.ini#villain5"
+    },
+    {
+      "id": 6,
+      "name": "征服者拉格納",
+      "portrait": "mora",
+      "reward": 12000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 100,
+          "troop_name": "義勇軍"
+        },
+        {
+          "slot": 1,
+          "count": 20,
+          "troop_name": "弓箭手"
+        },
+        {
+          "slot": 2,
+          "count": 20,
+          "troop_name": "槍兵"
+        },
+        {
+          "slot": 3,
+          "count": 15,
+          "troop_name": "騎兵"
+        },
+        {
+          "slot": 4,
+          "count": 15,
+          "troop_name": "武士"
+        }
+      ],
+      "source": "data/free/villains.ini#villain6"
+    },
+    {
+      "id": 7,
+      "name": "黑修士塞巴斯汀",
+      "portrait": "barr",
+      "reward": 14000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 30,
+          "troop_name": "精靈族"
+        },
+        {
+          "slot": 1,
+          "count": 30,
+          "troop_name": "法師"
+        },
+        {
+          "slot": 2,
+          "count": 10,
+          "troop_name": "德魯依"
+        },
+        {
+          "slot": 3,
+          "count": 30,
+          "troop_name": "槍兵"
+        },
+        {
+          "slot": 4,
+          "count": 300,
+          "troop_name": "小妖精"
+        }
+      ],
+      "source": "data/free/villains.ini#villain7"
+    },
+    {
+      "id": 8,
+      "name": "葛瑞許馬克",
+      "portrait": "barg",
+      "reward": 16000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 150,
+          "troop_name": "牛獸人"
+        },
+        {
+          "slot": 1,
+          "count": 20,
+          "troop_name": "食人怪"
+        },
+        {
+          "slot": 2,
+          "count": 10,
+          "troop_name": "洞穴巨人"
+        },
+        {
+          "slot": 3,
+          "count": 5,
+          "troop_name": "巨人"
+        },
+        {
+          "slot": 4,
+          "count": 80,
+          "troop_name": "野狼"
+        }
+      ],
+      "source": "data/free/villains.ini#villain8"
+    },
+    {
+      "id": 9,
+      "name": "史凱勒·波羅斯",
+      "portrait": "rina",
+      "reward": 18000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 500,
+          "troop_name": "骷髏兵"
+        },
+        {
+          "slot": 1,
+          "count": 100,
+          "troop_name": "僵屍"
+        },
+        {
+          "slot": 2,
+          "count": 30,
+          "troop_name": "鬼"
+        },
+        {
+          "slot": 3,
+          "count": 10,
+          "troop_name": "吸血鬼"
+        },
+        {
+          "slot": 4,
+          "count": 6,
+          "troop_name": "惡魔"
+        }
+      ],
+      "source": "data/free/villains.ini#villain9"
+    },
+    {
+      "id": 10,
+      "name": "稻草人",
+      "portrait": "ragf",
+      "reward": 20000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 600,
+          "troop_name": "骷髏兵"
+        },
+        {
+          "slot": 1,
+          "count": 200,
+          "troop_name": "僵屍"
+        },
+        {
+          "slot": 2,
+          "count": 50,
+          "troop_name": "鬼"
+        },
+        {
+          "slot": 3,
+          "count": 25,
+          "troop_name": "吸血鬼"
+        },
+        {
+          "slot": 4,
+          "count": 10,
+          "troop_name": "惡魔"
+        }
+      ],
+      "source": "data/free/villains.ini#villain10"
+    },
+    {
+      "id": 11,
+      "name": "紅木利爪",
+      "portrait": "mahk",
+      "reward": 25000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 30,
+          "troop_name": "巨人"
+        },
+        {
+          "slot": 1,
+          "count": 5,
+          "troop_name": "火龍"
+        },
+        {
+          "slot": 2,
+          "count": 30,
+          "troop_name": "食人怪"
+        },
+        {
+          "slot": 3,
+          "count": 200,
+          "troop_name": "牛獸人"
+        },
+        {
+          "slot": 4,
+          "count": 200,
+          "troop_name": "地精"
+        }
+      ],
+      "source": "data/free/villains.ini#villain11"
+    },
+    {
+      "id": 12,
+      "name": "叛將詹姆士爵士",
+      "portrait": "auri",
+      "reward": 30000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 300,
+          "troop_name": "地精"
+        },
+        {
+          "slot": 1,
+          "count": 40,
+          "troop_name": "野人"
+        },
+        {
+          "slot": 2,
+          "count": 20,
+          "troop_name": "巨人"
+        },
+        {
+          "slot": 3,
+          "count": 100,
+          "troop_name": "流浪者"
+        },
+        {
+          "slot": 4,
+          "count": 700,
+          "troop_name": "農夫"
+        }
+      ],
+      "source": "data/free/villains.ini#villain12"
+    },
+    {
+      "id": 13,
+      "name": "沙皇鮑里斯三世",
+      "portrait": "czar",
+      "reward": 35000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 35,
+          "troop_name": "弓箭手"
+        },
+        {
+          "slot": 1,
+          "count": 100,
+          "troop_name": "槍兵"
+        },
+        {
+          "slot": 2,
+          "count": 80,
+          "troop_name": "騎兵"
+        },
+        {
+          "slot": 3,
+          "count": 60,
+          "troop_name": "武士"
+        },
+        {
+          "slot": 4,
+          "count": 5,
+          "troop_name": "火龍"
+        }
+      ],
+      "source": "data/free/villains.ini#villain13"
+    },
+    {
+      "id": 14,
+      "name": "智者索利度斯",
+      "portrait": "magu",
+      "reward": 40000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 30,
+          "troop_name": "惡魔"
+        },
+        {
+          "slot": 1,
+          "count": 50,
+          "troop_name": "吸血鬼"
+        },
+        {
+          "slot": 2,
+          "count": 100,
+          "troop_name": "法師"
+        },
+        {
+          "slot": 3,
+          "count": 500,
+          "troop_name": "地精"
+        },
+        {
+          "slot": 4,
+          "count": 5000,
+          "troop_name": "農夫"
+        }
+      ],
+      "source": "data/free/villains.ini#villain14"
+    },
+    {
+      "id": 15,
+      "name": "索命者亞克羅",
+      "portrait": "urth",
+      "reward": 45000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 50,
+          "troop_name": "惡魔"
+        },
+        {
+          "slot": 1,
+          "count": 10,
+          "troop_name": "火龍"
+        },
+        {
+          "slot": 2,
+          "count": 200,
+          "troop_name": "騎兵"
+        },
+        {
+          "slot": 3,
+          "count": 250,
+          "troop_name": "武士"
+        },
+        {
+          "slot": 4,
+          "count": 60,
+          "troop_name": "法師"
+        }
+      ],
+      "source": "data/free/villains.ini#villain15"
+    },
+    {
+      "id": 16,
+      "name": "烏瓦·龍焰",
+      "portrait": "arec",
+      "reward": 50000,
+      "army": [
+        {
+          "slot": 0,
+          "count": 100,
+          "troop_name": "火龍"
+        },
+        {
+          "slot": 1,
+          "count": 25,
+          "troop_name": "火龍"
+        },
+        {
+          "slot": 2,
+          "count": 25,
+          "troop_name": "火龍"
+        },
+        {
+          "slot": 3,
+          "count": 100,
+          "troop_name": "惡魔"
+        },
+        {
+          "slot": 4,
+          "count": 100,
+          "troop_name": "吸血鬼"
+        }
+      ],
+      "source": "data/free/villains.ini#villain16"
+    }
+  ],
+  "castles": [
+    {
+      "id": 0,
+      "name": "阿克羅波斯",
+      "continent": 0,
+      "x": 44,
+      "y": 12,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle0"
+    },
+    {
+      "id": 1,
+      "name": "巴克塔",
+      "continent": 0,
+      "x": 12,
+      "y": 31,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle1"
+    },
+    {
+      "id": 2,
+      "name": "卡尼庫瑪",
+      "continent": 0,
+      "x": 36,
+      "y": 36,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle2"
+    },
+    {
+      "id": 3,
+      "name": "恐懼堡",
+      "continent": 0,
+      "x": 27,
+      "y": 52,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle3"
+    },
+    {
+      "id": 4,
+      "name": "艾蘿拉",
+      "continent": 0,
+      "x": 55,
+      "y": 47,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle4"
+    },
+    {
+      "id": 5,
+      "name": "墜落堡",
+      "continent": 0,
+      "x": 3,
+      "y": 14,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle5"
+    },
+    {
+      "id": 6,
+      "name": "哥斯",
+      "continent": 1,
+      "x": 37,
+      "y": 19,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle6"
+    },
+    {
+      "id": 7,
+      "name": "哈倫",
+      "continent": 1,
+      "x": 42,
+      "y": 45,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle7"
+    },
+    {
+      "id": 8,
+      "name": "艾昂",
+      "continent": 2,
+      "x": 13,
+      "y": 48,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle8"
+    },
+    {
+      "id": 9,
+      "name": "賈諾克",
+      "continent": 0,
+      "x": 43,
+      "y": 55,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle9"
+    },
+    {
+      "id": 10,
+      "name": "奇蒂",
+      "continent": 0,
+      "x": 6,
+      "y": 52,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle10"
+    },
+    {
+      "id": 11,
+      "name": "老齊",
+      "continent": 1,
+      "x": 13,
+      "y": 34,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle11"
+    },
+    {
+      "id": 12,
+      "name": "迷霧堡",
+      "continent": 3,
+      "x": 47,
+      "y": 10,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle12"
+    },
+    {
+      "id": 13,
+      "name": "納辛西",
+      "continent": 0,
+      "x": 37,
+      "y": 19,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle13"
+    },
+    {
+      "id": 14,
+      "name": "前哨堡",
+      "continent": 2,
+      "x": 39,
+      "y": 24,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle14"
+    },
+    {
+      "id": 15,
+      "name": "帕努克",
+      "continent": 1,
+      "x": 13,
+      "y": 44,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle15"
+    },
+    {
+      "id": 16,
+      "name": "麒麟",
+      "continent": 2,
+      "x": 53,
+      "y": 57,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle16"
+    },
+    {
+      "id": 17,
+      "name": "拉布勒",
+      "continent": 1,
+      "x": 30,
+      "y": 27,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle17"
+    },
+    {
+      "id": 18,
+      "name": "賽尼爾",
+      "continent": 2,
+      "x": 58,
+      "y": 39,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle18"
+    },
+    {
+      "id": 19,
+      "name": "提米爾",
+      "continent": 1,
+      "x": 60,
+      "y": 60,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle19"
+    },
+    {
+      "id": 20,
+      "name": "烏納米",
+      "continent": 2,
+      "x": 36,
+      "y": 7,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle20"
+    },
+    {
+      "id": 21,
+      "name": "維恩",
+      "continent": 1,
+      "x": 27,
+      "y": 37,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle21"
+    },
+    {
+      "id": 22,
+      "name": "女巫堡",
+      "continent": 2,
+      "x": 57,
+      "y": 17,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle22"
+    },
+    {
+      "id": 23,
+      "name": "夏泉",
+      "continent": 3,
+      "x": 33,
+      "y": 49,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle23"
+    },
+    {
+      "id": 24,
+      "name": "銀峰",
+      "continent": 3,
+      "x": 16,
+      "y": 46,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle24"
+    },
+    {
+      "id": 25,
+      "name": "昭福",
+      "continent": 3,
+      "x": 29,
+      "y": 35,
+      "properties": {
+        "difficulty": 1,
+        "dark": "no"
+      },
+      "source": "data/free/castles.ini#castle25"
+    }
+  ],
+  "towns": [
+    {
+      "id": 0,
+      "name": "艾米蓋爾",
+      "continent": 0,
+      "x": 52,
+      "y": 5,
+      "properties": {
+        "boat_x": 52,
+        "boat_y": 4,
+        "gate_x": 51,
+        "gate_y": 5,
+        "spell": 7,
+        "invert_id": 0
+      },
+      "source": "data/free/towns.ini#town0"
+    },
+    {
+      "id": 1,
+      "name": "穆拉",
+      "continent": 0,
+      "x": 16,
+      "y": 35,
+      "properties": {
+        "boat_x": 17,
+        "boat_y": 35,
+        "gate_x": 15,
+        "gate_y": 35,
+        "spell": 7,
+        "invert_id": 12
+      },
+      "source": "data/free/towns.ini#town1"
+    },
+    {
+      "id": 2,
+      "name": "絕路鎮",
+      "continent": 0,
+      "x": 56,
+      "y": 34,
+      "properties": {
+        "boat_x": 56,
+        "boat_y": 34,
+        "gate_x": 56,
+        "gate_y": 33,
+        "spell": 7,
+        "invert_id": 3
+      },
+      "source": "data/free/towns.ini#town2"
+    },
+    {
+      "id": 3,
+      "name": "納爾",
+      "continent": 0,
+      "x": 23,
+      "y": 61,
+      "properties": {
+        "boat_x": 23,
+        "boat_y": 61,
+        "gate_x": 24,
+        "gate_y": 61,
+        "spell": 7,
+        "invert_id": 6
+      },
+      "source": "data/free/towns.ini#town3"
+    },
+    {
+      "id": 4,
+      "name": "牧城",
+      "continent": 0,
+      "x": 60,
+      "y": 50,
+      "properties": {
+        "boat_x": 61,
+        "boat_y": 51,
+        "gate_x": 59,
+        "gate_y": 50,
+        "spell": 7,
+        "invert_id": 2
+      },
+      "source": "data/free/towns.ini#town4"
+    },
+    {
+      "id": 5,
+      "name": "海灣鎮",
+      "continent": 0,
+      "x": 10,
+      "y": 3,
+      "properties": {
+        "boat_x": 11,
+        "boat_y": 2,
+        "gate_x": 11,
+        "gate_y": 3,
+        "spell": 7,
+        "invert_id": 1
+      },
+      "source": "data/free/towns.ini#town5"
+    },
+    {
+      "id": 6,
+      "name": "玫瑰林",
+      "continent": 1,
+      "x": 52,
+      "y": 30,
+      "properties": {
+        "boat_x": 53,
+        "boat_y": 30,
+        "gate_x": 52,
+        "gate_y": 31,
+        "spell": 7,
+        "invert_id": 17
+      },
+      "source": "data/free/towns.ini#town6"
+    },
+    {
+      "id": 7,
+      "name": "馮迪",
+      "continent": 1,
+      "x": 47,
+      "y": 49,
+      "properties": {
+        "boat_x": 47,
+        "boat_y": 49,
+        "gate_x": 48,
+        "gate_y": 49,
+        "spell": 7,
+        "invert_id": 5
+      },
+      "source": "data/free/towns.ini#town7"
+    },
+    {
+      "id": 8,
+      "name": "夸斯",
+      "continent": 2,
+      "x": 21,
+      "y": 38,
+      "properties": {
+        "boat_x": 21,
+        "boat_y": 37,
+        "gate_x": 22,
+        "gate_y": 38,
+        "spell": 7,
+        "invert_id": 16
+      },
+      "source": "data/free/towns.ini#town8"
+    },
+    {
+      "id": 9,
+      "name": "澤明",
+      "continent": 0,
+      "x": 41,
+      "y": 62,
+      "properties": {
+        "boat_x": 41,
+        "boat_y": 63,
+        "gate_x": 42,
+        "gate_y": 62,
+        "spell": 7,
+        "invert_id": 25
+      },
+      "source": "data/free/towns.ini#town9"
+    },
+    {
+      "id": 10,
+      "name": "艾哈爾",
+      "continent": 0,
+      "x": 7,
+      "y": 49,
+      "properties": {
+        "boat_x": 7,
+        "boat_y": 48,
+        "gate_x": 8,
+        "gate_y": 49,
+        "spell": 7,
+        "invert_id": 4
+      },
+      "source": "data/free/towns.ini#town10"
+    },
+    {
+      "id": 11,
+      "name": "湖畔鎮",
+      "continent": 1,
+      "x": 9,
+      "y": 27,
+      "properties": {
+        "boat_x": 10,
+        "boat_y": 27,
+        "gate_x": 9,
+        "gate_y": 27,
+        "spell": 7,
+        "invert_id": 11
+      },
+      "source": "data/free/towns.ini#town11"
+    },
+    {
+      "id": 12,
+      "name": "維爾",
+      "continent": 3,
+      "x": 51,
+      "y": 24,
+      "properties": {
+        "boat_x": 52,
+        "boat_y": 24,
+        "gate_x": 50,
+        "gate_y": 24,
+        "spell": 7,
+        "invert_id": 21
+      },
+      "source": "data/free/towns.ini#town12"
+    },
+    {
+      "id": 13,
+      "name": "蘭鎮",
+      "continent": 0,
+      "x": 33,
+      "y": 22,
+      "properties": {
+        "boat_x": 32,
+        "boat_y": 22,
+        "gate_x": 34,
+        "gate_y": 22,
+        "spell": 7,
+        "invert_id": 14
+      },
+      "source": "data/free/towns.ini#town13"
+    },
+    {
+      "id": 14,
+      "name": "木板鎮",
+      "continent": 2,
+      "x": 33,
+      "y": 31,
+      "properties": {
+        "boat_x": 34,
+        "boat_y": 30,
+        "gate_x": 34,
+        "gate_y": 31,
+        "spell": 7,
+        "invert_id": 15
+      },
+      "source": "data/free/towns.ini#town14"
+    },
+    {
+      "id": 15,
+      "name": "科托",
+      "continent": 1,
+      "x": 5,
+      "y": 61,
+      "properties": {
+        "boat_x": 5,
+        "boat_y": 61,
+        "gate_x": 4,
+        "gate_y": 61,
+        "spell": 7,
+        "invert_id": 10
+      },
+      "source": "data/free/towns.ini#town15"
+    },
+    {
+      "id": 16,
+      "name": "烏薩奇",
+      "continent": 2,
+      "x": 50,
+      "y": 49,
+      "properties": {
+        "boat_x": 49,
+        "boat_y": 48,
+        "gate_x": 49,
+        "gate_y": 49,
+        "spell": 7,
+        "invert_id": 20
+      },
+      "source": "data/free/towns.ini#town16"
+    },
+    {
+      "id": 17,
+      "name": "伊諾拉",
+      "continent": 1,
+      "x": 39,
+      "y": 37,
+      "properties": {
+        "boat_x": 39,
+        "boat_y": 37,
+        "gate_x": 39,
+        "gate_y": 38,
+        "spell": 7,
+        "invert_id": 8
+      },
+      "source": "data/free/towns.ini#town17"
+    },
+    {
+      "id": 18,
+      "name": "圖里爾",
+      "continent": 2,
+      "x": 53,
+      "y": 30,
+      "properties": {
+        "boat_x": 52,
+        "boat_y": 30,
+        "gate_x": 54,
+        "gate_y": 30,
+        "spell": 7,
+        "invert_id": 19
+      },
+      "source": "data/free/towns.ini#town18"
+    },
+    {
+      "id": 19,
+      "name": "交匯鎮",
+      "continent": 1,
+      "x": 55,
+      "y": 61,
+      "properties": {
+        "boat_x": 55,
+        "boat_y": 61,
+        "gate_x": 55,
+        "gate_y": 62,
+        "spell": 7,
+        "invert_id": 9
+      },
+      "source": "data/free/towns.ini#town19"
+    },
+    {
+      "id": 20,
+      "name": "涅斯魯克",
+      "continent": 2,
+      "x": 34,
+      "y": 15,
+      "properties": {
+        "boat_x": 34,
+        "boat_y": 15,
+        "gate_x": 33,
+        "gate_y": 15,
+        "spell": 7,
+        "invert_id": 13
+      },
+      "source": "data/free/towns.ini#town20"
+    },
+    {
+      "id": 21,
+      "name": "希波麗特",
+      "continent": 1,
+      "x": 29,
+      "y": 35,
+      "properties": {
+        "boat_x": 30,
+        "boat_y": 35,
+        "gate_x": 28,
+        "gate_y": 35,
+        "spell": 7,
+        "invert_id": 7
+      },
+      "source": "data/free/towns.ini#town21"
+    },
+    {
+      "id": 22,
+      "name": "姊妹鎮",
+      "continent": 2,
+      "x": 57,
+      "y": 10,
+      "properties": {
+        "boat_x": 57,
+        "boat_y": 10,
+        "gate_x": 57,
+        "gate_y": 11,
+        "spell": 7,
+        "invert_id": 18
+      },
+      "source": "data/free/towns.ini#town22"
+    },
+    {
+      "id": 23,
+      "name": "瓦斯頓",
+      "continent": 3,
+      "x": 44,
+      "y": 53,
+      "properties": {
+        "boat_x": 45,
+        "boat_y": 53,
+        "gate_x": 43,
+        "gate_y": 53,
+        "spell": 7,
+        "invert_id": 22
+      },
+      "source": "data/free/towns.ini#town23"
+    },
+    {
+      "id": 24,
+      "name": "瑤津",
+      "continent": 3,
+      "x": 4,
+      "y": 53,
+      "properties": {
+        "boat_x": 3,
+        "boat_y": 53,
+        "gate_x": 5,
+        "gate_y": 53,
+        "spell": 7,
+        "invert_id": 24
+      },
+      "source": "data/free/towns.ini#town24"
+    },
+    {
+      "id": 25,
+      "name": "西安",
+      "continent": 3,
+      "x": 31,
+      "y": 9,
+      "properties": {
+        "boat_x": 30,
+        "boat_y": 9,
+        "gate_x": 32,
+        "gate_y": 9,
+        "spell": 7,
+        "invert_id": 23
+      },
+      "source": "data/free/towns.ini#town25"
+    }
+  ],
+  "world_layers": [
+    {
+      "name": "Continent 0",
+      "width": 64,
+      "height": 64,
+      "tile_count": 4096
+    },
+    {
+      "name": "Continent 1",
+      "width": 64,
+      "height": 64,
+      "tile_count": 4096
+    },
+    {
+      "name": "Continent 2",
+      "width": 64,
+      "height": 64,
+      "tile_count": 4096
+    },
+    {
+      "name": "Continent 3",
+      "width": 64,
+      "height": 64,
+      "tile_count": 4096
+    }
+  ],
+  "known_issues": [
+    {
+      "file": "data/free/troops.ini",
+      "section": "troop7",
+      "field": "file",
+      "severity": "medium",
+      "issue": "sprite filename not specified; perhaps fallback exists",
+      "action": "inspect loader fallback"
+    },
+    {
+      "file": "data/free/troops.ini",
+      "section": "troop14",
+      "field": "spoils",
+      "severity": "high",
+      "issue": "non-integer value '10s0'",
+      "action": "check original value; do not auto-correct"
+    },
+    {
+      "file": "data/free/troops.ini",
+      "section": "troop17",
+      "field": "file",
+      "severity": "medium",
+      "issue": "named sprite 'troll.png' is absent from data/free",
+      "action": "check module fallback or spelling"
+    },
+    {
+      "file": "data/free/spells.ini",
+      "section": "spell6",
+      "field": "gold",
+      "severity": "high",
+      "issue": "duplicate assignment on line 42: '250' then '2000'",
+      "action": "check parser precedence and intended value"
+    }
+  ],
+  "binary_manifest": [
+    {
+      "file": "data/KB.EXE",
+      "size_bytes": 107533,
+      "md5": "714cd13665f8d042dfe1a26b9a50f33c",
+      "sha256": "05b6098e562ac5f4d3ee4e8cfca9617fb234abdc84f0e72e3b87af9a321486db"
+    },
+    {
+      "file": "data/256.CC",
+      "size_bytes": 281551,
+      "md5": "36a360da4d53325b89ae7b30656e7a78",
+      "sha256": "95db901007b16ae41bd8809cf929ff684db4d04b993af1717712974dbce0cc78"
+    },
+    {
+      "file": "data/416.CC",
+      "size_bytes": 340983,
+      "md5": "def1c7f5b1c6ed719a24b4a6371bb451",
+      "sha256": "1cc54fda0f1aca1c004c86e802944ffb02946f1e653a2d33a2fb1e09ee95dc86"
+    },
+    {
+      "file": "data/kb.bin",
+      "size_bytes": 524288,
+      "md5": "1bb8e1e5d41bbeff2e452935bddd9883",
+      "sha256": "5fd1494a6a47e33d85b22ebbc26a1156f31bb539cf54d4e109e1bcbddef8b4eb"
+    },
+    {
+      "file": "openkb.exe",
+      "size_bytes": 1499152,
+      "md5": "3eb1ed8c533511ca50abb7f7ab66911a",
+      "sha256": "991ca804241bb2ebaff19786a373caecc26d855c3efe71bcf73c03d119893e0f"
+    }
+  ],
+  "license_note": "free module provenance: dual-licensed CC-BY-SA 4.0 and GPLv3-or-later; attribution: original openKB contributors and CHT translators. No original executable, ROM, art or audio is redistributed."
+}

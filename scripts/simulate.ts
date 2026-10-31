@@ -1,0 +1,13 @@
+import {mkdir,writeFile} from 'node:fs/promises';
+import type {ScenarioId} from '../src/core/types';
+import {Session,hash} from '../src/core/replay';
+import {nextAICommand} from '../src/core/ai';
+const session=new Session(process.argv[2]||'demo-2026',(process.argv[3]||'skirmish') as ScenarioId);
+session.dispatch({type:'start'});
+for(let i=0;i<5000&&session.state.phase==='battle';i++)session.dispatch(nextAICommand(session.state));
+if(session.state.phase!=='finished')throw Error('模擬未在 5000 步內結束');
+const replay=await session.export();const restored=await Session.import(replay);
+if(await hash(restored.state)!==replay.finalStateHash)throw Error('重播結果不一致');
+await mkdir('artifacts',{recursive:true});
+await writeFile(session.initial.scenarioId==='skirmish'?'artifacts/demo-replay.json':'artifacts/abilities-replay.json',JSON.stringify(replay,null,2)+'\n');
+console.log(JSON.stringify({seed:replay.seed,scenarioId:session.initial.scenarioId,winner:session.state.winner,rounds:session.state.round,commands:replay.commands.length,events:replay.events.length,finalStateHash:replay.finalStateHash,replayVerified:true},null,2));

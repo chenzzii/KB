@@ -1,0 +1,5 @@
+﻿file,section,field,severity,issue,action
+data/free/troops.ini,troop7,file,medium,sprite filename not specified; perhaps fallback exists,inspect loader fallback
+data/free/troops.ini,troop14,spoils,high,non-integer value '10s0',check original value; do not auto-correct
+data/free/troops.ini,troop17,file,medium,named sprite 'troll.png' is absent from data/free,check module fallback or spelling
+data/free/spells.ini,spell6,gold,high,duplicate assignment on line 42: '250' then '2000',check parser precedence and intended value

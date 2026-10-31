@@ -1,0 +1,60 @@
+{
+  "evidenceStatusEnum": [
+    "source-extracted",
+    "open-source-implementation",
+    "manual-documented",
+    "dos-experiment-verified",
+    "unverified",
+    "proposed-new-game"
+  ],
+  "facts": [
+    {
+      "key": "free_troop_stats",
+      "status": "source-extracted",
+      "source": "data/reference/openkb_cht_free_parameters.json",
+      "notes": "只代表壓縮包 data/free 設定值"
+    },
+    {
+      "key": "battle_damage_formula",
+      "status": "open-source-implementation",
+      "source": "OpenBounty combat code/spec; inspect exact revision before use",
+      "notes": "可做研究模式，但不應聲稱 DOS 原版已驗證"
+    },
+    {
+      "key": "upkeep_cost_formula",
+      "status": "open-source-implementation",
+      "source": "OpenBounty spec",
+      "notes": "spoils 欄位不得視為 upkeep"
+    },
+    {
+      "key": "morale_pair_matrix",
+      "status": "unverified",
+      "source": "to inspect engine and tests",
+      "notes": "A-E 的互斥加成需驗證，不得虛構"
+    },
+    {
+      "key": "unit_control",
+      "status": "open-source-implementation",
+      "source": "OpenBounty spec",
+      "notes": "每單一隊 hp*count 與統率比較，邊界及失控觸發需 DOS 實測"
+    },
+    {
+      "key": "ghost_absorb",
+      "status": "unverified",
+      "source": "openKB source implementation needed",
+      "notes": "需核對傷害後吸收的限制與行為"
+    },
+    {
+      "key": "four_original_maps",
+      "status": "source-extracted",
+      "source": "data/free/land.tmx (not shipped in pack)",
+      "notes": "只紀錄 4*64x64 地圖大小；地圖本身不複製到新遊戲"
+    },
+    {
+      "key": "new_content",
+      "status": "proposed-new-game",
+      "source": "data/content/*",
+      "notes": "名稱、文化、美術與故事都是提案，可調整"
+    }
+  ]
+}

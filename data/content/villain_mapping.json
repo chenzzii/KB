@@ -1,0 +1,699 @@
+[
+  {
+    "sourceVillainId": 0,
+    "villainId": "foe_00",
+    "name": "竊印客陸無咎",
+    "storyHook": "偽造軍令騙取城關信任",
+    "baselineRewardGold": 5000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "xiang_min",
+        "count": 50,
+        "sourceTroopId": 0
+      },
+      {
+        "slot": 1,
+        "unitId": "shan_lang",
+        "count": 20,
+        "sourceTroopId": 3
+      },
+      {
+        "slot": 2,
+        "unitId": "xiang_yong",
+        "count": 25,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 3,
+        "unitId": "xiang_min",
+        "count": 30,
+        "sourceTroopId": 0
+      },
+      {
+        "slot": 4,
+        "unitId": "xiang_min",
+        "count": 25,
+        "sourceTroopId": 0
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 1,
+    "villainId": "foe_01",
+    "name": "燕山快刀朱三刀",
+    "storyHook": "勾結路賊劫掠行商",
+    "baselineRewardGold": 6000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "guo_sai_you_xia",
+        "count": 10,
+        "sourceTroopId": 11
+      },
+      {
+        "slot": 1,
+        "unitId": "xiang_yong",
+        "count": 30,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 2,
+        "unitId": "xiang_yong",
+        "count": 20,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 3,
+        "unitId": "xiang_min",
+        "count": 60,
+        "sourceTroopId": 0
+      },
+      {
+        "slot": 4,
+        "unitId": "xiang_min",
+        "count": 40,
+        "sourceTroopId": 0
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 2,
+    "villainId": "foe_02",
+    "name": "紙鸞公主",
+    "storyHook": "以妖術聚集紙靈",
+    "baselineRewardGold": 7000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "zhi_he_ling",
+        "count": 70,
+        "sourceTroopId": 1
+      },
+      {
+        "slot": 1,
+        "unitId": "zhi_he_ling",
+        "count": 50,
+        "sourceTroopId": 1
+      },
+      {
+        "slot": 2,
+        "unitId": "bai_gu_bing",
+        "count": 20,
+        "sourceTroopId": 4
+      },
+      {
+        "slot": 3,
+        "unitId": "xing_shi",
+        "count": 20,
+        "sourceTroopId": 5
+      },
+      {
+        "slot": 4,
+        "unitId": "shan_xiao",
+        "count": 4,
+        "sourceTroopId": 15
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 3,
+    "villainId": "foe_03",
+    "name": "鐵掌侯顧破軍",
+    "storyHook": "恃武凌弱占據山寨",
+    "baselineRewardGold": 8000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "shan_lang",
+        "count": 30,
+        "sourceTroopId": 3
+      },
+      {
+        "slot": 1,
+        "unitId": "lang_ya_nu_shou",
+        "count": 20,
+        "sourceTroopId": 7
+      },
+      {
+        "slot": 2,
+        "unitId": "yu_lin_gong_shou",
+        "count": 10,
+        "sourceTroopId": 8
+      },
+      {
+        "slot": 3,
+        "unitId": "shu_kui",
+        "count": 2,
+        "sourceTroopId": 17
+      },
+      {
+        "slot": 4,
+        "unitId": "tie_shan_wei",
+        "count": 6,
+        "sourceTroopId": 12
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 4,
+    "villainId": "foe_04",
+    "name": "水寨首領韓逐浪",
+    "storyHook": "截斷商路漕運",
+    "baselineRewardGold": 9000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "xiang_yong",
+        "count": 50,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 1,
+        "unitId": "xiang_yong",
+        "count": 50,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 2,
+        "unitId": "yu_lin_gong_shou",
+        "count": 10,
+        "sourceTroopId": 8
+      },
+      {
+        "slot": 3,
+        "unitId": "zhu_lin_jian_shou",
+        "count": 10,
+        "sourceTroopId": 9
+      },
+      {
+        "slot": 4,
+        "unitId": "huang_yuan_kuang_ke",
+        "count": 5,
+        "sourceTroopId": 16
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 5,
+    "villainId": "foe_05",
+    "name": "符師魏寒燈",
+    "storyHook": "操縱禁術與符兵",
+    "baselineRewardGold": 10000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "zhi_he_ling",
+        "count": 250,
+        "sourceTroopId": 1
+      },
+      {
+        "slot": 1,
+        "unitId": "you_hun",
+        "count": 10,
+        "sourceTroopId": 13
+      },
+      {
+        "slot": 2,
+        "unitId": "hu_ben_zhong_jia",
+        "count": 10,
+        "sourceTroopId": 14
+      },
+      {
+        "slot": 3,
+        "unitId": "yu_feng_fang_shi",
+        "count": 4,
+        "sourceTroopId": 20
+      },
+      {
+        "slot": 4,
+        "unitId": "yu_feng_fang_shi",
+        "count": 4,
+        "sourceTroopId": 20
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 6,
+    "villainId": "foe_06",
+    "name": "雁門逆將段驚霜",
+    "storyHook": "擅調官軍精銳",
+    "baselineRewardGold": 12000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "xiang_yong",
+        "count": 100,
+        "sourceTroopId": 2
+      },
+      {
+        "slot": 1,
+        "unitId": "yu_lin_gong_shou",
+        "count": 20,
+        "sourceTroopId": 8
+      },
+      {
+        "slot": 2,
+        "unitId": "zhen_wei_chang_qiang",
+        "count": 20,
+        "sourceTroopId": 10
+      },
+      {
+        "slot": 3,
+        "unitId": "yu_lin_tie_qi",
+        "count": 15,
+        "sourceTroopId": 18
+      },
+      {
+        "slot": 4,
+        "unitId": "hu_ben_zhong_jia",
+        "count": 15,
+        "sourceTroopId": 14
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 7,
+    "villainId": "foe_07",
+    "name": "觀星客白無涯",
+    "storyHook": "以法術干預地方秩序",
+    "baselineRewardGold": 14000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "zhu_lin_jian_shou",
+        "count": 30,
+        "sourceTroopId": 9
+      },
+      {
+        "slot": 1,
+        "unitId": "yu_feng_fang_shi",
+        "count": 30,
+        "sourceTroopId": 20
+      },
+      {
+        "slot": 2,
+        "unitId": "zhu_you_wu_yi",
+        "count": 10,
+        "sourceTroopId": 19
+      },
+      {
+        "slot": 3,
+        "unitId": "zhen_wei_chang_qiang",
+        "count": 30,
+        "sourceTroopId": 10
+      },
+      {
+        "slot": 4,
+        "unitId": "zhi_he_ling",
+        "count": 300,
+        "sourceTroopId": 1
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 8,
+    "villainId": "foe_08",
+    "name": "妖嶺霸主赤嶂",
+    "storyHook": "驅策群妖侵入人境",
+    "baselineRewardGold": 16000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "lang_ya_nu_shou",
+        "count": 150,
+        "sourceTroopId": 7
+      },
+      {
+        "slot": 1,
+        "unitId": "shan_xiao",
+        "count": 20,
+        "sourceTroopId": 15
+      },
+      {
+        "slot": 2,
+        "unitId": "shu_kui",
+        "count": 10,
+        "sourceTroopId": 17
+      },
+      {
+        "slot": 3,
+        "unitId": "shan_yue_li_shi",
+        "count": 5,
+        "sourceTroopId": 22
+      },
+      {
+        "slot": 4,
+        "unitId": "shan_lang",
+        "count": 80,
+        "sourceTroopId": 3
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 9,
+    "villainId": "foe_09",
+    "name": "冥河都尉孟無生",
+    "storyHook": "以鬼卒築造幽界軍營",
+    "baselineRewardGold": 18000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "bai_gu_bing",
+        "count": 500,
+        "sourceTroopId": 4
+      },
+      {
+        "slot": 1,
+        "unitId": "xing_shi",
+        "count": 100,
+        "sourceTroopId": 5
+      },
+      {
+        "slot": 2,
+        "unitId": "you_hun",
+        "count": 30,
+        "sourceTroopId": 13
+      },
+      {
+        "slot": 3,
+        "unitId": "shi_xue_mei",
+        "count": 10,
+        "sourceTroopId": 21
+      },
+      {
+        "slot": 4,
+        "unitId": "xiu_luo_gui_jiang",
+        "count": 6,
+        "sourceTroopId": 23
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 10,
+    "villainId": "foe_10",
+    "name": "稻田紙鬼沈荒",
+    "storyHook": "祕術操控死者",
+    "baselineRewardGold": 20000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "bai_gu_bing",
+        "count": 600,
+        "sourceTroopId": 4
+      },
+      {
+        "slot": 1,
+        "unitId": "xing_shi",
+        "count": 200,
+        "sourceTroopId": 5
+      },
+      {
+        "slot": 2,
+        "unitId": "you_hun",
+        "count": 50,
+        "sourceTroopId": 13
+      },
+      {
+        "slot": 3,
+        "unitId": "shi_xue_mei",
+        "count": 25,
+        "sourceTroopId": 21
+      },
+      {
+        "slot": 4,
+        "unitId": "xiu_luo_gui_jiang",
+        "count": 10,
+        "sourceTroopId": 23
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 11,
+    "villainId": "foe_11",
+    "name": "焚林妖侯九枝",
+    "storyHook": "縱使蛟影焚毀山林",
+    "baselineRewardGold": 25000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "shan_yue_li_shi",
+        "count": 30,
+        "sourceTroopId": 22
+      },
+      {
+        "slot": 1,
+        "unitId": "chi_yan_jiao_long",
+        "count": 5,
+        "sourceTroopId": 24
+      },
+      {
+        "slot": 2,
+        "unitId": "shan_xiao",
+        "count": 30,
+        "sourceTroopId": 15
+      },
+      {
+        "slot": 3,
+        "unitId": "lang_ya_nu_shou",
+        "count": 200,
+        "sourceTroopId": 7
+      },
+      {
+        "slot": 4,
+        "unitId": "shan_min_duan_gong",
+        "count": 200,
+        "sourceTroopId": 6
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 12,
+    "villainId": "foe_12",
+    "name": "流亡節度使秦玄甲",
+    "storyHook": "收編邊軍與山民",
+    "baselineRewardGold": 30000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "shan_min_duan_gong",
+        "count": 300,
+        "sourceTroopId": 6
+      },
+      {
+        "slot": 1,
+        "unitId": "huang_yuan_kuang_ke",
+        "count": 40,
+        "sourceTroopId": 16
+      },
+      {
+        "slot": 2,
+        "unitId": "shan_yue_li_shi",
+        "count": 20,
+        "sourceTroopId": 22
+      },
+      {
+        "slot": 3,
+        "unitId": "guo_sai_you_xia",
+        "count": 100,
+        "sourceTroopId": 11
+      },
+      {
+        "slot": 4,
+        "unitId": "xiang_min",
+        "count": 700,
+        "sourceTroopId": 0
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 13,
+    "villainId": "foe_13",
+    "name": "僭王呼延朔",
+    "storyHook": "欲以兵威奪取龍脈",
+    "baselineRewardGold": 35000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "yu_lin_gong_shou",
+        "count": 35,
+        "sourceTroopId": 8
+      },
+      {
+        "slot": 1,
+        "unitId": "zhen_wei_chang_qiang",
+        "count": 100,
+        "sourceTroopId": 10
+      },
+      {
+        "slot": 2,
+        "unitId": "yu_lin_tie_qi",
+        "count": 80,
+        "sourceTroopId": 18
+      },
+      {
+        "slot": 3,
+        "unitId": "hu_ben_zhong_jia",
+        "count": 60,
+        "sourceTroopId": 14
+      },
+      {
+        "slot": 4,
+        "unitId": "chi_yan_jiao_long",
+        "count": 5,
+        "sourceTroopId": 24
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 14,
+    "villainId": "foe_14",
+    "name": "玄門叛徒聞人敘",
+    "storyHook": "挪用禁籙與群妖",
+    "baselineRewardGold": 40000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "xiu_luo_gui_jiang",
+        "count": 30,
+        "sourceTroopId": 23
+      },
+      {
+        "slot": 1,
+        "unitId": "shi_xue_mei",
+        "count": 50,
+        "sourceTroopId": 21
+      },
+      {
+        "slot": 2,
+        "unitId": "yu_feng_fang_shi",
+        "count": 100,
+        "sourceTroopId": 20
+      },
+      {
+        "slot": 3,
+        "unitId": "shan_min_duan_gong",
+        "count": 500,
+        "sourceTroopId": 6
+      },
+      {
+        "slot": 4,
+        "unitId": "xiang_min",
+        "count": 5000,
+        "sourceTroopId": 0
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 15,
+    "villainId": "foe_15",
+    "name": "斷命司主卜離",
+    "storyHook": "操縱人鬼兩道",
+    "baselineRewardGold": 45000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "xiu_luo_gui_jiang",
+        "count": 50,
+        "sourceTroopId": 23
+      },
+      {
+        "slot": 1,
+        "unitId": "chi_yan_jiao_long",
+        "count": 10,
+        "sourceTroopId": 24
+      },
+      {
+        "slot": 2,
+        "unitId": "yu_lin_tie_qi",
+        "count": 200,
+        "sourceTroopId": 18
+      },
+      {
+        "slot": 3,
+        "unitId": "hu_ben_zhong_jia",
+        "count": 250,
+        "sourceTroopId": 14
+      },
+      {
+        "slot": 4,
+        "unitId": "yu_feng_fang_shi",
+        "count": 60,
+        "sourceTroopId": 20
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  },
+  {
+    "sourceVillainId": 16,
+    "villainId": "foe_16",
+    "name": "赤潭龍主焱鱗",
+    "storyHook": "率火蛟盤據龍潭",
+    "baselineRewardGold": 50000,
+    "army": [
+      {
+        "slot": 0,
+        "unitId": "chi_yan_jiao_long",
+        "count": 100,
+        "sourceTroopId": 24
+      },
+      {
+        "slot": 1,
+        "unitId": "chi_yan_jiao_long",
+        "count": 25,
+        "sourceTroopId": 24
+      },
+      {
+        "slot": 2,
+        "unitId": "chi_yan_jiao_long",
+        "count": 25,
+        "sourceTroopId": 24
+      },
+      {
+        "slot": 3,
+        "unitId": "xiu_luo_gui_jiang",
+        "count": 100,
+        "sourceTroopId": 23
+      },
+      {
+        "slot": 4,
+        "unitId": "shi_xue_mei",
+        "count": 100,
+        "sourceTroopId": 21
+      }
+    ],
+    "status": "proposed-identity; baseline-army/reward-from-free-module",
+    "releaseMap": "must-be-original"
+  }
+]

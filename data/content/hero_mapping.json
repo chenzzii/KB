@@ -1,0 +1,102 @@
+[
+  {
+    "sourceHeroClassIndex": 0,
+    "sourceName": "Knight",
+    "heroClassId": "wu_jiang",
+    "name": "武將",
+    "role": "正規軍統帥；兵權較強",
+    "referenceStats": {
+      "initial_leadership": 100,
+      "initial_gold": 7500,
+      "initial_commission_per_week": 1000,
+      "initial_max_spells": 2,
+      "initial_spell_power": 1,
+      "starts_with_magic": false
+    },
+    "startingTroopsReferenceNames": [
+      {
+        "name_en": "Militia",
+        "count": 20
+      },
+      {
+        "name_en": "Archers",
+        "count": 2
+      }
+    ],
+    "statPolicy": "inherit-openbounty-reference; not DOS-verified"
+  },
+  {
+    "sourceHeroClassIndex": 1,
+    "sourceName": "Paladin",
+    "heroClassId": "ru_jiang",
+    "name": "儒將",
+    "role": "擅長協調與韜略",
+    "referenceStats": {
+      "initial_leadership": 80,
+      "initial_gold": 10000,
+      "initial_commission_per_week": 1000,
+      "initial_max_spells": 3,
+      "initial_spell_power": 1,
+      "starts_with_magic": false
+    },
+    "startingTroopsReferenceNames": [
+      {
+        "name_en": "Peasants",
+        "count": 20
+      },
+      {
+        "name_en": "Militia",
+        "count": 20
+      }
+    ],
+    "statPolicy": "inherit-openbounty-reference; not DOS-verified"
+  },
+  {
+    "sourceHeroClassIndex": 2,
+    "sourceName": "Sorceress",
+    "heroClassId": "hao_xia",
+    "name": "豪俠",
+    "role": "人脈廣、收入設計沿用原版職業",
+    "referenceStats": {
+      "initial_leadership": 60,
+      "initial_gold": 10000,
+      "initial_commission_per_week": 3000,
+      "initial_max_spells": 5,
+      "initial_spell_power": 2,
+      "starts_with_magic": true
+    },
+    "startingTroopsReferenceNames": [
+      {
+        "name_en": "Peasants",
+        "count": 30
+      },
+      {
+        "name_en": "Sprites",
+        "count": 10
+      }
+    ],
+    "statPolicy": "inherit-openbounty-reference; not DOS-verified"
+  },
+  {
+    "sourceHeroClassIndex": 3,
+    "sourceName": "Barbarian",
+    "heroClassId": "fang_shi",
+    "name": "方士",
+    "role": "法術取向、偏高法力與經濟優勢",
+    "referenceStats": {
+      "initial_leadership": 100,
+      "initial_gold": 7500,
+      "initial_commission_per_week": 2000,
+      "initial_max_spells": 2,
+      "initial_spell_power": 0,
+      "starts_with_magic": false
+    },
+    "startingTroopsReferenceNames": [
+      {
+        "name_en": "Wolves",
+        "count": 20
+      }
+    ],
+    "statPolicy": "inherit-openbounty-reference; not DOS-verified"
+  }
+]

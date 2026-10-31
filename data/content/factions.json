@@ -1,0 +1,12 @@
+{
+  "status": "original-fiction-design",
+  "sourceMoraleGroupMapping": {
+    "A": "鄉里",
+    "B": "朝廷軍旅",
+    "C": "方外江湖",
+    "D": "山野妖靈",
+    "E": "幽冥"
+  },
+  "pairwiseMoraleMatrix": "NOT_VERIFIED",
+  "principle": "A-E 保留原版組別以做基準對比。實際士氣矩陣需從程式碼或實驗驗證；新版陣營士氣可以覆寫但不得污染基準資料。"
+}

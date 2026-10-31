@@ -1,0 +1,16 @@
+{
+  "kitVersion": "1.0.0",
+  "created": "2026-10-31",
+  "name": "九州兵譜（暫名）Codex 開發交接包",
+  "isGame": false,
+  "originalGameAssetsIncluded": false,
+  "inputFileName": "KingsBounty-CHT-full-windows-x64.zip",
+  "referenceTroops": 25,
+  "referenceSpells": 14,
+  "referenceArtifacts": 8,
+  "referenceVillains": 17,
+  "newHeroes": 4,
+  "target": "Windows 11 Chrome / GitHub Pages",
+  "firstDeliverable": "Deterministic 6x5 combat vertical slice, playable in browser",
+  "warning": "Do not conflate openKB-CHT free-module parameters with original DOS engine behavior."
+}

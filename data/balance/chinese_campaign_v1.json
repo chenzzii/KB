@@ -1,0 +1,9 @@
+{
+ "version":"campaign-1.0.0", "evidence":"proposed-new-game",
+ "daysPerWeek":5,"stepsPerDay":40,"deadlineDays":180,"weeklySupply":20,
+ "victoryLeadership":100,"startingSpellCharges":2,"heroSpellPrices":[2000,500,1500,500,300,5000,null,100,200,1000,1000,500,1000,500],
+ "encounterDivisor":25,"minimumEnemyStack":1,"campaignSpellPower":1,
+ "enhanced":{"minimumDamage":1,"continuousLeech":true,"magicProfiles":{"19":{"base":10,"charges":3},"20":{"base":25,"charges":2}},"diplomacyDiscount":0.75},
+ "study":{"minimumDamage":0,"continuousLeech":false,"magicProfiles":{},"note":"Open-source reference approximation; no claim of DOS equivalence. Missing free-module magic values remain unverified."},
+ "morale":{"evidence":"open-source-implementation","source":"OpenBounty research parameter snapshot; not DOS-verified","groups":"ABCDE","matrix":["NNNNN","NNNNN","NNHNN","LNLHN","LLLNN"]}
+}

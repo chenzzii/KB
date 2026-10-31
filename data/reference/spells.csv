@@ -1,0 +1,15 @@
+﻿id,name,type,effect_value_raw,effect_value,gold_raw,gold,filter,all_gold_assignments,source
+0,複製術,clone,10,10,2000,2000,,2000,data/free/spells.ini#spell0
+1,傳送術,teleport,,,500,500,,500,data/free/spells.ini#spell1
+2,火球術,magic_damage,25,25,1500,1500,,1500,data/free/spells.ini#spell2
+3,閃電術,magic_damage,10,10,500,500,,500,data/free/spells.ini#spell3
+4,凝滯術,freeze,1,1,300,300,,300,data/free/spells.ini#spell4
+5,復活術,resurrect,1,1,5000,5000,,5000,data/free/spells.ini#spell5
+6,超渡術,holy_damage,50,50,2000,2000,undead,250;2000,data/free/spells.ini#spell6
+7,造橋術,bridge,2,2,100,100,,100,data/free/spells.ini#spell7
+8,停時術,time_stop,40,40,200,200,,200,data/free/spells.ini#spell8
+9,尋兇術,find_villain,1,1,1000,1000,,1000,data/free/spells.ini#spell9
+10,入城術,castle_gate,1,1,1000,1000,,1000,data/free/spells.ini#spell10
+11,入鄉術,town_gate,1,1,500,500,,500,data/free/spells.ini#spell11
+12,召兵術,instant_army,1,1,1000,1000,,1000,data/free/spells.ini#spell12
+13,增控術,raise_control,1,1,500,500,,500,data/free/spells.ini#spell13

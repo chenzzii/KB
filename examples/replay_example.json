@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "0.1.0-example",
+  "rulesetVersion": "research/openkb-cht-unverified-v0",
+  "dataHash": "REPLACE_WITH_ACTUAL_SHA256",
+  "seed": "demo-2026",
+  "initialState": {
+    "map": {
+      "columns": 6,
+      "rows": 5
+    },
+    "playerStacks": [
+      {
+        "instanceId": "a",
+        "unitId": "yu_lin_gong_shou",
+        "count": 10,
+        "cell": {
+          "x": 0,
+          "y": 1
+        }
+      }
+    ],
+    "enemyStacks": [
+      {
+        "instanceId": "b",
+        "unitId": "bai_gu_bing",
+        "count": 10,
+        "cell": {
+          "x": 5,
+          "y": 1
+        }
+      }
+    ]
+  },
+  "commands": [
+    {
+      "type": "end-turn",
+      "actorId": "player",
+      "payload": {}
+    }
+  ],
+  "events": [],
+  "finalStateHash": "REPLACE_AFTER_ENGINE_IMPLEMENTATION",
+  "note": "Schema and flow example only; not simulated original-game output."
+}

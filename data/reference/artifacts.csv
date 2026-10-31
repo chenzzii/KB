@@ -1,0 +1,9 @@
+﻿id,name,power,description,invert_id,source
+0,王者之劍,increased_damage,"你啃著殘羹冷飯,率領\n大軍深入遙遠而冷酷的\n異域。就在此地,你尋\n得了一柄附魔的寶劍……",7,data/free/artifacts.ini#artifact0
+1,護身盾牌,quarter_protection,"你與一名來路不明的術\n士立下契約,自此獲得\n更強的防護……",2,data/free/artifacts.ini#artifact1
+2,指揮王冠,double_leadership,"你在戰場上證明了自己\n的價值,贏得麾下將士\n的一致推崇……",4,data/free/artifacts.ini#artifact2
+3,貴族契約,increase_commission,你身為一方領主的血統\n獲得確認。從此你可領\n取更豐厚的俸祿……,1,data/free/artifacts.ini#artifact3
+4,強力護身符,double_spell_power,"你從邪惡惡棍的魔掌中\n救出一名佳人,獲贈一\n件小小的謝禮……",6,data/free/artifacts.ini#artifact4
+5,英雄指環,unknown,"你在一處遠古寶藏中翻\n找,赫然發現一枚神祕\n的指環……",0,data/free/artifacts.ini#artifact5
+6,尼克羅斯之書,double_max_spells,"你在一間廢棄的小屋裡\n查探,發現一本名為\n《死靈之書》的典籍……",5,data/free/artifacts.ini#artifact6
+7,海權之錨,cheaper_boat_rental,"你掃蕩海上的險阻與海\n怪,尋得一只魔法之\n錨……",3,data/free/artifacts.ini#artifact7

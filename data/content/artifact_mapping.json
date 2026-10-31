@@ -1,0 +1,66 @@
+[
+  {
+    "sourceArtifactId": 0,
+    "artifactId": "artifact_00",
+    "name": "斬邪古劍",
+    "theme": "古劍的威勢增強傷害",
+    "referencePower": "increased_damage",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 1,
+    "artifactId": "artifact_01",
+    "name": "玄武甲",
+    "theme": "以玄武紋護甲減輕傷害",
+    "referencePower": "quarter_protection",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 2,
+    "artifactId": "artifact_02",
+    "name": "龍紋虎符",
+    "theme": "擴張統御權柄",
+    "referencePower": "double_leadership",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 3,
+    "artifactId": "artifact_03",
+    "name": "封邑金券",
+    "theme": "提高每週俸祿",
+    "referencePower": "increase_commission",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 4,
+    "artifactId": "artifact_04",
+    "name": "九曜法璧",
+    "theme": "加強法術威力",
+    "referencePower": "double_spell_power",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 5,
+    "artifactId": "artifact_05",
+    "name": "俠義佩環",
+    "theme": "效果尚不明，等待驗證",
+    "referencePower": "unknown",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 6,
+    "artifactId": "artifact_06",
+    "name": "太陰秘籙",
+    "theme": "增加可攜帶法術量",
+    "referencePower": "double_max_spells",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  },
+  {
+    "sourceArtifactId": 7,
+    "artifactId": "artifact_07",
+    "name": "海舶令牌",
+    "theme": "降低水路船費",
+    "referencePower": "cheaper_boat_rental",
+    "status": "proposed-name; inherited-power-requires-engine-verification"
+  }
+]

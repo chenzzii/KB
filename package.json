@@ -1,0 +1,37 @@
+{
+  "name": "jiuzhou-bingpu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "validate:data": "python3 scripts/validate_pack.py && node scripts/generate.mjs --check",
+    "predev": "npm run generate",
+    "dev": "vite --host 0.0.0.0",
+    "pretest": "npm run generate",
+    "test": "vitest run",
+    "prebuild": "npm run generate",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "simulate": "node --import tsx scripts/simulate.ts",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "presimulate": "npm run generate",
+    "pretest:browser": "npm run simulate",
+    "presimulate:batch": "npm run generate",
+    "simulate:batch": "node --import tsx scripts/batch-simulate.ts",
+    "art:generate": "node scripts/create-art.mjs",
+    "campaign:verify": "node --import tsx scripts/campaign-playthrough.ts",
+    "test:campaign-browser": "node scripts/campaign-browser.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^3.2.4",
+    "tsx": "^4.21.0",
+    "@playwright/test": "^1.56.0"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

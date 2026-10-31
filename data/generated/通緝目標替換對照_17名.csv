@@ -1,0 +1,18 @@
+﻿來源ID,原角色名,新角色名,懸賞金,軍隊配置（新兵種×數量）,備註
+0,騙徒莫里斯,竊印客陸無咎,5000,xiang_min×50 / shan_lang×20 / xiang_yong×25 / xiang_min×30 / xiang_min×25,軍隊/賞金僅研究基準；故事與地圖另創
+1,盜賊亞當,燕山快刀朱三刀,6000,guo_sai_you_xia×10 / xiang_yong×30 / xiang_yong×20 / xiang_min×60 / xiang_min×40,軍隊/賞金僅研究基準；故事與地圖另創
+2,蜜雅公主,紙鸞公主,7000,zhi_he_ling×70 / zhi_he_ling×50 / bai_gu_bing×20 / xing_shi×20 / shan_xiao×4,軍隊/賞金僅研究基準；故事與地圖另創
+3,鐵拳領主,鐵掌侯顧破軍,8000,shan_lang×30 / lang_ya_nu_shou×20 / yu_lin_gong_shou×10 / shu_kui×2 / tie_shan_wei×6,軍隊/賞金僅研究基準；故事與地圖另創
+4,海盜羅賓,水寨首領韓逐浪,9000,xiang_yong×50 / xiang_yong×50 / yu_lin_gong_shou×10 / zhu_lin_jian_shou×10 / huang_yuan_kuang_ke×5,軍隊/賞金僅研究基準；故事與地圖另創
+5,巫師卡恩,符師魏寒燈,10000,zhi_he_ling×250 / you_hun×10 / hu_ben_zhong_jia×10 / yu_feng_fang_shi×4 / yu_feng_fang_shi×4,軍隊/賞金僅研究基準；故事與地圖另創
+6,征服者拉格納,雁門逆將段驚霜,12000,xiang_yong×100 / yu_lin_gong_shou×20 / zhen_wei_chang_qiang×20 / yu_lin_tie_qi×15 / hu_ben_zhong_jia×15,軍隊/賞金僅研究基準；故事與地圖另創
+7,黑修士塞巴斯汀,觀星客白無涯,14000,zhu_lin_jian_shou×30 / yu_feng_fang_shi×30 / zhu_you_wu_yi×10 / zhen_wei_chang_qiang×30 / zhi_he_ling×300,軍隊/賞金僅研究基準；故事與地圖另創
+8,葛瑞許馬克,妖嶺霸主赤嶂,16000,lang_ya_nu_shou×150 / shan_xiao×20 / shu_kui×10 / shan_yue_li_shi×5 / shan_lang×80,軍隊/賞金僅研究基準；故事與地圖另創
+9,史凱勒·波羅斯,冥河都尉孟無生,18000,bai_gu_bing×500 / xing_shi×100 / you_hun×30 / shi_xue_mei×10 / xiu_luo_gui_jiang×6,軍隊/賞金僅研究基準；故事與地圖另創
+10,稻草人,稻田紙鬼沈荒,20000,bai_gu_bing×600 / xing_shi×200 / you_hun×50 / shi_xue_mei×25 / xiu_luo_gui_jiang×10,軍隊/賞金僅研究基準；故事與地圖另創
+11,紅木利爪,焚林妖侯九枝,25000,shan_yue_li_shi×30 / chi_yan_jiao_long×5 / shan_xiao×30 / lang_ya_nu_shou×200 / shan_min_duan_gong×200,軍隊/賞金僅研究基準；故事與地圖另創
+12,叛將詹姆士爵士,流亡節度使秦玄甲,30000,shan_min_duan_gong×300 / huang_yuan_kuang_ke×40 / shan_yue_li_shi×20 / guo_sai_you_xia×100 / xiang_min×700,軍隊/賞金僅研究基準；故事與地圖另創
+13,沙皇鮑里斯三世,僭王呼延朔,35000,yu_lin_gong_shou×35 / zhen_wei_chang_qiang×100 / yu_lin_tie_qi×80 / hu_ben_zhong_jia×60 / chi_yan_jiao_long×5,軍隊/賞金僅研究基準；故事與地圖另創
+14,智者索利度斯,玄門叛徒聞人敘,40000,xiu_luo_gui_jiang×30 / shi_xue_mei×50 / yu_feng_fang_shi×100 / shan_min_duan_gong×500 / xiang_min×5000,軍隊/賞金僅研究基準；故事與地圖另創
+15,索命者亞克羅,斷命司主卜離,45000,xiu_luo_gui_jiang×50 / chi_yan_jiao_long×10 / yu_lin_tie_qi×200 / hu_ben_zhong_jia×250 / yu_feng_fang_shi×60,軍隊/賞金僅研究基準；故事與地圖另創
+16,烏瓦·龍焰,赤潭龍主焱鱗,50000,chi_yan_jiao_long×100 / chi_yan_jiao_long×25 / chi_yan_jiao_long×25 / xiu_luo_gui_jiang×100 / shi_xue_mei×100,軍隊/賞金僅研究基準；故事與地圖另創

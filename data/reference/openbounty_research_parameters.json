@@ -1,0 +1,658 @@
+{
+  "research_status": "reference-data / not independently verified from original DOS binary",
+  "sources": {
+    "original_manual_html": "https://www.freegameempire.com/games/King-s-Bounty/manual",
+    "openbounty_data": "https://raw.githubusercontent.com/dannyheskett/openbounty/main/assets/kings-bounty/game.json",
+    "openbounty_spec": "https://github.com/dannyheskett/openbounty/blob/main/docs/OPENBOUNTY-SPEC.md",
+    "openbounty_license": "https://github.com/dannyheskett/openbounty/blob/main/LICENSE"
+  },
+  "world": {
+    "zones": 4,
+    "zone_dimensions": [
+      64,
+      64
+    ],
+    "army_slots": 5,
+    "battlefield": [
+      6,
+      5
+    ],
+    "villains": 17,
+    "artifacts": 8,
+    "troop_types": 25,
+    "spells": 14
+  },
+  "time": {
+    "steps_per_day": 40,
+    "days_per_week": 5,
+    "days_by_difficulty": {
+      "easy": 900,
+      "normal": 600,
+      "hard": 400,
+      "impossible": 200
+    },
+    "search_cost_days": 10
+  },
+  "economy": {
+    "boat_rental_per_week": 500,
+    "boat_cost_with_artifact": 100,
+    "siege_weapon_cost": 3000,
+    "learn_magic_cost": 5000,
+    "weekly_upkeep_model": "count * floor(recruit_cost / 10)"
+  },
+  "battle": {
+    "damage_model_reimplementation": "floor(count_at_turn_start * random_integer(melee_min,melee_max) * (attacker_skill + 5 - defender_skill) / 10); then adjust morale, artifacts, abilities and injury",
+    "morale_damage_multipliers": {
+      "L": 0.5,
+      "N": 1,
+      "H": 1.5
+    },
+    "morale_matrix_order": "row: subject troop group A..E; columns: other troop group A..E",
+    "morale_matrix": [
+      "NNNNN",
+      "NNNNN",
+      "NNHNN",
+      "LNLHN",
+      "LLLNN"
+    ],
+    "control_rule": "troop.hp * troop_count > leadership_current makes that stack out of control",
+    "notes": [
+      "Original manual and OpenBounty differ on some upkeep and morale handling; verify before asserting strict DOS fidelity.",
+      "Ranged and special MAGIC damage require separate handling and are not described by the melee formula."
+    ]
+  },
+  "classes": [
+    {
+      "name_en": "Knight",
+      "initial_leadership": 100,
+      "initial_gold": 7500,
+      "initial_commission_per_week": 1000,
+      "initial_max_spells": 2,
+      "initial_spell_power": 1,
+      "starts_with_magic": false,
+      "starting_troops": [
+        {
+          "name_en": "Militia",
+          "count": 20
+        },
+        {
+          "name_en": "Archers",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name_en": "Paladin",
+      "initial_leadership": 80,
+      "initial_gold": 10000,
+      "initial_commission_per_week": 1000,
+      "initial_max_spells": 3,
+      "initial_spell_power": 1,
+      "starts_with_magic": false,
+      "starting_troops": [
+        {
+          "name_en": "Peasants",
+          "count": 20
+        },
+        {
+          "name_en": "Militia",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "name_en": "Sorceress",
+      "initial_leadership": 60,
+      "initial_gold": 10000,
+      "initial_commission_per_week": 3000,
+      "initial_max_spells": 5,
+      "initial_spell_power": 2,
+      "starts_with_magic": true,
+      "starting_troops": [
+        {
+          "name_en": "Peasants",
+          "count": 30
+        },
+        {
+          "name_en": "Sprites",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name_en": "Barbarian",
+      "initial_leadership": 100,
+      "initial_gold": 7500,
+      "initial_commission_per_week": 2000,
+      "initial_max_spells": 2,
+      "initial_spell_power": 0,
+      "starts_with_magic": false,
+      "starting_troops": [
+        {
+          "name_en": "Wolves",
+          "count": 20
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "militia",
+      "name_en": "Militia",
+      "location": "castle",
+      "skill": 2,
+      "hp": 2,
+      "move_rate": 2,
+      "melee_damage": [
+        1,
+        2
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 50,
+      "morale_group": "A",
+      "abilities": []
+    },
+    {
+      "id": "archers",
+      "name_en": "Archers",
+      "location": "castle",
+      "skill": 2,
+      "hp": 10,
+      "move_rate": 2,
+      "melee_damage": [
+        1,
+        2
+      ],
+      "ranged_damage": [
+        1,
+        3
+      ],
+      "recruit_cost": 250,
+      "morale_group": "B",
+      "abilities": []
+    },
+    {
+      "id": "pikemen",
+      "name_en": "Pikemen",
+      "location": "castle",
+      "skill": 3,
+      "hp": 10,
+      "move_rate": 2,
+      "melee_damage": [
+        2,
+        4
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 300,
+      "morale_group": "B",
+      "abilities": []
+    },
+    {
+      "id": "cavalry",
+      "name_en": "Cavalry",
+      "location": "castle",
+      "skill": 4,
+      "hp": 20,
+      "move_rate": 4,
+      "melee_damage": [
+        3,
+        5
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 800,
+      "morale_group": "B",
+      "abilities": []
+    },
+    {
+      "id": "knights",
+      "name_en": "Knights",
+      "location": "castle",
+      "skill": 5,
+      "hp": 35,
+      "move_rate": 1,
+      "melee_damage": [
+        6,
+        10
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 1000,
+      "morale_group": "B",
+      "abilities": []
+    },
+    {
+      "id": "peasants",
+      "name_en": "Peasants",
+      "location": "plains",
+      "skill": 1,
+      "hp": 1,
+      "move_rate": 1,
+      "melee_damage": [
+        1,
+        1
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 10,
+      "morale_group": "A",
+      "abilities": []
+    },
+    {
+      "id": "wolves",
+      "name_en": "Wolves",
+      "location": "plains",
+      "skill": 2,
+      "hp": 3,
+      "move_rate": 3,
+      "melee_damage": [
+        1,
+        3
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 40,
+      "morale_group": "D",
+      "abilities": []
+    },
+    {
+      "id": "nomads",
+      "name_en": "Nomads",
+      "location": "plains",
+      "skill": 3,
+      "hp": 15,
+      "move_rate": 2,
+      "melee_damage": [
+        2,
+        4
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 300,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "barbarians",
+      "name_en": "Barbarians",
+      "location": "plains",
+      "skill": 4,
+      "hp": 40,
+      "move_rate": 3,
+      "melee_damage": [
+        1,
+        6
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 750,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "archmages",
+      "name_en": "Archmages",
+      "location": "plains",
+      "skill": 5,
+      "hp": 25,
+      "move_rate": 1,
+      "melee_damage": [
+        2,
+        3
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 1200,
+      "morale_group": "C",
+      "abilities": [
+        "FLY",
+        "MAGIC"
+      ]
+    },
+    {
+      "id": "sprites",
+      "name_en": "Sprites",
+      "location": "forest",
+      "skill": 1,
+      "hp": 1,
+      "move_rate": 1,
+      "melee_damage": [
+        1,
+        2
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 15,
+      "morale_group": "C",
+      "abilities": [
+        "FLY"
+      ]
+    },
+    {
+      "id": "gnomes",
+      "name_en": "Gnomes",
+      "location": "forest",
+      "skill": 2,
+      "hp": 5,
+      "move_rate": 1,
+      "melee_damage": [
+        1,
+        3
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 60,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "elves",
+      "name_en": "Elves",
+      "location": "forest",
+      "skill": 3,
+      "hp": 10,
+      "move_rate": 3,
+      "melee_damage": [
+        1,
+        2
+      ],
+      "ranged_damage": [
+        2,
+        4
+      ],
+      "recruit_cost": 200,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "trolls",
+      "name_en": "Trolls",
+      "location": "forest",
+      "skill": 4,
+      "hp": 50,
+      "move_rate": 1,
+      "melee_damage": [
+        2,
+        5
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 1000,
+      "morale_group": "D",
+      "abilities": [
+        "REGEN"
+      ]
+    },
+    {
+      "id": "druids",
+      "name_en": "Druids",
+      "location": "forest",
+      "skill": 5,
+      "hp": 25,
+      "move_rate": 2,
+      "melee_damage": [
+        2,
+        3
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 700,
+      "morale_group": "C",
+      "abilities": [
+        "MAGIC"
+      ]
+    },
+    {
+      "id": "orcs",
+      "name_en": "Orcs",
+      "location": "hills",
+      "skill": 2,
+      "hp": 5,
+      "move_rate": 2,
+      "melee_damage": [
+        2,
+        3
+      ],
+      "ranged_damage": [
+        1,
+        2
+      ],
+      "recruit_cost": 75,
+      "morale_group": "D",
+      "abilities": []
+    },
+    {
+      "id": "dwarves",
+      "name_en": "Dwarves",
+      "location": "hills",
+      "skill": 3,
+      "hp": 20,
+      "move_rate": 1,
+      "melee_damage": [
+        2,
+        4
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 350,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "ogres",
+      "name_en": "Ogres",
+      "location": "hills",
+      "skill": 4,
+      "hp": 40,
+      "move_rate": 1,
+      "melee_damage": [
+        3,
+        5
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 750,
+      "morale_group": "D",
+      "abilities": []
+    },
+    {
+      "id": "giants",
+      "name_en": "Giants",
+      "location": "hills",
+      "skill": 5,
+      "hp": 60,
+      "move_rate": 3,
+      "melee_damage": [
+        10,
+        20
+      ],
+      "ranged_damage": [
+        5,
+        10
+      ],
+      "recruit_cost": 2000,
+      "morale_group": "C",
+      "abilities": []
+    },
+    {
+      "id": "dragons",
+      "name_en": "Dragons",
+      "location": "hills",
+      "skill": 6,
+      "hp": 200,
+      "move_rate": 1,
+      "melee_damage": [
+        25,
+        50
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 5000,
+      "morale_group": "D",
+      "abilities": [
+        "FLY",
+        "IMMUNE"
+      ]
+    },
+    {
+      "id": "skeletons",
+      "name_en": "Skeletons",
+      "location": "dungeon",
+      "skill": 2,
+      "hp": 3,
+      "move_rate": 2,
+      "melee_damage": [
+        1,
+        2
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 40,
+      "morale_group": "E",
+      "abilities": [
+        "UNDEAD"
+      ]
+    },
+    {
+      "id": "zombies",
+      "name_en": "Zombies",
+      "location": "dungeon",
+      "skill": 2,
+      "hp": 5,
+      "move_rate": 1,
+      "melee_damage": [
+        2,
+        2
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 50,
+      "morale_group": "E",
+      "abilities": [
+        "UNDEAD"
+      ]
+    },
+    {
+      "id": "ghosts",
+      "name_en": "Ghosts",
+      "location": "dungeon",
+      "skill": 4,
+      "hp": 10,
+      "move_rate": 3,
+      "melee_damage": [
+        3,
+        4
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 400,
+      "morale_group": "E",
+      "abilities": [
+        "ABSORB",
+        "UNDEAD"
+      ]
+    },
+    {
+      "id": "vampires",
+      "name_en": "Vampires",
+      "location": "dungeon",
+      "skill": 5,
+      "hp": 30,
+      "move_rate": 1,
+      "melee_damage": [
+        3,
+        6
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 1500,
+      "morale_group": "E",
+      "abilities": [
+        "FLY",
+        "LEECH",
+        "UNDEAD"
+      ]
+    },
+    {
+      "id": "demons",
+      "name_en": "Demons",
+      "location": "dungeon",
+      "skill": 6,
+      "hp": 50,
+      "move_rate": 1,
+      "melee_damage": [
+        5,
+        7
+      ],
+      "ranged_damage": null,
+      "recruit_cost": 3000,
+      "morale_group": "E",
+      "abilities": [
+        "FLY",
+        "SCYTHE"
+      ]
+    }
+  ],
+  "spells": [
+    {
+      "name_en": "Clone",
+      "kind": "combat",
+      "price": 2000
+    },
+    {
+      "name_en": "Teleport",
+      "kind": "combat",
+      "price": 500
+    },
+    {
+      "name_en": "Fireball",
+      "kind": "combat",
+      "price": 1500
+    },
+    {
+      "name_en": "Lightning",
+      "kind": "combat",
+      "price": 500
+    },
+    {
+      "name_en": "Freeze",
+      "kind": "combat",
+      "price": 300
+    },
+    {
+      "name_en": "Resurrect",
+      "kind": "combat",
+      "price": 5000
+    },
+    {
+      "name_en": "Turn Undead",
+      "kind": "combat",
+      "price": 2000
+    },
+    {
+      "name_en": "Bridge",
+      "kind": "adventure",
+      "price": 100
+    },
+    {
+      "name_en": "Time Stop",
+      "kind": "adventure",
+      "price": 200
+    },
+    {
+      "name_en": "Find Villain",
+      "kind": "adventure",
+      "price": 1000
+    },
+    {
+      "name_en": "Castle Gate",
+      "kind": "adventure",
+      "price": 1000
+    },
+    {
+      "name_en": "Town Gate",
+      "kind": "adventure",
+      "price": 500
+    },
+    {
+      "name_en": "Instant Army",
+      "kind": "adventure",
+      "price": 1000
+    },
+    {
+      "name_en": "Raise Control",
+      "kind": "adventure",
+      "price": 500
+    }
+  ],
+  "needs_original_binary_verification": [
+    "precise battle morale in asymmetric pairings",
+    "unpaid weekly troop handling",
+    "random-number generator / chance distribution",
+    "combat spell edge cases",
+    "promotion stat accumulation",
+    "enemy AI target selection"
+  ]
+}

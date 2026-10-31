@@ -1,0 +1,15 @@
+﻿來源ID,舊法術,新法術,效果鍵,效果數值,價錢原值,備註
+0,複製術,影分身符,clone,10,2000,proposed-name; mechanics-need-code-verification
+1,傳送術,縮地符,teleport,,500,proposed-name; mechanics-need-code-verification
+2,火球術,火龍符,magic_damage,25,1500,proposed-name; mechanics-need-code-verification
+3,閃電術,天雷訣,magic_damage,10,500,proposed-name; mechanics-need-code-verification
+4,凝滯術,定身咒,freeze,1,300,proposed-name; mechanics-need-code-verification
+5,復活術,還魂籙,resurrect,1,5000,proposed-name; mechanics-need-code-verification
+6,超渡術,渡厄真言,holy_damage,50,250;2000,proposed-name; mechanics-need-code-verification
+7,造橋術,架橋術,bridge,2,100,proposed-name; mechanics-need-code-verification
+8,停時術,止息法,time_stop,40,200,proposed-name; mechanics-need-code-verification
+9,尋兇術,追跡羅盤,find_villain,1,1000,proposed-name; mechanics-need-code-verification
+10,入城術,歸城令,castle_gate,1,1000,proposed-name; mechanics-need-code-verification
+11,入鄉術,歸鄉訣,town_gate,1,500,proposed-name; mechanics-need-code-verification
+12,召兵術,符兵召來,instant_army,1,1000,proposed-name; mechanics-need-code-verification
+13,增控術,帥印加持,raise_control,1,500,proposed-name; mechanics-need-code-verification

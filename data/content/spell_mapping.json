@@ -1,0 +1,128 @@
+[
+  {
+    "sourceSpellId": 0,
+    "spellId": "spell_00",
+    "name": "影分身符",
+    "theme": "以符籙複製戰場單位的形體",
+    "effectTypeInherited": "clone",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 1,
+    "spellId": "spell_01",
+    "name": "縮地符",
+    "theme": "瞬間換位或短距離轉移",
+    "effectTypeInherited": "teleport",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 2,
+    "spellId": "spell_02",
+    "name": "火龍符",
+    "theme": "以火行之術造成法術傷害",
+    "effectTypeInherited": "magic_damage",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 3,
+    "spellId": "spell_03",
+    "name": "天雷訣",
+    "theme": "召引雷霆造成傷害",
+    "effectTypeInherited": "magic_damage",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 4,
+    "spellId": "spell_04",
+    "name": "定身咒",
+    "theme": "暫時限制敵人行動",
+    "effectTypeInherited": "freeze",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 5,
+    "spellId": "spell_05",
+    "name": "還魂籙",
+    "theme": "恢復已陣亡的部隊成員",
+    "effectTypeInherited": "resurrect",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 6,
+    "spellId": "spell_06",
+    "name": "渡厄真言",
+    "theme": "對特定幽冥目標造成傷害",
+    "effectTypeInherited": "holy_damage",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 7,
+    "spellId": "spell_07",
+    "name": "架橋術",
+    "theme": "跨越地形障礙",
+    "effectTypeInherited": "bridge",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 8,
+    "spellId": "spell_08",
+    "name": "止息法",
+    "theme": "延緩或停止時間推進",
+    "effectTypeInherited": "time_stop",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 9,
+    "spellId": "spell_09",
+    "name": "追跡羅盤",
+    "theme": "協助尋找通緝目標",
+    "effectTypeInherited": "find_villain",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 10,
+    "spellId": "spell_10",
+    "name": "歸城令",
+    "theme": "返回已解鎖城池",
+    "effectTypeInherited": "castle_gate",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 11,
+    "spellId": "spell_11",
+    "name": "歸鄉訣",
+    "theme": "返回已解鎖城鎮",
+    "effectTypeInherited": "town_gate",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 12,
+    "spellId": "spell_12",
+    "name": "符兵召來",
+    "theme": "直接增加可用兵源",
+    "effectTypeInherited": "instant_army",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  },
+  {
+    "sourceSpellId": 13,
+    "spellId": "spell_13",
+    "name": "帥印加持",
+    "theme": "提高英雄對兵力的統御能力",
+    "effectTypeInherited": "raise_control",
+    "numericPolicy": "inherit-reference-unchanged",
+    "status": "proposed-name; mechanics-need-code-verification"
+  }
+]
