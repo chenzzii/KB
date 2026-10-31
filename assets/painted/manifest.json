@@ -1,0 +1,56 @@
+{
+  "version": "1.1.0",
+  "status": "Illustrated visual pass. Static atlas sprites with UI animation, not hand-animated frame sequences. Earlier SVG icons retained as prototype design references.",
+  "assets": [
+    {
+      "file": "units-v1.png",
+      "kind": "character-atlas",
+      "layout": "5x5, sourceTroopId row-major",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "4bc69ccba7801ecf43298478ee7be8cebe183a6070363f88ae5142620b3af6ee",
+      "bytes": 3127639,
+      "origin": "New original artwork generated with OpenAI image_gen for Jiuzhou; no source-game images used."
+    },
+    {
+      "file": "courtyard-v1.png",
+      "kind": "battle-environment",
+      "layout": "single scenic plate",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4e956d9dd024eee412791e32e8a6f8fd4109f57b79317ad1221fa4c2750fd56b",
+      "bytes": 3686068,
+      "origin": "New original artwork generated with OpenAI image_gen for Jiuzhou; no source-game images used."
+    },
+    {
+      "file": "props-v1.png",
+      "kind": "obstacle-atlas",
+      "layout": "2x2 rocks / broken pillar / bamboo / stone lion",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "0aba7c0e04ee8580f1e1654b0d2d34fba57ac5ad8cf87b3366af8872c2758594",
+      "bytes": 2765484,
+      "origin": "New original artwork generated with OpenAI image_gen for Jiuzhou; no source-game images used."
+    },
+    {
+      "file": "portraits-v1.png",
+      "kind": "portrait-and-scene-atlas",
+      "layout": "5x5: 4 heroes, 17 villains, 4 landscape scenes",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7450016a0564366809ebecc27e07b4d03cac1160524a882bdd1742ea0ac1d5cd",
+      "bytes": 3734524,
+      "origin": "New original artwork generated with OpenAI image_gen for Jiuzhou; no source-game images used."
+    },
+    {
+      "file": "world-items-v1.png",
+      "kind": "world-and-item-atlas",
+      "layout": "6x6: 8 terrain tiles, 6 buildings, 14 spells, 8 artifacts",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c602da892ed5e7faa394a1fe54cacfaf9e68c2c24d3badb634e6377e7f845e76",
+      "bytes": 3490093,
+      "origin": "New original artwork generated with OpenAI image_gen for Jiuzhou; no source-game images used."
+    }
+  ]
+}
