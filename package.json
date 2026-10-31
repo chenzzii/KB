@@ -1,6 +1,6 @@
 {
   "name": "jiuzhou-bingpu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,7 +23,9 @@
     "campaign:verify": "node --import tsx scripts/campaign-playthrough.ts",
     "test:campaign-browser": "node scripts/campaign-browser.mjs",
     "pretest:painted": "npm run generate && node --import tsx scripts/prepare-art-review.ts",
-    "test:painted": "node scripts/painted-browser.mjs"
+    "test:painted": "node scripts/painted-browser.mjs",
+    "pretest:recruitment": "npm run generate",
+    "test:recruitment": "node --import tsx scripts/recruitment-browser.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
