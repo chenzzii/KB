@@ -1,4 +1,4 @@
-# 九州兵譜：烽火歸途 v1.0
+# 九州兵譜：烽火歸途 v1.1
 
 本版是可從開局玩到結局的原創單機冒險遊戲，保留演武沙盒與研究檢視。不是 DOS《御封戰將》的逐項復刻。
 原始交接包 `README.md` 保留不改；本文件是目前的操作入口。
@@ -44,7 +44,9 @@ npm run dev
 新旅程可選「研究基準」或「華夏改良」。研究模式使用零傷害、回合兵數快照、整兵吸血、輪首再生，並停用來源缺參數的兵種魔法；華夏模式保留下限 1、連續吸血、獨立魔法次數與林地遠射減傷。兩者皆不是 DOS 已驗證模式。
 
 全新 32×32 主地圖、3 城、4 個兵源營、17 敵將與古廟／烽臺可探索。戰場有平地、竹林、赤岩三種配置。
-「青嵐繪卷」展示 86 件原創 SVG；自選音效與「青嵐行旅」程式五聲小調，沒有來源遊戲的圖片、地圖、音樂或執行檔。
+v1.1 已將主要遊戲呈現更新為繪製風格的角色、人物肖像、場景、地形、建築、符籙及神器；五張 PNG 圖集由生成式影像製作，非人工逐格動畫。戰場加入位移、射擊軌跡、受傷數字與消失效果，並支援減少動態效果。
+
+「青嵐繪卷」展示新版美術與先前 86 件原型 SVG 對照；自選音效與「青嵐行旅」程式五聲小調，沒有來源遊戲的圖片、地圖、音樂或執行檔。
 
 ## 存讀檔與重播
 
@@ -78,6 +80,7 @@ node scripts/generate.mjs --check
 npx playwright install chromium
 npm run test:campaign-browser
 npm run test:browser
+npm run test:painted
 ```
 
 雲端已裝 `/usr/bin/chromium`；可用 `CHROMIUM_PATH` 指定，`SMOKE_URL` 選擇測試服務。演武測試會先產生 CLI 基準回放；冒險測試需先跑 `campaign:verify`。
@@ -86,7 +89,7 @@ npm run test:browser
 ## 靜態成品與比對報告
 
 `npm run build` 產生 `dist/`，`npm run preview` 檢查靜態成品；不需後端。相對 base 適用子目錄託管，但不可把直接雙擊 HTML 當作 HTTP 服務。
-此工作沒有推送、部署或發布環境。Linux／Chromium 已驗證，Windows 11 尚未實機驗證。
+線上版本：https://chenzzii.github.io/KB/ 。靜態網站由 `gh-pages` 分支提供，原始碼在 `delivery/jiuzhou-v1`；網站更新須等待 GitHub Pages 部署。Linux／Chromium 已驗證，Windows 11 尚未實機驗證。
 
 - 功能驗收：`docs/COMPLETION_MATRIX.md`
 - 完整異動盤點（含地圖、美術、音樂及來源限制）：`docs/FINAL_COMPARISON.md`
