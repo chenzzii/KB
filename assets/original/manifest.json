@@ -1,0 +1,522 @@
+{
+  "license": "CC0-1.0",
+  "style": "Original vector ink-and-jade icon system",
+  "assets": [
+    {
+      "file": "unit-0.svg",
+      "title": "鄉民",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "ade11bf3e6f683cd58dcb4f9a96b912498593461373284c3b4279a60a273eaa5"
+    },
+    {
+      "file": "unit-1.svg",
+      "title": "紙鶴靈",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "62ddf48f096f20b947086418b3791eade075a4f27260a0789c97b0d03fc8e4c8"
+    },
+    {
+      "file": "unit-2.svg",
+      "title": "鄉勇",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "3f5f51328f9819855684212acde025a6722e45d10590e707e71bb9395a0a22d6"
+    },
+    {
+      "file": "unit-3.svg",
+      "title": "山狼",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "f954426da930c1a15fd59a7a4570607fc85eacf6b8f5862f738e995cd01cf1ee"
+    },
+    {
+      "file": "unit-4.svg",
+      "title": "白骨兵",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "d2a8635ff70fe70d8b413a98f3378ebd0cfea28f4d55df04cde0a3ceebb3f591"
+    },
+    {
+      "file": "unit-5.svg",
+      "title": "行屍",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "6aa789c615421b4d6124d59571e340c914e1561f5d927a03925c88396c539a8c"
+    },
+    {
+      "file": "unit-6.svg",
+      "title": "山民鍛工",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "83f16452f681e85318ca779c2d1e76f933b716028cb64c66e684b3cc232d7629"
+    },
+    {
+      "file": "unit-7.svg",
+      "title": "狼牙弩妖",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "131d9590ce11a58b8c718351f087b048197d2adf651cc28f28301c8b7a3f9dee"
+    },
+    {
+      "file": "unit-8.svg",
+      "title": "羽林弓手",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "5be3e11694acb238bffc4d163289ad43b9f37fe22a6414a793842152f570c845"
+    },
+    {
+      "file": "unit-9.svg",
+      "title": "竹林箭客",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "adf63dce0cb37931d08e7d43d23f1a88b09a87da4a9fa808877a3afff34c7564"
+    },
+    {
+      "file": "unit-10.svg",
+      "title": "鎮衛長槍兵",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "6fc94cc123bfa802d38a3da62c70f5a331bc541541e63ea9ffc7492f84c0a8fa"
+    },
+    {
+      "file": "unit-11.svg",
+      "title": "過塞遊俠",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b96fc33e15a52f96399551371fe93806316f5c585d72d05239e3aea0e538ac5a"
+    },
+    {
+      "file": "unit-12.svg",
+      "title": "鐵山衛",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "884c0d32e89996e8b7a1bd9096ae622e5f37310ce81e2f1633638fc686aba514"
+    },
+    {
+      "file": "unit-13.svg",
+      "title": "幽魂",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "84cdbdc66921d60f60f9c1aa8d87693399993fc970cc88054595b2005497da87"
+    },
+    {
+      "file": "unit-14.svg",
+      "title": "虎賁重甲",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "cb631f86e73a83446223b1bb1dd34d2cbae2d142191251c319607d2c94f986a2"
+    },
+    {
+      "file": "unit-15.svg",
+      "title": "山魈",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "edd01d210e53b541cfb383a9abd2516928bc7fd8f492d63d9c55437b686b6dd8"
+    },
+    {
+      "file": "unit-16.svg",
+      "title": "荒原狂客",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "c84a2a507a377e749b6f337c468b348e8a16e7a30274d1ee2808bbe931dc1964"
+    },
+    {
+      "file": "unit-17.svg",
+      "title": "樹魁",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "d18f261933ae751c7e321ea58276de7eec26abc5e13c6e76b92ee5690b7c83c9"
+    },
+    {
+      "file": "unit-18.svg",
+      "title": "羽林鐵騎",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "bb5efad07c1c4a33dbb69b6adb8eb1b25578f78809fbcc323284d5b8c04bf20b"
+    },
+    {
+      "file": "unit-19.svg",
+      "title": "祝由巫醫",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "940a6de2aa6efcaf35e582eb8bb5dedaf40ce6b922d5dc5f9f6e9c78634626ea"
+    },
+    {
+      "file": "unit-20.svg",
+      "title": "御風方士",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "6cd79d2d679973b40f21f67486fec15a0551333b0f0768e328bce4a01ed7cd5a"
+    },
+    {
+      "file": "unit-21.svg",
+      "title": "噬血魅",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "f3a6cce6dce29dd8475b64270c7790fc8c4129f6489308ac51ba178a4472f84b"
+    },
+    {
+      "file": "unit-22.svg",
+      "title": "山嶽力士",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "fa46c8cdeebb942958cd28724025ccc8901ace6ebe6a45320a872252906f8c0a"
+    },
+    {
+      "file": "unit-23.svg",
+      "title": "修羅鬼將",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "c446e0ec5a78e1d9e8fc88905af503e62fcea502878ac4d6a49c5df4de83fc66"
+    },
+    {
+      "file": "unit-24.svg",
+      "title": "赤焰蛟龍",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b31efe5c87f6e8d6dd38c3d065f0b71433371900d41f05f59dd2e91e112e6a3c"
+    },
+    {
+      "file": "tile-plain.svg",
+      "title": "plain",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "05e4c26657007b13f5fd7fa8888a531593e9527d7dcbb58325b0707743a3a473"
+    },
+    {
+      "file": "tile-forest.svg",
+      "title": "forest",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "c13861a92d638e10998e264d3a02ff928a2d1f065e42757c99d865565e681a2b"
+    },
+    {
+      "file": "tile-mountain.svg",
+      "title": "mountain",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "0f81da120096e4fb9d906795746ea9af6714d11e5fb4f6d5d2df9defb72eb4bb"
+    },
+    {
+      "file": "tile-water.svg",
+      "title": "water",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "e764476b26337a940af497b82e2be023a6183a637afbc740c1fbfe56dda73fba"
+    },
+    {
+      "file": "tile-road.svg",
+      "title": "road",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "8b906174bd4dcea73cfae80cedf92447fd87b2832756f33a8d4bc1ae444fe56d"
+    },
+    {
+      "file": "tile-bridge.svg",
+      "title": "bridge",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "09feab3f232a97f1c2dea91b831c2bbd1885fc3df792e871ca534f42343d9776"
+    },
+    {
+      "file": "tile-marsh.svg",
+      "title": "marsh",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "647725e792b6253d818cad68347c1c3c518ae7fba8d456580877ad6d9aa0ea0a"
+    },
+    {
+      "file": "tile-ruins.svg",
+      "title": "ruins",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "d5b02c9f95695effdc6866266397584a7cabb0a5ba64948acc1ff5aa24d81c24"
+    },
+    {
+      "file": "place-city.svg",
+      "title": "city",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "822a53785c33a4c7d467caf2250f1f0b03a3534aacdd230449eddaeac2ad5f5c"
+    },
+    {
+      "file": "place-camp.svg",
+      "title": "camp",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "bea213909b4723cb279fc81eef29d88833499baa4e2f2de75c96d4cc4ce44593"
+    },
+    {
+      "file": "place-foe.svg",
+      "title": "foe",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "2e292a08ffcd69b6b9d28c4b85178a3babcfb025baf87f8f3596a15dfe8453d8"
+    },
+    {
+      "file": "place-bandit.svg",
+      "title": "bandit",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "d41ca3a4179c0380ea972a9cf26764acfe6e5ca5b96da163733d7b109c36d90e"
+    },
+    {
+      "file": "place-shrine.svg",
+      "title": "shrine",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "9900df5eb054f4ca9dc506a0de97a0cd3ba5e55352545cb09aead18dfef49740"
+    },
+    {
+      "file": "place-beacon.svg",
+      "title": "beacon",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "375f9f56cf67a29ae09b2350cba53c441f9ccd59ae574be12778ac662110c457"
+    },
+    {
+      "file": "spell-0.svg",
+      "title": "符籙 1",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "9f8fe03234fe028b59c4ab0f928c5fb4f1db80976b5861f250678fa20ab856ba"
+    },
+    {
+      "file": "spell-1.svg",
+      "title": "符籙 2",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "29631df12920cebd97d491c5e1fbb05cb776fd1032e089179be4bcfea35b6cc5"
+    },
+    {
+      "file": "spell-2.svg",
+      "title": "符籙 3",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "9b5ae5bdc5c7619a669f0ffa65523176f56dacdbe57e1f12de628bd98b2eec02"
+    },
+    {
+      "file": "spell-3.svg",
+      "title": "符籙 4",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "6c78ab4da0a0f9811b7d4a85c78602a0b4d452c0e680a48d11259ddedda52a18"
+    },
+    {
+      "file": "spell-4.svg",
+      "title": "符籙 5",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "5da82787c974c89da2f2fed2db39fe17f9ea1ce7612f3d8f71d6c119121aaf76"
+    },
+    {
+      "file": "spell-5.svg",
+      "title": "符籙 6",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "011cc4b4c23e78e5f5cf5c9c5229ecbfc2e354f100c9676d67e577edd53868aa"
+    },
+    {
+      "file": "spell-6.svg",
+      "title": "符籙 7",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "abdcb036bf60bd38a0d6fae9acd5495be849a0dbe4202c43220e316e5bf79f94"
+    },
+    {
+      "file": "spell-7.svg",
+      "title": "符籙 8",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "ce1b49370b90cb3e4e6158d7ddcf6330501585d052c3d6ca0bf978197314ec04"
+    },
+    {
+      "file": "spell-8.svg",
+      "title": "符籙 9",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "3b0a0eab80a48e2e102f7fe76642397c4cbefbf98da747abb757fbd31aaaed98"
+    },
+    {
+      "file": "spell-9.svg",
+      "title": "符籙 10",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "2b3efeb8e6bc710ce2de15e5b517eff015a2724c1d73bb1747c29acffe1efc8d"
+    },
+    {
+      "file": "spell-10.svg",
+      "title": "符籙 11",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "888384a2b6e4468f51cc3eafda0747a3aae10ba1d0a56abfe50902f6a2ffdce6"
+    },
+    {
+      "file": "spell-11.svg",
+      "title": "符籙 12",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "9837c517f2d478bdc81626cbf4cf9b1d3f9542630a007f5b3ca956497de76888"
+    },
+    {
+      "file": "spell-12.svg",
+      "title": "符籙 13",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b5a7c29023f180fa3371cc5804c89ce59d1e09a125a9632cb1ea40964aa205cb"
+    },
+    {
+      "file": "spell-13.svg",
+      "title": "符籙 14",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "ab938948396d029cfa239c46e7a9831baacf0b65ba5f25fbee80647b59bcb6fe"
+    },
+    {
+      "file": "artifact-0.svg",
+      "title": "神器 1",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "22eaeaa3860080b67cdce418d37157eef0a5a0ec22604291d7d89c627dca556f"
+    },
+    {
+      "file": "artifact-1.svg",
+      "title": "神器 2",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "0edbc0bf2166708775fdb8c956479a5a8488bd64624d341e988e9acebf4b4825"
+    },
+    {
+      "file": "artifact-2.svg",
+      "title": "神器 3",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "9bfbc3f4cb168e199349f4ac4af8904cda7c9b0fd97e54c408431b9660efea78"
+    },
+    {
+      "file": "artifact-3.svg",
+      "title": "神器 4",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "c0be85118d88d832f153881adb1c670beefd407e140fc247a7129b226ceb70ae"
+    },
+    {
+      "file": "artifact-4.svg",
+      "title": "神器 5",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "6bf5f28d0df3aed8b8bb569f7eac03661e32a93eedaedffc842f2c8cc1d1a437"
+    },
+    {
+      "file": "artifact-5.svg",
+      "title": "神器 6",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "84ce7743a9652f6b5a3972c31f2c34e14a54c5c2d5664317ce70105b3625805a"
+    },
+    {
+      "file": "artifact-6.svg",
+      "title": "神器 7",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "ff59e18e4964497720c1a36f9b7e8ecf53cd206e953aa70d8b2b87550d347d43"
+    },
+    {
+      "file": "artifact-7.svg",
+      "title": "神器 8",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b12af86117c1ac4f2de84609017851fa766b23fdc71940c4c7ea42a472503fc0"
+    },
+    {
+      "file": "hero-0.svg",
+      "title": "武將",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "edbcaae80f5e9c712da39c02fae8873d876c00158a7b814b8eca647267925877"
+    },
+    {
+      "file": "hero-1.svg",
+      "title": "儒將",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "ef0fd4b7de1463f4ed160ef92bb73cfe3dfc5c0f07200734c07c37a0ec1b3edc"
+    },
+    {
+      "file": "hero-2.svg",
+      "title": "豪俠",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "da3d470de942934d5ce0743d932a4223c232f2268bbe0be54741fd5e1cf5def7"
+    },
+    {
+      "file": "hero-3.svg",
+      "title": "方士",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "3637a679d17567cfcc9374dbcc1fd21c0f701b00286f93d75b4fc4403d4a53ce"
+    },
+    {
+      "file": "foe-0.svg",
+      "title": "竊印客陸無咎",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "f72f266b272ee26a6e6a7cc6810538a1db1f60f69df3fa2d71e26efe683f3d0e"
+    },
+    {
+      "file": "foe-1.svg",
+      "title": "燕山快刀朱三刀",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "3118408176c86fda10b4950e80a99073c1e94acfe121701434e9f956960acad8"
+    },
+    {
+      "file": "foe-2.svg",
+      "title": "紙鸞公主",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "1135e04a57550d50addeb0fab1ecd84b8c91225678e44663316f3539d748865d"
+    },
+    {
+      "file": "foe-3.svg",
+      "title": "鐵掌侯顧破軍",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "5f95da22940bc761987d7b16859579cc288bdbc2268b1937dc86564083e1d8ea"
+    },
+    {
+      "file": "foe-4.svg",
+      "title": "水寨首領韓逐浪",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "d256da996ffd27224b6d64de1be0f68136017b20b1befb805ac81c986713aefc"
+    },
+    {
+      "file": "foe-5.svg",
+      "title": "符師魏寒燈",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "0525e507058f5f6409386fb1a83ea97558adc8cc7fbbaa416fa65c4d865b63fa"
+    },
+    {
+      "file": "foe-6.svg",
+      "title": "雁門逆將段驚霜",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "070d462a1683a44df1ca011fd5d0f017a356a03b9a831e30b25bdd2e1d15a858"
+    },
+    {
+      "file": "foe-7.svg",
+      "title": "觀星客白無涯",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "eb42f7afac9759c2df2b122c2d92af664f0e0d156cfb2b63fd680197f888a26b"
+    },
+    {
+      "file": "foe-8.svg",
+      "title": "妖嶺霸主赤嶂",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "5c3c7a06ac9b1084505ba7c7fdc32cac20b42d3fc51b9734e54a1c4a0b51a8aa"
+    },
+    {
+      "file": "foe-9.svg",
+      "title": "冥河都尉孟無生",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "cb0970707eec379e217dc8f1130d5a918c5d77a197a94180d7c42f07ee7a1440"
+    },
+    {
+      "file": "foe-10.svg",
+      "title": "稻田紙鬼沈荒",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b64549fdc911e10f9b7edc6c6e9bab2adf7b8086f4293501e3871e48c66489f8"
+    },
+    {
+      "file": "foe-11.svg",
+      "title": "焚林妖侯九枝",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "47619b595adaf0628fa363761dd3b5d604bbf525dbca0b9f1bcfc466aabac7b9"
+    },
+    {
+      "file": "foe-12.svg",
+      "title": "流亡節度使秦玄甲",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "b36f559d21ed3f1a5a6f23926390c21125a10ac6c21a18aa03788eae86d8d01f"
+    },
+    {
+      "file": "foe-13.svg",
+      "title": "僭王呼延朔",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "a2786a65a154346f951865ff04b67e7ee60e5b1bba346cb5ee3272ae95d812b3"
+    },
+    {
+      "file": "foe-14.svg",
+      "title": "玄門叛徒聞人敘",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "8f78e74b0280669f01919837b7f8dbdd8c5a1ed96da9bcf3c831d0001ca6f6ba"
+    },
+    {
+      "file": "foe-15.svg",
+      "title": "斷命司主卜離",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "71c4fae21651a6cc25fdb4487e1a409d7847c4ca05d3ffa8f13bcc599cb0d61f"
+    },
+    {
+      "file": "foe-16.svg",
+      "title": "赤潭龍主焱鱗",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "a68d38336bb3648d3460827b845c2381a794babb2c2f492e2fca3cc84206f5a7"
+    },
+    {
+      "file": "scene-0.svg",
+      "title": "青禾曉色",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "0db941ee1e212e4a679f4d8b199cf927fe077cc5f59844bf46c85850fc9f19b6"
+    },
+    {
+      "file": "scene-1.svg",
+      "title": "竹隱聽雨",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "4dd613958bcc76ffd253d0dda090fd86b86637cc46281766460458b4df2d2744"
+    },
+    {
+      "file": "scene-2.svg",
+      "title": "赤嶺烽火",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "02e4b87743458558637d4137070ceb1fc91b2176aaedb6f3bc3b0fb5f8adc47d"
+    },
+    {
+      "file": "scene-3.svg",
+      "title": "百川盟誓",
+      "origin": "Original procedural vector art created for 九州兵譜; no source-game imagery",
+      "sha256": "e260b43f97a24a65fe4b9ac81e635e1d065ef33be17ce72f682c0dcf8b509866"
+    }
+  ]
+}
