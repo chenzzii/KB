@@ -1,7 +1,12 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.1.1",
-  "sourceCommit": "d58a95984a530b75d722eb73889b86d6d34d4411",
+  "version": "1.2.0",
+  "sourceCommit": "d4454a3a706476b129f9dd786b701f5759745a21",
   "mapSize": "32x32",
-  "visualAssets": "assets/painted/manifest.json"
+  "visualAssets": "assets/painted/manifest.json",
+  "soundtracks": [
+    "青嵐遠行",
+    "烽鼓破陣"
+  ],
+  "animatedTroops": 25
 }
