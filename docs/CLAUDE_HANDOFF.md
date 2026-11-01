@@ -157,3 +157,7 @@ Vite 使用相對 base，無後端、資料庫或外部遊戲 API。`dist/` 是�
 證據：`artifacts/handoff-extraction-check.json` 與 `artifacts/handoff-clean-validation.txt`。最終包在同一批遊戲原始碼上補入這份證據與交接文件，重新產生所有 SHA-256，未更改遊戲程式。
 
 重新匯出工具為 `scripts/export-claude-handoff.py`，需在 Git checkout 執行，並以 `--original-pack` 指定開發包 ZIP。成品 ZIP 自身不含 .git；要保留歷史與推送能力請使用前述 git clone。
+
+## 13. 獨立美術交接包補充
+
+另提供 `delivery/jiuzhou-art-handoff-v1.2.zip`，包含五張相同原始 PNG、91 圖格／背景索引、86 原型 SVG、分層動作碼及可獨立開啟的預覽。先前完整包的 project/public/assets/painted 已有原圖，輕量包則未附 PNG；此補充包方便直接交給美術接手者，沒有修改遊戲資產。詳見 `ART_HANDOFF_V1_2.md`。

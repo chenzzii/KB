@@ -1,3 +1,9 @@
+# 獨立美術交接下載
+
+`jiuzhou-art-handoff-v1.2.zip`：五張原始 PNG 圖集、91 項圖格／背景索引、86 原型 SVG、分層動作整合碼、實際畫面與完整地圖、Claude 美術接手說明，以及可獨立開啟的 preview.html。解壓後先讀 START_HERE.md；逐檔 SHA-256 與預覽驗證均已附上。
+
+原始完整程式交接包已有 PNG，位於 project/public/assets/painted/；輕量上下文包沒有 PNG。這份獨立美術包可以搭配兩者使用。
+
 # Claude 交接下載
 
 - `jiuzhou-claude-handoff-v1.2.zip`：完整原始碼、全部美術、完整靜態成品、原始開發包、測試存檔、畫面與音樂證據，約 42.7 MB。
