@@ -1,12 +1,20 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.2.0",
-  "sourceCommit": "d4454a3a706476b129f9dd786b701f5759745a21",
+  "version": "1.3.0",
+  "sourceCommit": "9f5b803c5d546e54908ffbce979a4d1dcb3611b8",
   "mapSize": "32x32",
   "visualAssets": "assets/painted/manifest.json",
   "soundtracks": [
     "青嵐遠行",
     "烽鼓破陣"
   ],
-  "animatedTroops": 25
+  "animatedTroops": 25,
+  "sourceBranch": "claude/keen-wozniak-j649by",
+  "onboarding": [
+    "title screen",
+    "story prologue",
+    "role selection",
+    "first-time tips",
+    "map recruit/battle markers"
+  ]
 }
