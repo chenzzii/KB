@@ -1,6 +1,6 @@
 import {chromium} from '@playwright/test';
 import {mkdir,writeFile} from 'node:fs/promises';
-// v1.3.1: archers shoot distant enemies by clicking them; victory and bounty claims show a report.
+// v1.3.1+: archers shoot distant enemies by clicking them; victory and bounty claims show a report.
 const url=process.env.SMOKE_URL||'http://127.0.0.1:5173/';
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 const page=await browser.newPage({viewport:{width:1400,height:1000}}),errors=[],checks=[];
@@ -10,6 +10,13 @@ await mkdir('artifacts',{recursive:true});
 await page.addInitScript(()=>localStorage.setItem('jiuzhou-settings',JSON.stringify({tips:false,music:false,sfx:false})));
 await page.goto(url);
 await page.locator('#title-new').click();await page.locator('#story-skip').click();await page.locator('[data-hero="wu_jiang"]').click();await page.locator('#title-start').click();
+// v1.3.2: before the quest, 斷雁寨 choices are disabled with a visible reason; errors also float on screen.
+await page.locator('[data-world="10,8"]').click();await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent==='斷雁寨',null,{timeout:20000});
+check('bandit choices locked before quest',await page.locator('[data-route="conquest"]').isDisabled());
+check('bandit explains the quest requirement',(await page.locator('.requirement').innerText()).includes('接受山河三印委託'));
+await page.locator('.requirement [data-destination="4,5"]').click();await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent==='青禾府',null,{timeout:20000});
+await page.locator('[data-action="claim"]').click();
+check('errors float in view',await page.locator('#toast.show').evaluate(e=>{const r=e.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&e.textContent.length>0;}));
 await page.locator('[data-action="accept"]').click();
 await page.locator('[data-destination="7,5"]').click();await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent==='柳灣鄉營');
 await page.locator('[data-world="11,12"]').click();await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent?.includes('朱三刀'),null,{timeout:20000});

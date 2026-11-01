@@ -145,16 +145,25 @@ function placeMarker(p:Place,px:number,py:number,done:boolean,building:number){
  const ring=role==='battle'||role==='choice'?`<circle class="marker-ring" cx="${px+20}" cy="${py+20}" r="21" fill="none" stroke="${color}" stroke-width="3" stroke-dasharray="${role==='choice'?'5 3':'none'}"/>`:`<rect class="marker-ring" x="${px+1}" y="${py+1}" width="38" height="38" rx="7" fill="none" stroke="${color}" stroke-width="${role==='recruit'?3:2}"/>`;
  return `<g class="place-marker marker-${role}" data-place-role="${role}">${face}${ring}<circle cx="${px+33}" cy="${py+7}" r="11" fill="${color}" stroke="#fff" stroke-width="2"/><text x="${px+33}" y="${py+7.5}">${roleLabel[role][0]}</text></g>`;
 }
+/** Explains why a place's main actions are locked, right where the player is looking. */
+function requirementHTML(p:Place|undefined){
+ const w=game.state;if(!p)return '';
+ const needQuest=!w.quest&&(p.id==='bandit'&&!w.route||p.id==='shrine'&&!w.seals.includes('water')||p.id==='beacon');
+ if(needQuest)return `<div class="requirement" role="note"><b>尚未接受委託</b><p>要先回青禾府按「接受山河三印委託」，這裡的選項才能使用。</p><button data-destination="4,5">前往青禾府 (5,6)</button></div>`;
+ if(p.id==='beacon'&&w.seals.length<3)return `<div class="requirement" role="note"><b>三印未齊（${w.seals.length}/3）</b><p>斷雁寨取木印、聽雨古廟取水印、擊敗任一野外敵將取山印，集齊後才能挑戰龍主並點燃烽火。</p></div>`;
+ return '';
+}
 function locationHTML(){const w=game.state,p=location(w);const completed=p?.foe!==undefined&&w.defeated.includes(p.foe);const actions:string[]=[];
  if(p?.id==='home'&&!w.quest)actions.push('<button class="primary" data-action="accept">接受山河三印委託</button>');
  if(p?.units)actions.push('<button class="primary" id="open-recruitment">招募部曲</button>');
  if(p?.kind==='city')actions.push('<button data-action="claim">領取討伐賞金</button>','<button data-action="rest">客棧休整 · 100 兩／日</button>',p.id==='east'&&!w.boat?'<button data-action="boat">租船渡江</button>':'',p.id!=='home'&&w.route==='conquest'?'<button data-action="occupy">占領城關 · 1,000 兩</button>':'');
- if(p?.id==='bandit'&&!w.route)actions.push('<button data-route="conquest">討伐 · 武力奪印</button>','<button data-route="alliance">招安 · 500 兩盟約</button>','<button data-route="trade">交易 · 1,000 兩贖印</button>');
- if(p?.foe!==undefined&&!completed&&(p.id!=='bandit'||w.route==='conquest'))actions.push('<button class="primary" data-action="fight">與守軍交戰</button>');
- if(p?.id==='shrine'&&!w.seals.includes('water'))actions.push('<button data-action="shrine">守夜取印 · 一日</button>');
- if(p?.id==='beacon')actions.push('<button class="primary" data-action="finish">合印點烽 · 完成旅程</button>');
+ const noQuest=!w.quest?'disabled':'';
+ if(p?.id==='bandit'&&!w.route)actions.push(`<button data-route="conquest" ${noQuest}>討伐 · 武力奪印（立即開戰）</button>`,`<button data-route="alliance" ${noQuest}>招安 · 500 兩盟約</button>`,`<button data-route="trade" ${noQuest}>交易 · 1,000 兩贖印</button>`);
+ if(p?.foe!==undefined&&!completed&&(p.id!=='bandit'||w.route==='conquest'))actions.push(`<button class="primary" data-action="fight" ${p.foe===16&&(!w.quest||w.seals.length<3)?'disabled':''}>與守軍交戰</button>`);
+ if(p?.id==='shrine'&&!w.seals.includes('water'))actions.push(`<button data-action="shrine" ${noQuest}>守夜取印 · 一日</button>`);
+ if(p?.id==='beacon')actions.push(`<button class="primary" data-action="finish" ${!w.quest||w.seals.length<3||!w.route?'disabled':''}>合印點烽 · 完成旅程</button>`);
  const sites=['bandit','shrine','foe-4','home','foe-9','forest','ghost','east'];sites.forEach((site,i)=>{if(p?.id===site&&!w.artifacts.includes(i))actions.push(`<button data-artifact="${i}">${img(`artifact-${i}`)} 取 ${artifacts[i].name}</button>`);});
- return `<section class="panel location-panel">${img(`scene-${p?.id==='beacon'?2:p?.kind==='camp'?1:0}`,p?.name??'山河行旅','scene')}<div class="location-body"><p class="eyebrow">${p?'WAYPOINT':'ON THE ROAD'} · ${w.position.x+1},${w.position.y+1}</p>${p?`<span class="place-kind kp-${placeRole(p)}">${roleLabel[placeRole(p)][1]}</span>`:''}<h3>${e(p?.name??terrainNames[map[w.position.y][w.position.x]])}</h3><p>${e(p?.description??'沿驛道探訪各地。江面需渡船或架橋，山壁不能攀越；雨天與林澤耗費更多步數。')}</p>${completed?'<p class="completed">此地敵將已解決，憑證可返回城鎮領賞。</p>':''}<div class="location-actions">${actions.join('')}</div></div></section>`;
+ return `<section class="panel location-panel">${img(`scene-${p?.id==='beacon'?2:p?.kind==='camp'?1:0}`,p?.name??'山河行旅','scene')}<div class="location-body"><p class="eyebrow">${p?'WAYPOINT':'ON THE ROAD'} · ${w.position.x+1},${w.position.y+1}</p>${p?`<span class="place-kind kp-${placeRole(p)}">${roleLabel[placeRole(p)][1]}</span>`:''}<h3>${e(p?.name??terrainNames[map[w.position.y][w.position.x]])}</h3><p>${e(p?.description??'沿驛道探訪各地。江面需渡船或架橋，山壁不能攀越；雨天與林澤耗費更多步數。')}</p>${completed?'<p class="completed">此地敵將已解決，憑證可返回城鎮領賞。</p>':''}${requirementHTML(p)}<div class="location-actions">${actions.join('')}</div></div></section>`;
 }
 /** Recruitment preview only; applyWorld remains authoritative and unchanged. */
 function recruitmentInfo(target:number){
