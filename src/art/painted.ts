@@ -8,8 +8,12 @@ export function unitFigure(sourceId:number,label:string,extra=''){
  const motion=motionStyle(sourceId);
  return `<span data-motion="${motion.kind}" class="unit-sprite ${extra}" role="img" aria-label="${escape(label)}" style="${motion.style};background-image:url('${base}units-v1.png');background-position:${sourceId%5*25}% ${Math.floor(sourceId/5)*25}%"><span class="sprite-body" aria-hidden="true"><span class="sprite-upper"></span><span class="sprite-leg sprite-leg-left"></span><span class="sprite-leg sprite-leg-right"></span></span><span class="sprite-aura" aria-hidden="true"></span></span>`;
 }
-/** Unit art: atlas cell by sourceTroopId, or a standalone image (v2 placeholders, later Codex art) with the same layers. */
-export function troopFigure(u:{sourceTroopId:number;art?:string},label:string,extra=''){
+/** v2 ground troops use registered walk strips; other troops retain their static art/layers. */
+export function troopFigure(u:{sourceTroopId:number;art?:string;walk?:{src:string;frames:number}},label:string,extra=''){
+ if(u.walk){
+  const motion=motionStyle(u.sourceTroopId,.45);
+  return `<span data-motion="${motion.kind}" class="unit-sprite walk-art ${extra}" role="img" aria-label="${escape(label)}" style="${motion.style}"><span class="sprite-body" aria-hidden="true"><span class="sprite-walk" style="background-image:url('${import.meta.env.BASE_URL}${u.walk.src}');--walk-frames:${u.walk.frames}"></span></span><span class="sprite-aura" aria-hidden="true"></span></span>`;
+ }
  if(!u.art)return unitFigure(u.sourceTroopId,label,extra);
  return unitFigure(u.sourceTroopId,label,`single-art ${extra}`).replace(/background-image:url\('[^']*'\);background-position:[^"]*"/,`background-image:url('${import.meta.env.BASE_URL}${u.art}');background-position:50% 50%"`);
 }

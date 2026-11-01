@@ -60,3 +60,15 @@ body.presentation-hidden .unit-sprite *,body.motion-paused .unit-sprite *{animat
 @keyframes torso-stride{0%,100%{rotate:1.5deg}50%{rotate:-1.5deg}}
 /* Heavy and giant troops stride slower and lower. */
 .unit-sprite:is([data-motion=heavy],[data-motion=giant],[data-motion=tree],[data-motion=shambler]){--stride:calc(var(--idle-period) * .5)}
+/* v1.5 art supplement: the inner strip owns frame selection; the body owns command
+   effects and the outer sprite owns enemy facing. No sliced limbs on walk art. */
+.unit-sprite.walk-art .sprite-body{animation:none}
+.unit-sprite.walk-art .sprite-body>.sprite-walk{background-size:calc(var(--walk-frames) * 100%) 100%;background-position:0 0;animation:troop-walk-frames var(--idle-period) steps(var(--walk-frames)) var(--idle-phase) infinite;transform-origin:50% 94%}
+@keyframes troop-walk-frames{to{background-position:120% 0}}
+.troop-visual.motion-walk .walk-art .sprite-body{animation:travel-bob .18s ease-in-out infinite alternate}
+.troop-visual.motion-walk .walk-art .sprite-walk{animation-duration:.6s}
+.troop-visual.motion-strike .walk-art .sprite-body{animation:weapon-swing .4s ease-out}
+.troop-visual.motion-shoot .walk-art .sprite-body{animation:bow-recoil .42s ease-out}
+.troop-visual.motion-cast .walk-art .sprite-body{animation:cast-rise .55s ease-out}
+.motion-frozen .sprite-walk,.walk-art.motion-frozen *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.unit-sprite.walk-art .sprite-body,.unit-sprite.walk-art .sprite-walk{animation:none!important}}

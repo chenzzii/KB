@@ -1,5 +1,7 @@
 # Claude 開發交接：九州兵譜：烽火歸途 v1.3
 
+> 最新補件：v1.5 三個正式兵種與 19 組逐格走路圖。**此版起舊存檔不相容**，請先看第 15 節；前文為歷史紀錄。
+
 交接日期：2026-11-01（Asia/Taipei）。本文件整理此對話實際完成的工作；原始文件內的指令與後續需求應分開判讀。
 
 ## 1. 正確接手版本
@@ -177,3 +179,20 @@ Vite 使用相對 base，無後端、資料庫或外部遊戲 API。`dist/` 是�
 - v1.4：選角大圖、旅程標頭精簡與「⚙ 系統」選單、購買金幣音效與動畫（`docs/UI_POLISH_V1_4.md`）。
 - v1.5：**新規則版本 `campaign-2.0.0`**：五陣營各一到五級兵譜（華夏改良）、免接委託、渡厄真言定價、符兵召來改召鄉兵、地面部隊原地行軍待機、三個新兵種的文字佔位圖（`docs/ROSTER_V2_V1_5.md`）。舊存檔仍以 `campaign-1.0.0` 載入，研究基準兵種與雜湊未改。
 - 測試：129 項單元測試；`test:title` 28 項、`test:battle-report` 24 項，其餘瀏覽器腳本照舊通過。
+
+## 15. v1.5 美術補件：三個兵種、19 組六格走路圖
+
+此節取代前文的「文字佔位」及 v2「切圖行軍」狀態；五張既有圖集未覆蓋。
+
+- 鄉兵（弩手）、山民（重錘）、山神（巨石守護神）：`public/assets/painted/v2/v2_xiang_bing.png`、`v2_shan_min.png`、`v2_shan_shen.png`，各 512×512 RGBA、右向全身、腳底 y=481、角色約 85% 高。來源為 OpenAI image_gen，以專案原創圖集為風格參考，沒有來源遊戲素材。
+- 19 個 v2 地面兵種：`public/assets/painted/walk/<unitId>.png`，每張 1536×256、6 格、每格 256×256、透明。image_gen 繪出實際關節彎曲姿勢，再用 ImageMagick 裁格／對齊；不是原靜態腿的旋轉。飛行五種及幽魂保留原動作。
+- 完整規格、來源與逐檔 SHA-256：`public/assets/painted/v2/manifest.json`、`public/assets/painted/walk/manifest.json`；人可讀的三圖及 19 條圖雜湊表見 [ROSTER_V2_V1_5.md](ROSTER_V2_V1_5.md)。
+- `data/balance/chinese_campaign_v2.json` 接入 `art` 與 `walk`；`src/content/load.ts` 只補呈現資料型別。`src/art/painted.ts` / `motion.ts` / `motion.css` 負責 steps(6)、時間軸相位、動作開關／系統減少動態／定身暫停，並保留攻擊、遠射、施法、移動、受擊及敵軍鏡像。規則版本仍為 campaign-2.0.0；沒有改動戰鬥或世界規則。
+- **此版起舊存檔不相容**：使用者已確認無須保留 campaign-1.0.0 或補件前 campaign-2.0.0 存檔，不寫遷移。v2 美術欄位使 balance 雜湊改變，請開新旅程。底層 v1 研究／歷史測試路徑仍保留，但不是舊存檔支援承諾；新存檔驗證未放寬。
+- `data/reference/*`、`data/content/troop_mapping.json`、`data/generated/*`、25 個 sourceTroopId 研究映射、`src/core/*` 與 `src/campaign/engine.ts` 都未改。沒有任何新增的 DOS 已驗證宣稱。
+
+驗證：129 項單元測試、validate:data、build、campaign:verify；瀏覽器需啟動 `npm run dev`，設定 `CHROMIUM_PATH=/usr/bin/chromium` 後依序執行 test:title、test:battle-report、test:campaign-browser、test:painted、test:recruitment、test:presentation、test:browser、test:walk。`test:walk` 另驗證 19 圖全部解碼與換格、六種像素姿勢、關閉動作停格、減少動態、定身及 v2 新存檔匯出／匯入／重算。`test:battle-report` 改查正式 PNG 解碼與條圖播放，不再依賴 placeholder 或 leg-stride。
+
+截圖：`artifacts/walk-role-selection.png`（儒將選角含新鄉兵）、`walk-village-five-tiers.png`（鄉里五級整軍）、`walk-battle-0.png` 到 `walk-battle-5.png`（實際戰鬥連續動畫畫面）。測試存檔均由 `scripts/prepare-walk-review.ts` 的正常指令建立，可完整重播。測試結果見 `artifacts/walk-verification.json`。本次只交付 delivery/jiuzhou-v1，不部署 gh-pages。
+
+提交內的截圖、實戰動畫 GIF 與條圖驗證報告：`docs/evidence/v1.5-art/`。逐檔美術雜湊以兩份資產 manifest 及兵譜文件表格為準。全部指定檢查與新增 test:walk 均已通過；資料驗證仍有 4 項預期來源警告。

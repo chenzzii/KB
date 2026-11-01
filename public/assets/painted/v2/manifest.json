@@ -1,0 +1,35 @@
+{
+  "version": "1.5-art.1",
+  "assets": [
+    {
+      "file": "v2_shan_min.png",
+      "kind": "unit-character",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 259006,
+      "sha256": "23f9377e918394aebad6458267e69833b5b8c651b4210c7603fc254e897c8b6c",
+      "origin": "Original artwork generated with OpenAI image_gen using Jiuzhou units-v1.png as style reference; no source-game imagery. Trimmed and registered with ImageMagick to 85% canvas height, sole baseline y=481."
+    },
+    {
+      "file": "v2_shan_shen.png",
+      "kind": "unit-character",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 276830,
+      "sha256": "e65a2221b5a01ab37c7d0852dcc52da7f174f728ac3fa136410e91a85414cd31",
+      "origin": "Original artwork generated with OpenAI image_gen using Jiuzhou units-v1.png as style reference; no source-game imagery. Trimmed and registered with ImageMagick to 85% canvas height, sole baseline y=481."
+    },
+    {
+      "file": "v2_xiang_bing.png",
+      "kind": "unit-character",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 192370,
+      "sha256": "810513fb27ac7a5fe262e62e743926fec1210b893b98a9c4ccd2a59700fdbf81",
+      "origin": "Original artwork generated with OpenAI image_gen using Jiuzhou units-v1.png as style reference; no source-game imagery. Trimmed and registered with ImageMagick to 85% canvas height, sole baseline y=481."
+    }
+  ]
+}

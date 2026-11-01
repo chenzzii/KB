@@ -6,11 +6,11 @@
 
 - 新規則版本 `campaign-2.0.0`，資料在 `data/balance/chinese_campaign_v2.json`。從標題畫面開始的新旅程都使用它。
 - **華夏改良**模式使用下列五陣營兵譜；**研究基準**模式仍使用來源 25 兵種、原數值與 A-E 組別（3／4／8／5／5），只套用免接委託。
-- 舊存檔（`campaign-1.0.0`，存檔內無 ruleset）照舊重算載入；v1 的資料雜湊沒有改變。v1 與 v2 存檔互相拒絕混用。
+- **此版起舊存檔不相容**：使用者已確認不保留舊存檔，不提供遷移；美術設定納入 v2 balance 雜湊，因此補件前的 `campaign-2.0.0` 存檔會拒絕載入，請開新旅程。v1 研究／歷史測試路徑仍保留，但不承諾舊版存檔支援。新存檔仍須通過命令重算、快照與 SHA-256 驗證。
 - `data/reference`、`troop_mapping.json` 與 25 個 sourceTroopId 研究映射全部未改。v2 兵種的 sourceTroopId 只表示「特性從哪個原兵種繼承」，數值是新估算。
 - 演武場（arena）仍用原兵種與原回放格式。
 
-## 兵譜（🖼 = 圖片暫用文字佔位）
+## 兵譜
 
 
 ### A 鄉里：鄉間自衛到山中守護神；人多、便宜，頂層有遠投巨力。
@@ -18,10 +18,10 @@
 | 級 | 兵種 | 特性來源（v1 兵種） | HP | 技能 | 移動 | 近戰 | 遠射／彈藥 | 招募價 | 能力 |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | 鄉民 | 鄉民（#0） | 2 | 1 | 2 | 1–2 | — | 15 | — |
-| 2 | 鄉兵 🖼 | 竹林箭客（#9） | 5 | 2 | 2 | 1–2 | 1–3／10 | 80 | — |
+| 2 | 鄉兵 | 竹林箭客（#9） | 5 | 2 | 2 | 1–2 | 1–3／10 | 80 | — |
 | 3 | 鄉勇 | 鄉勇（#2） | 15 | 3 | 2 | 2–4 | — | 350 | — |
-| 4 | 山民 🖼 | 山民鍛工（#6） | 35 | 4 | 2 | 3–6 | — | 900 | — |
-| 5 | 山神 🖼 | 山嶽力士（#22） | 80 | 6 | 2 | 12–20 | 6–12／6 | 3800 | — |
+| 4 | 山民 | 山民鍛工（#6） | 35 | 4 | 2 | 3–6 | — | 900 | — |
+| 5 | 山神 | 山嶽力士（#22） | 80 | 6 | 2 | 12–20 | 6–12／6 | 3800 | — |
 
 ### B 朝廷軍旅：正規軍；遠射、長槍、重步、鐵騎與重甲，均衡耐打。
 
@@ -97,22 +97,62 @@
 - **符兵召來**：v2 華夏改良召來 10 名鄉兵（以兵種 HP 正確計算）。
 - **兵種法術**：數值寫在兵譜（`magic` 欄），不再依 sourceTroopId 硬編碼。
 
-## 美術佔位（給 Codex）
+## 正式美術（v1.5 補件，取代美術佔位）
 
-新兵種暫用帶文字的 SVG 佔位，位置與兵種：
+三個文字 SVG 已刪除。正式圖由 OpenAI image_gen 以本專案原創 `units-v1.png` 為風格參考生成，未使用來源遊戲圖片；僅以 ImageMagick 做透明邊界裁切、縮放及基線對齊。三張均為 **512×512 RGBA PNG**，右向全身、暖色左上光，角色約 85% 高，腳底基線 y=481（下方約 6% 留白）。`art` 指向以下檔案（路徑前綴 `public/` 不寫進執行設定）：
 
-- `public/assets/placeholder/v2_xiang_bing.svg`：鄉兵（鄉里二級，弩手）
-- `public/assets/placeholder/v2_shan_min.svg`：山民（鄉里四級，山地重錘）
-- `public/assets/placeholder/v2_shan_shen.svg`：山神（鄉里五級，巨石遠投）
+| 兵種 | 路徑 | SHA-256 |
+|---|---|---|
+| 山民 | `public/assets/painted/v2/v2_shan_min.png` | `23f9377e918394aebad6458267e69833b5b8c651b4210c7603fc254e897c8b6c` |
+| 山神 | `public/assets/painted/v2/v2_shan_shen.png` | `e65a2221b5a01ab37c7d0852dcc52da7f174f728ac3fa136410e91a85414cd31` |
+| 鄉兵 | `public/assets/painted/v2/v2_xiang_bing.png` | `810513fb27ac7a5fe262e62e743926fec1210b893b98a9c4ccd2a59700fdbf81` |
 
-換成正式美術時，放入新圖並把 `chinese_campaign_v2.json` 對應兵種的 `art` 欄改成新路徑即可（PNG 也可）；圖片會以整張置中、保留比例顯示，並套用同樣的分層動作。其餘 22 種沿用現有圖集。
+規格、來源、檔案大小與雜湊另存 `public/assets/painted/v2/manifest.json`。既有五張圖集及其 manifest 保持逐位元不變。
 
-## 行軍動作
+## 六格走路動畫
 
-地面部隊的待機由呼吸改為原地行軍：左右腿交替擺動、每步上下起伏並前後小幅移動；飛行單位維持懸停與振翅。重甲、巨人、樹魁、行屍步伐較慢。這仍是把同一張圖切成上身與雙腿來擺動，關節無法真正彎曲；若要真正的走路動畫，需要逐格走路圖（例如每兵種 4–8 格），屆時可替換。關閉「部隊動作」或系統減少動態時停止。
+v2 兵譜的 **19 個地面兵種**各有一張 `public/assets/painted/walk/<unitId>.png`；每張 **1536×256 RGBA**，橫向 6 格、每格 256×256。以原創靜態角色為參考，image_gen 分別繪出關節彎曲姿勢：左腳接地 → 右腿經過 → 右腿前擺 → 右腳接地 → 左腿經過 → 左腿前擺，循環回第一格。騎兵與野獸按四足步態繪製。透明間距經檢查後才裁格；同一兵種六格共用縮放係數、水平中心與腳底基線，對齊原靜態圖，不以切圖旋轉生成新姿勢。
+
+紙鶴靈、御風方士、噬血魅、修羅鬼將、赤焰蛟龍、幽魂不新增走路圖，保留原懸停／振翅。研究基準與演武原圖也保留既有動作。
+
+兵種資料直接附 `walk: {src, frames: 6}`。`troopFigure()` 以內層 `.sprite-walk` 播放 `steps(6)`；`motionStyle()` 為走路設定對齊文件時間軸的 `--idle-period` / `--idle-phase`（基礎節奏 × 0.45），避免重畫重啟步伐。中層 `.sprite-body` 承接移動、近戰、遠射、施法效果，外層仍負責敵軍鏡像與受擊。定身、`body.motion-paused`、`prefers-reduced-motion` 皆停格。
+
+所有圖的來源、裁格座標、註冊縮放、腳底基線與 SHA-256 見 `public/assets/painted/walk/manifest.json`。以下為交付版本雜湊：
+
+| unitId（檔名加 `.png`） | SHA-256 |
+|---|---|
+| `v2_xiang_min` | `51080ec70af1df81a57fe16fbfa17377d58a36f139244749a6394dee068c8d3f` |
+| `v2_xiang_bing` | `dabef649aa1b50cb952057f14b14620edfeee109054298dc6458d7fb25a759fa` |
+| `v2_xiang_yong` | `6190cc21fcbb70c75a4ce6b7944773779f0cf482cffc70ee2c40451e2bf5bff3` |
+| `v2_shan_min` | `d79004f0317c2577b97455bffca4339a258d6bd39a1150abc151f49ce23b1138` |
+| `v2_shan_shen` | `5a590aedf34dceb2bef448b6301e0849c4bd5a08139d2658adde886b67ab4c4a` |
+| `v2_yu_lin_gong_shou` | `d56e6ce986097c94c9ad3327123b9954e80085bbd2afc17b6e5d9e40b29771e3` |
+| `v2_zhen_wei_chang_qiang` | `751f041d51400b9a499a4c9f687a097626a09b2c506c44dd19e9a73ecb9cb073` |
+| `v2_tie_shan_wei` | `c2fd9c2898a9b2517069aa9068589d4460559923bc3495050cc91c5d691dee31` |
+| `v2_yu_lin_tie_qi` | `4bfa47b7127cf2d669918d056039f8ffbcece95da1d374adda67dbdf2117d9b6` |
+| `v2_hu_ben_zhong_jia` | `b609cc6fe18e164b865b4d3d04f35be81c0e2a2b58c7863dd3ce7b0abfd0c0d7` |
+| `v2_guo_sai_you_xia` | `c3ff33dff28bb85862b32f75f0f1dcddf80644a6e56c46ade5ff12a5778c7d9c` |
+| `v2_huang_yuan_kuang_ke` | `00a5e672c5e6238e61686c3a1936886ef5ca4ed584d38859ed6fcd6f7a5908da` |
+| `v2_zhu_you_wu_yi` | `4860fefb8569b378ec0cb9a86b83af78960b98a747b88a2887ae5e65c8ec5277` |
+| `v2_shan_lang` | `7f09363cdeeb2f02197da0426f04ca7a273baf475deab74f6089513ba49733c4` |
+| `v2_lang_ya_nu_shou` | `e44349fde1eb2bb4b3c3bfaaceb3cd8418e103120fa5fc295e4a5e93161777f0` |
+| `v2_shan_xiao` | `56b4286b3cd23707d75644a175b2320e693920ea47aac0510b2e30cccd16996e` |
+| `v2_shu_kui` | `64d407c89f5d4cce774bcdf7b4c2b1b2fed714a6143b2ca3b499c6f858f23a5b` |
+| `v2_bai_gu_bing` | `bee9434dcdd1e92ab8bbc5159ac5a0d2ad9d9128b2a72e819d999a5eaec81b35` |
+| `v2_xing_shi` | `293039ab8f08d227dfa8eae70904772b34b8b5a439edb6306ad965d51fc9dc9b` |
+
+素材封裝工具：`python3 scripts/pack-walk-art.py <來源路徑 JSON>`（需 Pillow、ImageMagick；不是遊戲執行依賴）。來源 JSON 為 unitId → 原始 image_gen 輸出路徑。工具只封裝既有繪製像素，遇到無透明間隔會停止；不修改五張原圖集。
 
 ## 測試
 
 - `tests/campaign-v2.test.ts`（13 項）：5×5 兵譜與等級曲線、特性保留、法術數值、研究基準不變、免接委託、起始部曲不超統率、據點與庫存、敵軍換算、渡厄真言、符兵召來、存檔互通與版本拒絕、選項正規化。
-- `test:battle-report` 增至 24 項（v2 鄉里兵源、佔位圖、渡厄真言、行軍動作）；`test:title` 28 項。
+- `test:battle-report` 為 25 項（v2 鄉里兵源、正式 PNG 解碼、渡厄真言、六格走路動畫及時間換格）；`test:title` 28 項。
 - 舊瀏覽器腳本（`jiuzhou-automation-skip-title`）仍跑 `campaign-1.0.0`，作為舊規則與舊存檔相容檢查。
+
+### 美術補件驗收
+
+`npm run test:walk`（含 pre-script）用正常 v2 指令建立鄉里五級部隊與戰鬥存檔；檢查 19 張圖 SHA-256、PNG 解碼、透明像素、每張 6 格像素皆不同、所有兵種隨時間換格、完整六格循環、實際動作開關停止、系統減少動態、定身、敵軍鏡像與新存檔匯出／匯入／重算。沒有刪除舊檢查或跳過雜湊驗證。
+
+截圖輸出：`artifacts/walk-role-selection.png`、`walk-village-five-tiers.png`、`walk-battle-0.png` 至 `walk-battle-5.png`。連續戰鬥截圖以動畫開啟狀態拍攝。所有瀏覽器腳本依序執行，避免資料生成觸發 Vite HMR 干擾測試。
+
+提交內可直接檢視的證據：[選角](evidence/v1.5-art/role-selection.png)、[鄉里五級整軍](evidence/v1.5-art/village-five-tiers.png)、[實戰走路 GIF](evidence/v1.5-art/battle-walk.gif)、[條圖驗證 JSON](evidence/v1.5-art/walk-verification.json)。GIF 由實際瀏覽器連續截圖組成，沒有重繪畫面。

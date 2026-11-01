@@ -61,7 +61,7 @@ await page.locator('[data-buy-spell="2"]').click();
 check('purchase coins fly',await page.locator('.coin-fly').count()>0);
 check('purchase shows amount',(await page.locator('.spend-float').textContent()).includes('兩'));
 check('gold reduced after purchase',(await page.locator('.gold-stat b').textContent())!==goldBefore);
-// v1.5: five-faction roster, placeholder art, 渡厄真言 priced, march-in-place idle.
+// v1.5 art supplement: production artwork and real frame animation.
 check('渡厄真言 for sale at 1000',!(await page.locator('[data-buy-spell="6"]').isDisabled())&&(await page.locator('[data-buy-spell="6"]').textContent()).includes('1000'));
 await page.locator('[data-subtab="map"]').click();
 await page.locator('[data-destination="7,5"]').click();await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent==='柳灣鄉營',null,{timeout:20000});
@@ -69,10 +69,13 @@ await page.locator('#open-recruitment').click();
 const offers=await page.locator('#world-recruit-unit option').allTextContents();
 check('village sells the 鄉里 line',['鄉民','鄉兵','鄉勇','山民'].every(n=>offers.some(o=>o.includes(n))),offers.join(' / '));
 await page.locator('#world-recruit-unit').selectOption('v2_xiang_bing');await page.locator('#world-count').fill('2');await page.locator('#world-recruit').click();
-const art=await page.locator('.company',{hasText:'鄉兵'}).locator('.unit-sprite.single-art').first().evaluate(el=>getComputedStyle(el.querySelector('.sprite-upper')).backgroundImage);
-check('placeholder art labels the new unit',art.includes('assets/placeholder/v2_xiang_bing.svg'),art);
-const gait=await page.locator('.company .unit-sprite').first().evaluate(el=>getComputedStyle(el.querySelector('.sprite-leg-left')).animationName);
-check('ground troops march in place',gait==='leg-stride',gait);
+const art=await page.evaluate(async()=>{const im=new Image();im.src=new URL('assets/painted/v2/v2_xiang_bing.png',document.baseURI).href;await im.decode();return {width:im.naturalWidth,height:im.naturalHeight};});
+check('production crossbow artwork decodes',art.width===512&&art.height===512,JSON.stringify(art));
+const walk=page.locator('.company',{hasText:'鄉兵'}).locator('.sprite-walk').first();
+const gait=await walk.evaluate(el=>{const s=getComputedStyle(el);return {name:s.animationName,state:s.animationPlayState,image:s.backgroundImage,timing:s.animationTimingFunction};});
+check('ground troops play six-frame strips',gait.name==='troop-walk-frames'&&gait.state==='running'&&gait.timing.includes('steps(6)')&&gait.image.includes('walk/v2_xiang_bing.png'),JSON.stringify(gait));
+const before=await walk.evaluate(el=>getComputedStyle(el).backgroundPosition);await page.waitForTimeout(260);
+check('walk frame changes over time',before!==await walk.evaluate(el=>getComputedStyle(el).backgroundPosition));
 await writeFile('artifacts/battle-report-verification.json',JSON.stringify({url,checks,errors},null,2));
 await browser.close();
 const failed=checks.filter(c=>!c.ok);

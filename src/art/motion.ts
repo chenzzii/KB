@@ -6,8 +6,8 @@ export const motionProfiles=[
  ['beast',2.6],['berserker',2.1],['tree',4.8],['cavalry',2.4],['shaman',3.9],
  ['wind',3.1],['vampire',3.3],['giant',4.1],['reaper',3.6],['dragon',3.8]
 ] as const;
-export function motionStyle(sourceId:number){
- const [kind,period]=motionProfiles[sourceId];
+export function motionStyle(sourceId:number,pace=1){
+ const [kind,basePeriod]=motionProfiles[sourceId],period=basePeriod*pace;
  // Advance the phase with the document timeline so DOM renders do not restart idle motion.
  const clock=typeof document==='undefined'?0:Number(document.timeline.currentTime??performance.now())/1000;
  return {kind,style:`--idle-period:${period}s;--idle-phase:-${((clock+sourceId*.317)%period).toFixed(3)}s`};

@@ -31,7 +31,9 @@
     "pretest:title": "npm run generate",
     "test:title": "node scripts/title-browser.mjs",
     "pretest:battle-report": "npm run generate",
-    "test:battle-report": "node scripts/battle-report-browser.mjs"
+    "test:battle-report": "node scripts/battle-report-browser.mjs",
+    "pretest:walk": "npm run generate && node --import tsx scripts/prepare-walk-review.ts",
+    "test:walk": "node scripts/walk-browser.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

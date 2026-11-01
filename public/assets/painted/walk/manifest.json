@@ -1,0 +1,1050 @@
+{
+  "version": "1.5-art.1",
+  "assets": [
+    {
+      "file": "v2_xiang_min.png",
+      "unitId": "v2_xiang_min",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 364051,
+      "sha256": "51080ec70af1df81a57fe16fbfa17377d58a36f139244749a6394dee068c8d3f",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "a627b6cf272fbf654fae82ae31405fd0413ce42aadcfde162bc90f1d78d7853b",
+      "sourceFrameBounds": [
+        [
+          31,
+          112,
+          379,
+          596
+        ],
+        [
+          398,
+          111,
+          742,
+          598
+        ],
+        [
+          744,
+          111,
+          1085,
+          597
+        ],
+        [
+          1115,
+          114,
+          1451,
+          597
+        ],
+        [
+          1463,
+          111,
+          1800,
+          598
+        ],
+        [
+          1818,
+          112,
+          2155,
+          596
+        ]
+      ],
+      "scale": 0.47946769622540764,
+      "baseline": 254
+    },
+    {
+      "file": "v2_xiang_bing.png",
+      "unitId": "v2_xiang_bing",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 268477,
+      "sha256": "dabef649aa1b50cb952057f14b14620edfeee109054298dc6458d7fb25a759fa",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "70439355edf82d1b2abda08312d8abd453298e3b7d3064ff5dd5ab3f750c055a",
+      "sourceFrameBounds": [
+        [
+          41,
+          192,
+          327,
+          581
+        ],
+        [
+          417,
+          191,
+          689,
+          580
+        ],
+        [
+          757,
+          191,
+          1048,
+          583
+        ],
+        [
+          1112,
+          189,
+          1407,
+          581
+        ],
+        [
+          1518,
+          190,
+          1774,
+          584
+        ],
+        [
+          1837,
+          192,
+          2134,
+          580
+        ]
+      ],
+      "scale": 0.5275288092189501,
+      "baseline": 232
+    },
+    {
+      "file": "v2_xiang_yong.png",
+      "unitId": "v2_xiang_yong",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 386839,
+      "sha256": "6190cc21fcbb70c75a4ce6b7944773779f0cf482cffc70ee2c40451e2bf5bff3",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "8b1388c4ceceb6c9a7d38c3b157c7a6d96bc3227ab22a1787d6a8382a1661807",
+      "sourceFrameBounds": [
+        [
+          13,
+          120,
+          367,
+          604
+        ],
+        [
+          389,
+          120,
+          719,
+          603
+        ],
+        [
+          742,
+          120,
+          1078,
+          605
+        ],
+        [
+          1097,
+          120,
+          1444,
+          602
+        ],
+        [
+          1469,
+          120,
+          1805,
+          605
+        ],
+        [
+          1824,
+          120,
+          2158,
+          605
+        ]
+      ],
+      "scale": 0.4778574042323996,
+      "baseline": 254
+    },
+    {
+      "file": "v2_shan_min.png",
+      "unitId": "v2_shan_min",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 315964,
+      "sha256": "d79004f0317c2577b97455bffca4339a258d6bd39a1150abc151f49ce23b1138",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "ce046df66d5753353b86a3be26586bde40694a88f978303d54ddf543e6460b14",
+      "sourceFrameBounds": [
+        [
+          74,
+          205,
+          322,
+          556
+        ],
+        [
+          430,
+          204,
+          666,
+          556
+        ],
+        [
+          799,
+          202,
+          1040,
+          556
+        ],
+        [
+          1143,
+          202,
+          1385,
+          556
+        ],
+        [
+          1504,
+          202,
+          1741,
+          555
+        ],
+        [
+          1856,
+          202,
+          2093,
+          555
+        ]
+      ],
+      "scale": 0.5849858356940509,
+      "baseline": 232
+    },
+    {
+      "file": "v2_shan_shen.png",
+      "unitId": "v2_shan_shen",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 388824,
+      "sha256": "5a590aedf34dceb2bef448b6301e0849c4bd5a08139d2658adde886b67ab4c4a",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "90b5357cf1c4da4119d3047bfa44d3a69ee62ef420d2faa60a501e99886cccc5",
+      "sourceFrameBounds": [
+        [
+          77,
+          231,
+          319,
+          614
+        ],
+        [
+          416,
+          228,
+          655,
+          614
+        ],
+        [
+          781,
+          227,
+          1020,
+          613
+        ],
+        [
+          1122,
+          227,
+          1376,
+          614
+        ],
+        [
+          1491,
+          227,
+          1736,
+          614
+        ],
+        [
+          1841,
+          226,
+          2086,
+          614
+        ]
+      ],
+      "scale": 0.5614489003880984,
+      "baseline": 240
+    },
+    {
+      "file": "v2_yu_lin_gong_shou.png",
+      "unitId": "v2_yu_lin_gong_shou",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 409565,
+      "sha256": "d56e6ce986097c94c9ad3327123b9954e80085bbd2afc17b6e5d9e40b29771e3",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "d3e6a3f8e55d778fd30c04c708cacef87cdbe377b6d579e83a398b84271f3577",
+      "sourceFrameBounds": [
+        [
+          28,
+          116,
+          384,
+          618
+        ],
+        [
+          390,
+          118,
+          747,
+          624
+        ],
+        [
+          754,
+          117,
+          1113,
+          616
+        ],
+        [
+          1123,
+          117,
+          1471,
+          621
+        ],
+        [
+          1483,
+          117,
+          1837,
+          622
+        ],
+        [
+          1841,
+          118,
+          2172,
+          620
+        ]
+      ],
+      "scale": 0.4980237154150198,
+      "baseline": 254
+    },
+    {
+      "file": "v2_zhen_wei_chang_qiang.png",
+      "unitId": "v2_zhen_wei_chang_qiang",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 416781,
+      "sha256": "751f041d51400b9a499a4c9f687a097626a09b2c506c44dd19e9a73ecb9cb073",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "deeb03b457842fe9fa74e31694b0cd6d0649df50cc9c91051bc763b81aca01ac",
+      "sourceFrameBounds": [
+        [
+          50,
+          87,
+          370,
+          592
+        ],
+        [
+          398,
+          86,
+          730,
+          596
+        ],
+        [
+          762,
+          85,
+          1084,
+          590
+        ],
+        [
+          1122,
+          87,
+          1452,
+          597
+        ],
+        [
+          1489,
+          86,
+          1815,
+          597
+        ],
+        [
+          1847,
+          86,
+          2159,
+          596
+        ]
+      ],
+      "scale": 0.4931506849315068,
+      "baseline": 254
+    },
+    {
+      "file": "v2_tie_shan_wei.png",
+      "unitId": "v2_tie_shan_wei",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 479347,
+      "sha256": "c2fd9c2898a9b2517069aa9068589d4460559923bc3495050cc91c5d691dee31",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "27995fb5ac03e3d6bc1e4f0ad29c7516da6f29521bf03df824283b8329a5e692",
+      "sourceFrameBounds": [
+        [
+          13,
+          157,
+          371,
+          597
+        ],
+        [
+          375,
+          153,
+          728,
+          597
+        ],
+        [
+          738,
+          155,
+          1079,
+          592
+        ],
+        [
+          1084,
+          154,
+          1439,
+          599
+        ],
+        [
+          1448,
+          154,
+          1800,
+          598
+        ],
+        [
+          1810,
+          156,
+          2159,
+          599
+        ]
+      ],
+      "scale": 0.5218128523111613,
+      "baseline": 254
+    },
+    {
+      "file": "v2_yu_lin_tie_qi.png",
+      "unitId": "v2_yu_lin_tie_qi",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 526501,
+      "sha256": "4bfa47b7127cf2d669918d056039f8ffbcece95da1d374adda67dbdf2117d9b6",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "df6abe629a14cbaf418995281aa3e44733c78af544a73033de3020ab922dd66c",
+      "sourceFrameBounds": [
+        [
+          24,
+          215,
+          331,
+          560
+        ],
+        [
+          385,
+          214,
+          695,
+          556
+        ],
+        [
+          751,
+          214,
+          1058,
+          558
+        ],
+        [
+          1121,
+          214,
+          1420,
+          559
+        ],
+        [
+          1480,
+          214,
+          1784,
+          560
+        ],
+        [
+          1845,
+          215,
+          2148,
+          559
+        ]
+      ],
+      "scale": 0.7283236994219653,
+      "baseline": 254
+    },
+    {
+      "file": "v2_hu_ben_zhong_jia.png",
+      "unitId": "v2_hu_ben_zhong_jia",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 609100,
+      "sha256": "b609cc6fe18e164b865b4d3d04f35be81c0e2a2b58c7863dd3ce7b0abfd0c0d7",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "8945108932ee6aaf9e060c4913d7bcf19f99ff98a9bbe6bdca01dfbe99f22f19",
+      "sourceFrameBounds": [
+        [
+          45,
+          231,
+          320,
+          510
+        ],
+        [
+          426,
+          231,
+          690,
+          511
+        ],
+        [
+          786,
+          231,
+          1054,
+          511
+        ],
+        [
+          1134,
+          231,
+          1409,
+          510
+        ],
+        [
+          1513,
+          230,
+          1772,
+          511
+        ],
+        [
+          1859,
+          231,
+          2125,
+          512
+        ]
+      ],
+      "scale": 0.8872727272727273,
+      "baseline": 254
+    },
+    {
+      "file": "v2_guo_sai_you_xia.png",
+      "unitId": "v2_guo_sai_you_xia",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 546739,
+      "sha256": "c3ff33dff28bb85862b32f75f0f1dcddf80644a6e56c46ade5ff12a5778c7d9c",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "8d65fcc7b6e8c346128c880ced3f9803b54f5f5e57902bc73fc9a7db8704469b",
+      "sourceFrameBounds": [
+        [
+          27,
+          224,
+          326,
+          536
+        ],
+        [
+          401,
+          221,
+          690,
+          537
+        ],
+        [
+          764,
+          219,
+          1053,
+          535
+        ],
+        [
+          1119,
+          221,
+          1415,
+          535
+        ],
+        [
+          1493,
+          219,
+          1784,
+          535
+        ],
+        [
+          1866,
+          219,
+          2149,
+          538
+        ]
+      ],
+      "scale": 0.7899686520376176,
+      "baseline": 254
+    },
+    {
+      "file": "v2_huang_yuan_kuang_ke.png",
+      "unitId": "v2_huang_yuan_kuang_ke",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 511340,
+      "sha256": "00a5e672c5e6238e61686c3a1936886ef5ca4ed584d38859ed6fcd6f7a5908da",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "311b1cb93003b217355751fc26d766ef132a46e4a5c2a4dff51a0546a5cba16b",
+      "sourceFrameBounds": [
+        [
+          21,
+          134,
+          386,
+          587
+        ],
+        [
+          398,
+          141,
+          740,
+          582
+        ],
+        [
+          748,
+          135,
+          1104,
+          582
+        ],
+        [
+          1108,
+          135,
+          1457,
+          587
+        ],
+        [
+          1477,
+          136,
+          1824,
+          583
+        ],
+        [
+          1838,
+          133,
+          2171,
+          583
+        ]
+      ],
+      "scale": 0.5562913907284768,
+      "baseline": 254
+    },
+    {
+      "file": "v2_zhu_you_wu_yi.png",
+      "unitId": "v2_zhu_you_wu_yi",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 561181,
+      "sha256": "4860fefb8569b378ec0cb9a86b83af78960b98a747b88a2887ae5e65c8ec5277",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "0b07aa0a164b6437d076a9d6292fc0f96eaef8810691ff47013c238e554cab36",
+      "sourceFrameBounds": [
+        [
+          81,
+          210,
+          320,
+          526
+        ],
+        [
+          430,
+          211,
+          661,
+          528
+        ],
+        [
+          765,
+          209,
+          995,
+          528
+        ],
+        [
+          1139,
+          211,
+          1378,
+          528
+        ],
+        [
+          1508,
+          210,
+          1735,
+          529
+        ],
+        [
+          1853,
+          209,
+          2085,
+          528
+        ]
+      ],
+      "scale": 0.7899686520376176,
+      "baseline": 254
+    },
+    {
+      "file": "v2_shan_lang.png",
+      "unitId": "v2_shan_lang",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 426225,
+      "sha256": "7f09363cdeeb2f02197da0426f04ca7a273baf475deab74f6089513ba49733c4",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "9c2cff40bd86334b7cf7b58218f2193f31a34226e6706c36dc4f2082dc7568d1",
+      "sourceFrameBounds": [
+        [
+          10,
+          253,
+          363,
+          511
+        ],
+        [
+          373,
+          253,
+          722,
+          511
+        ],
+        [
+          725,
+          251,
+          1081,
+          511
+        ],
+        [
+          1088,
+          254,
+          1448,
+          511
+        ],
+        [
+          1454,
+          253,
+          1807,
+          511
+        ],
+        [
+          1812,
+          250,
+          2165,
+          510
+        ]
+      ],
+      "scale": 0.6777777777777778,
+      "baseline": 254
+    },
+    {
+      "file": "v2_lang_ya_nu_shou.png",
+      "unitId": "v2_lang_ya_nu_shou",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 436253,
+      "sha256": "e44349fde1eb2bb4b3c3bfaaceb3cd8418e103120fa5fc295e4a5e93161777f0",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "df41b795bca940ac8d06b79c31ca0b876b66baccb6b1a1e70cfe5fcc98a0fccc",
+      "sourceFrameBounds": [
+        [
+          12,
+          144,
+          383,
+          568
+        ],
+        [
+          413,
+          142,
+          739,
+          576
+        ],
+        [
+          760,
+          141,
+          1094,
+          576
+        ],
+        [
+          1104,
+          142,
+          1468,
+          573
+        ],
+        [
+          1493,
+          143,
+          1821,
+          579
+        ],
+        [
+          1843,
+          141,
+          2172,
+          580
+        ]
+      ],
+      "scale": 0.571753986332574,
+      "baseline": 253
+    },
+    {
+      "file": "v2_shan_xiao.png",
+      "unitId": "v2_shan_xiao",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 562420,
+      "sha256": "56b4286b3cd23707d75644a175b2320e693920ea47aac0510b2e30cccd16996e",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "e73a7124594884215159b17098f87c96d362c2a3c25936008067a5e29d08af7e",
+      "sourceFrameBounds": [
+        [
+          31,
+          213,
+          340,
+          521
+        ],
+        [
+          394,
+          212,
+          693,
+          521
+        ],
+        [
+          768,
+          211,
+          1054,
+          521
+        ],
+        [
+          1100,
+          212,
+          1425,
+          525
+        ],
+        [
+          1492,
+          211,
+          1780,
+          521
+        ],
+        [
+          1844,
+          211,
+          2142,
+          520
+        ]
+      ],
+      "scale": 0.7507692307692307,
+      "baseline": 254
+    },
+    {
+      "file": "v2_shu_kui.png",
+      "unitId": "v2_shu_kui",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 599488,
+      "sha256": "64d407c89f5d4cce774bcdf7b4c2b1b2fed714a6143b2ca3b499c6f858f23a5b",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "d69af8a7dab1e6cd42dfb27a8e2049466683b480923f2cec8120955683168e59",
+      "sourceFrameBounds": [
+        [
+          16,
+          110,
+          369,
+          612
+        ],
+        [
+          370,
+          110,
+          725,
+          609
+        ],
+        [
+          731,
+          109,
+          1084,
+          611
+        ],
+        [
+          1094,
+          110,
+          1433,
+          612
+        ],
+        [
+          1455,
+          113,
+          1820,
+          608
+        ],
+        [
+          1825,
+          110,
+          2167,
+          610
+        ]
+      ],
+      "scale": 0.50199203187251,
+      "baseline": 254
+    },
+    {
+      "file": "v2_bai_gu_bing.png",
+      "unitId": "v2_bai_gu_bing",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 416020,
+      "sha256": "bee9434dcdd1e92ab8bbc5159ac5a0d2ad9d9128b2a72e819d999a5eaec81b35",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "bf09245079bbe8444364f365f5f6843d1bcdd133ebbafd3838156d6ecf902024",
+      "sourceFrameBounds": [
+        [
+          55,
+          208,
+          337,
+          548
+        ],
+        [
+          428,
+          207,
+          697,
+          548
+        ],
+        [
+          793,
+          207,
+          1057,
+          549
+        ],
+        [
+          1154,
+          207,
+          1425,
+          550
+        ],
+        [
+          1531,
+          208,
+          1792,
+          550
+        ],
+        [
+          1884,
+          208,
+          2137,
+          551
+        ]
+      ],
+      "scale": 0.7306446727709047,
+      "baseline": 254
+    },
+    {
+      "file": "v2_xing_shi.png",
+      "unitId": "v2_xing_shi",
+      "kind": "walk-strip",
+      "layout": "6x1, left contact / passing / swing / right contact / passing / swing",
+      "frames": 6,
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "width": 1536,
+      "height": 256,
+      "bytes": 409904,
+      "sha256": "293039ab8f08d227dfa8eae70904772b34b8b5a439edb6306ad965d51fc9dc9b",
+      "origin": "Original OpenAI image_gen articulated poses, referenced only Jiuzhou original painted unit art; no source-game imagery. Alpha gutters cropped and frames registered/scaled with ImageMagick; no procedural rigid-leg pose synthesis.",
+      "sourceSha256": "4648966b58c34a1cb1f3b2ce6c0b4e5a194e80fe1d2f563adf653ba3e3d9c270",
+      "sourceFrameBounds": [
+        [
+          49,
+          196,
+          314,
+          540
+        ],
+        [
+          411,
+          195,
+          663,
+          540
+        ],
+        [
+          764,
+          194,
+          1024,
+          541
+        ],
+        [
+          1142,
+          196,
+          1405,
+          540
+        ],
+        [
+          1497,
+          195,
+          1753,
+          541
+        ],
+        [
+          1862,
+          194,
+          2115,
+          541
+        ]
+      ],
+      "scale": 0.7262247838616714,
+      "baseline": 254
+    }
+  ]
+}

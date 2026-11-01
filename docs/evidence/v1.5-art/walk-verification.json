@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "ids": [
+    "v2_xiang_min",
+    "v2_xiang_bing",
+    "v2_xiang_yong",
+    "v2_shan_min",
+    "v2_shan_shen",
+    "v2_yu_lin_gong_shou",
+    "v2_zhen_wei_chang_qiang",
+    "v2_tie_shan_wei",
+    "v2_yu_lin_tie_qi",
+    "v2_hu_ben_zhong_jia",
+    "v2_guo_sai_you_xia",
+    "v2_huang_yuan_kuang_ke",
+    "v2_zhu_you_wu_yi",
+    "v2_shan_lang",
+    "v2_lang_ya_nu_shou",
+    "v2_shan_xiao",
+    "v2_shu_kui",
+    "v2_bai_gu_bing",
+    "v2_xing_shi"
+  ],
+  "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "decoded": 19,
+  "allAdvance": true,
+  "disabledPaused": true,
+  "reducedMotion": true,
+  "frozen": true,
+  "enemyMirror": true,
+  "newSaveRoundtrip": true,
+  "stripMovement": true,
+  "stripShooting": true,
+  "stripMelee": true,
+  "errors": []
+}

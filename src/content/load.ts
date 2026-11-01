@@ -2,8 +2,8 @@ import data from './generated.json';
 import v2 from '../../data/balance/chinese_campaign_v2.json';
 export const units = data.units;
 type BaseUnit = typeof units[number];
-/** v2 campaign units carry a tier, optional placeholder art and their own unit-magic numbers. */
-export type Unit = BaseUnit & {tier?:number;art?:string;magic?:{base:number;charges:number}};
+/** v2 campaign units carry presentation assets separately from research mappings. */
+export type Unit = BaseUnit & {tier?:number;art?:string;walk?:{src:string;frames:number};magic?:{base:number;charges:number}};
 export const dataHash = data.dataHash;
 export const catalogs = data.catalogs;
 export const warnings = data.warnings;
