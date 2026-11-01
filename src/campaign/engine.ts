@@ -62,6 +62,8 @@ function beginBattle(w:World,foe:number){
  s.obstacles=s.terrain==='plain'?[]:[{x:2,y:1},{x:3,y:3}];
  w.battle=applyCommand(s,{type:'start'}).state;w.battleFoe=foe;w.log.push(`與 ${villains[foe].name} 開戰。戰役兵數為獨立平衡檔縮放，基準兵種屬性不變。`);
 }
+/** Bounty paid at a city for a defeated foe (unchanged formula; exported for the UI report). */
+export function bountyReward(id:number){return Math.max(500,Math.floor(villains[id].baselineRewardGold/5));}
 function win(w:World,foe:number){
  if(!w.defeated.includes(foe))w.defeated.push(foe);w.leadership+=balance.victoryLeadership;
  w.spellPower=heroClasses.find(h=>h.id===w.options.heroId)!.power+Math.floor(w.defeated.length/3);
@@ -105,7 +107,7 @@ export function applyWorld(input:World,c:WorldCommand):World{
   if(p?.foe===undefined)throw Error('此處沒有敵將');if(p.id==='bandit'&&w.route!=='conquest')throw Error('斷雁寨須先選擇討伐／招安／交易');beginBattle(w,p.foe);
  }else if(c.type==='claim'){
   if(p?.kind!=='city')throw Error('須在城鎮領賞');const list=w.defeated.filter(id=>!w.claimed.includes(id));if(!list.length)throw Error('沒有待領賞金');
-  for(const id of list){const reward=Math.max(500,Math.floor(villains[id].baselineRewardGold/5));w.gold+=reward;w.claimed.push(id);w.log.push(`${villains[id].name} 賞金 +${reward} 兩。`);}
+  for(const id of list){const reward=bountyReward(id);w.gold+=reward;w.claimed.push(id);w.log.push(`${villains[id].name} 賞金 +${reward} 兩。`);}
  }else if(c.type==='rest'){
   if(p?.kind!=='city')throw Error('只能在城鎮休整');spend(w,100);tick(w,1);for(const a of w.army)if(a){a.hp=a.count*unit(a.unitId).hp;a.ammo=unit(a.unitId).ammo;}w.log.push('客棧休整：存活兵員傷勢痊癒，不能復活陣亡者。');
  }else if(c.type==='boat'){

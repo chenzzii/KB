@@ -113,3 +113,21 @@ body.motion-paused .marker-battle .marker-ring{animation:none}
 .known-places button.kp-done{border-left:5px solid #a9b0aa;color:#7b847d}
 .place-kind{display:inline-block;font-size:11px;font-weight:700;color:#fff;border-radius:4px;padding:2px 8px;margin:0 0 6px;letter-spacing:.1em}
 .place-kind.kp-recruit{background:#23864b}.place-kind.kp-battle{background:#b3261e}.place-kind.kp-choice{background:#c27a17}.place-kind.kp-event{background:#7a5bb0}.place-kind.kp-done{background:#7b847d}
+/* Battle: attackable enemies and post-battle reports */
+.campaign-board .cell.target-attack{box-shadow:inset 0 0 0 3px #d23b2f,0 0 12px #d23b2f88;cursor:crosshair}
+.campaign-board .cell.target-ranged-attack{box-shadow:inset 0 0 0 3px #e08a1e,0 0 12px #e08a1e88;cursor:crosshair}
+.campaign-board .cell.target-magic-attack{box-shadow:inset 0 0 0 3px #8a5bd6,0 0 12px #8a5bd688;cursor:crosshair}
+.range-note{margin:-4px 0 10px;font-size:13px;color:#8a4b12;font-weight:700}
+.report-layer{position:fixed;inset:0;z-index:55;background:#0b1a17aa;display:grid;place-items:center;padding:16px;overflow:auto}
+.report-card{background:#fbf7ec;border:1px solid #d5c39a;border-top:4px solid #ad8b51;border-radius:10px;max-width:520px;width:100%;padding:20px 22px;box-shadow:0 18px 40px #0007;color:#253c38;max-height:calc(100vh - 32px);overflow:auto}
+.report-layer[data-report="victory"] .report-card{border-top-color:#23864b}
+.report-layer[data-report="retreat"] .report-card{border-top-color:#a54838}
+.report-card h3{display:flex;align-items:center;gap:12px;font:700 21px "Noto Serif TC",serif;margin-bottom:8px}
+.report-card h4{margin:14px 0 6px}
+.report-card .portrait-sprite.report-face{width:56px;height:56px}
+.report-gains{margin:0;padding-left:20px;line-height:1.9}
+.report-table{width:100%;border-collapse:collapse;font-size:14px}
+.report-table th,.report-table td{border-bottom:1px solid #e3dac4;padding:5px 6px;text-align:left}
+.report-table td.loss{color:#a54838;font-weight:700}
+.report-note{margin:10px 0 14px;font-size:14px}
+.report-card button.primary{width:100%;background:#183f39;color:#fff;border-color:#183f39}

@@ -113,6 +113,7 @@ npm run test:recruitment
 npm run test:presentation
 npm run test:browser
 npm run test:title
+npm run test:battle-report
 ```
 
 瀏覽器腳本預設找 `/usr/bin/chromium`；在其他系統以 `CHROMIUM_PATH` 指向實際 Chrome／Chromium 執行檔。僅執行 `npx playwright install chromium` 不會改變腳本預設路徑。`SMOKE_URL` 預設 `http://127.0.0.1:5173/`；正式版本也已用 `/KB/` 子路徑檢查。

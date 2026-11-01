@@ -88,6 +88,7 @@ npm run test:painted
 npm run test:recruitment
 npm run test:presentation
 npm run test:title
+npm run test:battle-report
 ```
 
 雲端已裝 `/usr/bin/chromium`；可用 `CHROMIUM_PATH` 指定，`SMOKE_URL` 選擇測試服務。演武測試會先產生 CLI 基準回放；冒險測試需先跑 `campaign:verify`。
