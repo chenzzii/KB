@@ -1,21 +1,41 @@
 import {units,unit} from '../content/load';
 import {applyCommand,initialState,makeStack,integer,alive} from '../core/engine';
 import {hasAbility} from '../core/abilities';
-import {balance,heroClasses,places,map,villains} from './content';
-import type {World,Options,WorldCommand} from './types';
+import {balance,balanceV2,heroClasses,places,map,villains} from './content';
+import type {World,Options,WorldCommand,Ruleset} from './types';
+import type {Place} from './content';
 import type {Stack} from '../core/types';
 export const campaignVersion='campaign-1.0.0';
+export const campaignVersion2:Ruleset='campaign-2.0.0';
+/** v2 rules: auto quest, priced 渡厄真言. v2 roster: only with 華夏改良 (研究基準 keeps source troops). */
+export function isV2(o:Options){return o.ruleset===campaignVersion2;}
+export function usesRosterV2(o:Options){return isV2(o)&&o.mode==='enhanced';}
+/** Unit ids recruitable at a place under this journey's rules. */
+export function siteRoster(o:Options,p:Place|undefined):string[]|undefined{
+ if(!p?.units)return undefined;
+ if(usesRosterV2(o))return balanceV2.sites[p.id as keyof typeof balanceV2.sites];
+ return p.units.map(i=>units[i].id);
+}
+export function heroArmy(o:Options):[string,number][]{
+ const hero=heroClasses.find(h=>h.id===o.heroId);if(!hero)throw Error('未知英雄職業');
+ if(usesRosterV2(o))return balanceV2.heroArmies[hero.id as keyof typeof balanceV2.heroArmies] as [string,number][];
+ return hero.army.map(([i,n])=>[units[i].id,n]);
+}
+export function spellPrice(o:Options,id:number):number|null{return usesRosterV2(o)?balanceV2.heroSpellPrices[id]:balance.heroSpellPrices[id];}
 export function location(w:World){return places.find(p=>p.x===w.position.x&&p.y===w.position.y);}
 export function leadership(w:World){return (w.leadership+w.leadershipBuff)*(w.artifacts.includes(2)?2:1);}
 export function upkeep(w:World){return w.army.reduce((n,s)=>n+(s?s.count*Math.floor(unit(s.unitId).gold/10):0),0);}
 export function spellCap(w:World){return (4+Math.floor(w.defeated.length/3))*(w.artifacts.includes(6)?2:1);}
 function reveal(w:World){const set=new Set(w.revealed);for(let y=Math.max(0,w.position.y-4);y<=Math.min(31,w.position.y+4);y++)for(let x=Math.max(0,w.position.x-4);x<=Math.min(31,w.position.x+4);x++)set.add(y*32+x);w.revealed=[...set].sort((a,b)=>a-b);const p=location(w);if(p&&!w.visited.includes(p.id)){w.visited.push(p.id);w.log.push(`發現 ${p.name}。`);}}
-function restock(w:World){for(const p of places)if(p.units){const stock=w.supplies[p.id]??={};for(const id of p.units){const key=units[id].id;stock[key]=Math.min(100,(stock[key]??0)+balance.weeklySupply);}}}
+function restock(w:World){for(const p of places){const list=siteRoster(w.options,p);if(!list)continue;const stock=w.supplies[p.id]??={};for(const key of list){if(usesRosterV2(w.options)){const weekly=balanceV2.weeklySupplyByTier[(unit(key).tier??1)-1];stock[key]=Math.min(weekly*balanceV2.stockCapWeeks,(stock[key]??0)+weekly);}else stock[key]=Math.min(100,(stock[key]??0)+balance.weeklySupply);}}}
 export function newWorld(options:Options):World{
  if(options.mode!=='study'&&options.mode!=='enhanced')throw Error('未知規則模式');
+ if(options.ruleset!==undefined&&options.ruleset!==campaignVersion&&options.ruleset!==campaignVersion2)throw Error('未知戰役規則版本');
  const hero=heroClasses.find(h=>h.id===options.heroId);if(!hero)throw Error('未知英雄職業');initialState(options.seed);
- const army:(Stack|null)[]=Array(5).fill(null);hero.army.forEach(([id,count],i)=>army[i]=makeStack(`hero-${i}`,units[id].id,count));
- const w:World={nextId:0,options:{...options},position:{x:4,y:5},day:1,steps:0,gold:hero.gold,leadership:hero.leadership,commission:hero.commission,spellPower:hero.power,army,spellbook:Array(14).fill(balance.startingSpellCharges),artifacts:[],visited:[],revealed:[],bridges:[],frozenTime:0,leadershipBuff:0,boat:false,weather:'晴',supplies:{},quest:false,route:null,seals:[],defeated:[],claimed:[],relations:{court:0,jianghu:0,spirits:0},battle:null,battleFoe:null,ending:null,log:['你抵達青禾府。先接受三印委託，再前往柳灣鄉營補員。所有地圖、劇情與戰役平衡均為原創新作。']};
+ const army:(Stack|null)[]=Array(5).fill(null);heroArmy(options).forEach(([id,count],i)=>army[i]=makeStack(`hero-${i}`,id,count));
+ const {ruleset,...base}=options;
+ const w:World={nextId:0,options:ruleset===undefined?base:{...base,ruleset},position:{x:4,y:5},day:1,steps:0,gold:hero.gold,leadership:hero.leadership,commission:hero.commission,spellPower:hero.power,army,spellbook:Array(14).fill(balance.startingSpellCharges),artifacts:[],visited:[],revealed:[],bridges:[],frozenTime:0,leadershipBuff:0,boat:false,weather:'晴',supplies:{},quest:isV2(options),route:null,seals:[],defeated:[],claimed:[],relations:{court:0,jianghu:0,spirits:0},battle:null,battleFoe:null,ending:null,log:['你抵達青禾府。先接受三印委託，再前往柳灣鄉營補員。所有地圖、劇情與戰役平衡均為原創新作。']};
+ if(isV2(options))w.log=['你抵達青禾府。郡守將尋回山河三印的重任交給你：斷雁寨取木印、聽雨古廟取水印、擊敗任一野外敵將取山印，再前往天衡烽臺。所有地圖、劇情與戰役平衡均為原創新作。'];
  restock(w);reveal(w);return w;
 }
 function spend(w:World,n:number){if(w.gold<n)throw Error('銀兩不足');w.gold-=n;}
@@ -55,7 +75,8 @@ function beginBattle(w:World,foe:number){
  const s=initialState(`${w.options.seed}/foe-${foe}/day-${w.day}`);
  s.armies.player=w.army.map((a,i)=>{if(!a)return null;const fresh=makeStack(`p${i}`,a.unitId,a.count);fresh.hp=a.hp;return fresh;});
  const army=villains[foe].army;
- s.armies.enemy=army.map((a,i)=>makeStack(`e${i}`,a.unitId,Math.max(balance.minimumEnemyStack,Math.ceil(a.count/balance.encounterDivisor))));
+ s.armies.enemy=army.map((a,i)=>{const scaled=Math.max(balance.minimumEnemyStack,Math.ceil(a.count/balance.encounterDivisor));if(!usesRosterV2(w.options))return makeStack(`e${i}`,a.unitId,scaled);
+  const next=balanceV2.units.find(u=>u.sourceTroopId===a.sourceTroopId)!;return makeStack(`e${i}`,next.id,Math.max(1,Math.round(scaled*unit(a.unitId).hp/next.hp)));});
  s.rulesMode=w.options.mode;s.powers={player:w.artifacts.filter(a=>a!==5),enemy:[]};
  const power=w.spellPower*(w.artifacts.includes(4)?2:1);s.spellPower={player:power,enemy:1};s.spellbook={player:w.spellbook.slice(0,7),enemy:Array(7).fill(0)};
  s.leadership=leadership(w);s.gold=w.gold;s.terrain=foe%3===0?'forest':foe%3===1?'plain':'ruins';
@@ -113,7 +134,7 @@ export function applyWorld(input:World,c:WorldCommand):World{
  }else if(c.type==='boat'){
   if(p?.id!=='east'||w.boat)throw Error('須在望潮城租用尚未租用的船');spend(w,w.artifacts.includes(7)?100:500);w.boat=true;w.log.push('已租船，可渡江；每週另扣船費。');
  }else if(c.type==='recruit-world'){
-  integer(c.count,1);integer(c.slot,0,4);if(!p?.units?.some(id=>units[id].id===c.unitId))throw Error('此據點不供應該兵種');
+  integer(c.count,1);integer(c.slot,0,4);if(!p||!siteRoster(w.options,p)?.includes(c.unitId))throw Error('此據點不供應該兵種');
   if((p.id==='ghost'||p.id==='wild')&&w.relations.spirits<0)throw Error('妖靈關係敵對，須先在古廟守夜修復關係');
   const u=unit(c.unitId),stock=w.supplies[p.id][u.id];if(c.count>stock)throw Error('據點兵源不足，等待週次補充');
   const dst=w.army[c.slot];if(dst&&dst.unitId!==u.id)throw Error('目標欄已有不同兵種');integer((dst?.count??0)+c.count,1);
@@ -124,14 +145,15 @@ export function applyWorld(input:World,c:WorldCommand):World{
  }else if(c.type==='formation'){
   if(!['swap','merge','split'].includes(c.command.type))throw Error('冒險整軍只允許交換、合併與拆分');const s=initialState(w.options.seed);s.nextId=w.nextId;s.armies.player=w.army;const result=applyCommand(s,c.command);w.army=result.state.armies.player;w.nextId=result.state.nextId;
  }else if(c.type==='buy-spell'){
-  integer(c.spellId,0,13);if(p?.kind!=='city')throw Error('須在城鎮符坊購買');const price=balance.heroSpellPrices[c.spellId];if(price===null)throw Error('渡厄真言價格衝突，暫停販售；可使用初始符籙');if(w.spellbook[c.spellId]>=spellCap(w))throw Error('已達法術攜帶上限');spend(w,price);w.spellbook[c.spellId]++;w.log.push('購得一道符籙。');
+  integer(c.spellId,0,13);if(p?.kind!=='city')throw Error('須在城鎮符坊購買');const price=spellPrice(w.options,c.spellId);if(price===null)throw Error('渡厄真言價格衝突，暫停販售；可使用初始符籙');if(w.spellbook[c.spellId]>=spellCap(w))throw Error('已達法術攜帶上限');spend(w,price);w.spellbook[c.spellId]++;w.log.push('購得一道符籙。');
  }else if(c.type==='adventure-spell'){
   integer(c.spellId,7,13);if(w.spellbook[c.spellId]<=0)throw Error('此術沒有符籙');const id=c.spellId;
   if(id===7){const cell=c.cell;if(!cell||!Number.isInteger(cell.x)||!Number.isInteger(cell.y)||cell.x<0||cell.x>31||cell.y<0||cell.y>31||Math.abs(cell.x-w.position.x)+Math.abs(cell.y-w.position.y)!==1||map[cell.y][cell.x]!=='water'||w.bridges.includes(cell.y*32+cell.x))throw Error('架橋只能選擇相鄰且尚無橋梁的江面');w.bridges.push(cell.y*32+cell.x);}
   if(id===8)w.frozenTime+=40;
   if(id===9){const next=places.find(q=>q.foe!==undefined&&!w.defeated.includes(q.foe)&&q.id!=='bandit');if(!next)throw Error('已無待尋敵將');for(let y=next.y-1;y<=next.y+1;y++)for(let x=next.x-1;x<=next.x+1;x++)if(!w.revealed.includes(y*32+x))w.revealed.push(y*32+x);w.log.push(`羅盤指向 ${next.name}（${next.x+1},${next.y+1}）。`);}
   if(id===10||id===11){const target=id===10?'south':'home';if(!w.visited.includes(target))throw Error('尚未造訪該城，無法使用歸返術');const dest=places.find(q=>q.id===target)!;w.position={x:dest.x,y:dest.y};reveal(w);}
-  if(id===12){const id='xiang_yong';const slot=w.army.findIndex(a=>a?.unitId===id||!a);if(slot<0)throw Error('沒有同型隊伍或空欄');const a=w.army[slot],count=(a?.count??0)+10;if(count*unit(id).hp>leadership(w))throw Error('召兵後超過統率');if(a){a.count=count;a.hp+=20;a.maxCount=count;}else w.army[slot]=makeStack(`summon-${w.nextId++}`,id,10);}
+  if(id===12&&!usesRosterV2(w.options)){const id='xiang_yong';const slot=w.army.findIndex(a=>a?.unitId===id||!a);if(slot<0)throw Error('沒有同型隊伍或空欄');const a=w.army[slot],count=(a?.count??0)+10;if(count*unit(id).hp>leadership(w))throw Error('召兵後超過統率');if(a){a.count=count;a.hp+=20;a.maxCount=count;}else w.army[slot]=makeStack(`summon-${w.nextId++}`,id,10);}
+  if(id===12&&usesRosterV2(w.options)){const {unitId:id,count:n}=balanceV2.summonSpell;const slot=w.army.findIndex(a=>a?.unitId===id||!a);if(slot<0)throw Error('沒有同型隊伍或空欄');const a=w.army[slot],count=(a?.count??0)+n;if(count*unit(id).hp>leadership(w))throw Error('召兵後超過統率');if(a){a.count=count;a.hp+=n*unit(id).hp;a.maxCount=count;}else w.army[slot]=makeStack(`summon-${w.nextId++}`,id,n);}
   if(id===13)w.leadershipBuff+=50;
   w.spellbook[id]--;w.log.push(`施放第 ${id+1} 道冒險法術。`);
  }else if(c.type==='take-artifact'){

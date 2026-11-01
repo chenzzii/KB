@@ -1,7 +1,8 @@
 import balance from '../../data/balance/chinese_campaign_v1.json';
 import villains from '../../data/content/villain_mapping.json';
 import artifacts from '../../data/content/artifact_mapping.json';
-export {balance,villains,artifacts};
+import balanceV2 from '../../data/balance/chinese_campaign_v2.json';
+export {balance,villains,artifacts,balanceV2};
 export const heroClasses=[
  {id:'wu_jiang',name:'武將',leadership:100,gold:7500,commission:1000,power:1,army:[[2,20],[8,2]]},
  {id:'ru_jiang',name:'儒將',leadership:80,gold:10000,commission:1000,power:1,army:[[0,20],[2,20]]},

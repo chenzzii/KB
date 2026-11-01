@@ -35,7 +35,8 @@ check('first tips shown',first.includes('map')&&first.includes('home'),first.joi
 const roles=await page.locator('[data-place-role]').evaluateAll(els=>els.map(e=>e.dataset.placeRole));
 check('recruit sites marked',roles.filter(r=>r==='recruit').length>=2,roles.join(','));
 check('legend present',await page.locator('.marker-legend .k-battle').count()===1);
-await page.locator('[data-action="accept"]').click();
+// v1.5: the quest starts accepted; there is no 接受委託 button.
+check('no accept-quest step',await page.locator('[data-action="accept"]').count()===0);
 await page.locator('[data-destination="7,5"]').click();
 await page.waitForFunction(()=>document.querySelector('.location-panel h3')?.textContent?.includes('柳灣鄉營'));
 await page.waitForTimeout(200);

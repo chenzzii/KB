@@ -8,6 +8,11 @@ export function unitFigure(sourceId:number,label:string,extra=''){
  const motion=motionStyle(sourceId);
  return `<span data-motion="${motion.kind}" class="unit-sprite ${extra}" role="img" aria-label="${escape(label)}" style="${motion.style};background-image:url('${base}units-v1.png');background-position:${sourceId%5*25}% ${Math.floor(sourceId/5)*25}%"><span class="sprite-body" aria-hidden="true"><span class="sprite-upper"></span><span class="sprite-leg sprite-leg-left"></span><span class="sprite-leg sprite-leg-right"></span></span><span class="sprite-aura" aria-hidden="true"></span></span>`;
 }
+/** Unit art: atlas cell by sourceTroopId, or a standalone image (v2 placeholders, later Codex art) with the same layers. */
+export function troopFigure(u:{sourceTroopId:number;art?:string},label:string,extra=''){
+ if(!u.art)return unitFigure(u.sourceTroopId,label,extra);
+ return unitFigure(u.sourceTroopId,label,`single-art ${extra}`).replace(/background-image:url\('[^']*'\);background-position:[^"]*"/,`background-image:url('${import.meta.env.BASE_URL}${u.art}');background-position:50% 50%"`);
+}
 export function propFigure(index:number){return `<span class="scenery-prop" aria-hidden="true" style="background-image:url('${base}props-v1.png');background-position:${index%2*100}% ${Math.floor(index/2)*100}%"></span>`;}
 export const paintedBackground=base+'courtyard-v1.png';
 export function portraitFigure(index:number,label:string,extra=''){return `<span class="portrait-sprite ${extra}" role="img" aria-label="${escape(label)}" style="background-image:url('${base}portraits-v1.png');background-position:${index%5*25}% ${Math.floor(index/5)*25}%"></span>`;}

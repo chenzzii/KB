@@ -1,7 +1,8 @@
 import './intro.css';
 import {heroClasses} from './campaign/content';
-import {units} from './content/load';
-import {portraitFigure,unitFigure} from './art/painted';
+import {unit} from './content/load';
+import {heroArmy,campaignVersion2} from './campaign/engine';
+import {portraitFigure,troopFigure} from './art/painted';
 import {soundtrack} from './audio/soundtrack';
 import {settings,saveSettings} from './settings';
 import {resetTips} from './tips';
@@ -20,8 +21,8 @@ const story:{scene:number;lines:string[];foes?:boolean}[]=[
  {scene:2,lines:['討伐、招安，還是交易？','你在斷雁寨的選擇，將決定烽火最後傳向何方。']}
 ];
 const heroInfo:Record<string,{title:string;style:string;traits:string[];level:string}>={
- wu_jiang:{title:'沙場宿將',style:'正面作戰，穩紮穩打',level:'新手推薦',traits:['統率高，一開始就能帶較多兵','開局銀兩與每週俸祿都較少，要精打細算','起手有弓手，可遠近搭配']},
- ru_jiang:{title:'運籌儒將',style:'先經營、再擴軍',level:'容易上手',traits:['開局銀兩最多，可大量招兵','兩隊步兵，人多但單兵較弱','統率中等，需要拆隊運用']},
+ wu_jiang:{title:'沙場宿將',style:'正面作戰，穩紮穩打',level:'新手推薦',traits:['統率高，一開始就能帶較多兵','開局銀兩與每週俸祿都較少，要精打細算','起手有長槍兵與弓手，可遠近搭配']},
+ ru_jiang:{title:'運籌儒將',style:'先經營、再擴軍',level:'容易上手',traits:['開局銀兩最多，可大量招兵','鄉民加鄉兵弩手，人多又能遠射','統率中等，需要拆隊運用']},
  hao_xia:{title:'江湖豪俠',style:'遊走四方，快攻懸賞',level:'中等',traits:['山狼行動快，適合先手突擊','統率高，但只有一隊起始部曲','每週俸祿 2,000，收入比武將、儒將多']},
  fang_shi:{title:'雲遊方士',style:'以符籙取勝',level:'進階',traits:['法力 2：英雄法術威力加倍','統率最低，帶兵規模受限','開局銀兩多，每週俸祿 3,000 最高']}
 };
@@ -33,7 +34,8 @@ const help=[
  ['金錢來源','每週（5 日）自動領取職業俸祿，同時支付部曲軍餉；擊敗敵將後回任何城鎮領取討伐賞金。'],
  ['三條路線','斷雁寨可討伐、招安或交易，選擇不可逆，會決定結局。'],
  ['存檔','旅程會自動存在本機瀏覽器；也可以匯出成檔案保存，之後匯入繼續。'],
- ['規則模式','「華夏改良」是本作的建議規則；「研究基準」用來對照來源研究資料，不保證等同 DOS 原版。']
+ ['五大陣營','鄉里、朝廷軍旅、方外江湖、山野妖靈、幽冥，各有一到五級兵種。同陣營混編士氣穩定；妖靈、幽冥與人類陣營混編會降低士氣。'],
+ ['規則模式','「華夏改良」是本作建議規則，使用五陣營兵譜；「研究基準」保留來源研究的兵種與數值，用來對照，不保證等同 DOS 原版。']
 ];
 
 let root:HTMLElement|null=null,hooks:Hooks,page=0,heroId='wu_jiang',mode:RulesMode='enhanced',seed='jiuzhou-2026',screen:'title'|'story'|'select'='title',helpOpen=false;
@@ -55,7 +57,7 @@ function titleHTML(){
  const save=hooks.hasSave();
  return `${bg(0)}<div class="title-main"><span class="title-seal" aria-hidden="true">九<br>州</span><p class="eyebrow">JIUZHOU · THE BEACONS RETURN</p><h1>九州兵譜</h1><p class="title-sub">烽火歸途</p>
  <div class="title-menu">${save?'<button class="primary" id="title-continue">繼續旅程</button>':''}<button class="${save?'':'primary'}" id="title-new">開始新旅程</button><button id="title-help">遊戲說明</button><button id="title-options">設定</button></div>
- <p class="title-foot">原創華夏戰略 RPG · v1.4</p></div>`;
+ <p class="title-foot">原創華夏戰略 RPG · v1.5</p></div>`;
 }
 function storyHTML(){
  const s=story[page],last=page===story.length-1;
@@ -69,7 +71,7 @@ function selectHTML(){
  <div class="select-body"><section class="hero-detail"><div class="hero-detail-head">${portraitFigure(heroClasses.indexOf(hero),hero.name,'hero-big')}<div><p class="eyebrow">${info.level}</p><h3>${hero.name} · ${info.title}</h3><p>${info.style}</p></div></div>
  <dl class="hero-stats"><div><dt>統率</dt><dd>${hero.leadership}</dd></div><div><dt>起始銀兩</dt><dd>${hero.gold.toLocaleString()}</dd></div><div><dt>每週俸祿（收入）</dt><dd>${hero.commission.toLocaleString()}</dd></div><div><dt>法力</dt><dd>${hero.power}</dd></div></dl>
  <ul class="hero-traits">${info.traits.map(t=>`<li>${t}</li>`).join('')}</ul>
- <h4>起始部曲</h4><div class="hero-army">${hero.army.map(([u,n])=>`<span>${unitFigure(units[u].sourceTroopId,units[u].name,'army-pick')}<b>${units[u].name}</b><small>× ${n}</small></span>`).join('')}</div>
+ <h4>起始部曲</h4><div class="hero-army">${heroArmy({heroId,mode,seed,ruleset:campaignVersion2}).map(([id,n])=>`<span>${troopFigure(unit(id),unit(id).name,'army-pick')}<b>${unit(id).name}</b><small>× ${n}</small></span>`).join('')}</div>
  <details class="advanced"><summary>進階設定</summary><label>規則模式<select id="opt-mode"><option value="enhanced" ${mode==='enhanced'?'selected':''}>華夏改良（建議）</option><option value="study" ${mode==='study'?'selected':''}>研究基準（非 DOS 已驗證）</option></select></label><label>亂數種子<input id="opt-seed" value="${e(seed)}" maxlength="200"></label></details>
  </section>${toggles()}</div>
  <div class="select-go">${hooks.hasSave()?'<small>開始新旅程會覆蓋本機自動存檔；需要保留請先在遊戲中匯出存檔。</small>':''}<button class="primary big" id="title-start">以${hero.name}身分出發</button></div></div>`;
@@ -97,7 +99,7 @@ function bind(){
  on('story-prev',()=>{page=Math.max(0,page-1);render();});
  on('story-next',()=>{if(page<story.length-1)page++;else screen='select';render();});
  r.querySelectorAll<HTMLElement>('[data-hero]').forEach(el=>el.onclick=()=>{heroId=el.dataset.hero!;render();});
- r.querySelector('#opt-mode')?.addEventListener('change',ev=>mode=(ev.target as HTMLSelectElement).value as RulesMode);
+ r.querySelector('#opt-mode')?.addEventListener('change',ev=>{mode=(ev.target as HTMLSelectElement).value as RulesMode;const open=(r.querySelector('details.advanced') as HTMLDetailsElement|null)?.open;render();const d=r.querySelector('details.advanced') as HTMLDetailsElement|null;if(d&&open)d.open=true;});
  r.querySelector('#opt-seed')?.addEventListener('input',ev=>seed=(ev.target as HTMLInputElement).value);
  on('title-start',()=>{hooks.start({heroId,mode,seed:seed.trim()||'jiuzhou-2026'});close();});
  const check=(id:string,fn:(v:boolean)=>void)=>r.querySelector(`#${id}`)?.addEventListener('change',ev=>fn((ev.target as HTMLInputElement).checked));

@@ -9,4 +9,4 @@
 - UI、動畫和音樂不應改寫純規則引擎。修改規則／世界資料前先考慮既有存檔與重播相容性。
 - 此次使用者要求是匯出交接包。下一個開發目標尚未指定；先理解與驗證現況，再依使用者後續要求實作。
 
-啟動：Node.js 24、`npm ci`、`npm run dev`。基本檢查：`npm run validate:data`、`npm test`、`npm run build`。目前有 116 項單元測試；v1.3 另有 `npm run test:title` 瀏覽器檢查（27 項）。
+啟動：Node.js 24、`npm ci`、`npm run dev`。基本檢查：`npm run validate:data`、`npm test`、`npm run build`。目前有 129 項單元測試；另有 `npm run test:title`、`npm run test:battle-report` 等瀏覽器檢查。v1.5 起新旅程使用 `campaign-2.0.0`（見 `docs/ROSTER_V2_V1_5.md`）。

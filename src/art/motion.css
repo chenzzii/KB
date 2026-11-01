@@ -44,3 +44,19 @@
 @keyframes slash-sweep{0%{opacity:0;scale:.4;rotate:-80deg}40%{opacity:1;scale:1.12;rotate:10deg}100%{opacity:0;scale:1.22;rotate:65deg}}
 body.presentation-hidden .unit-sprite *,body.motion-paused .unit-sprite *{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.unit-sprite *{animation:none!important}.troop-visual{animation:none!important}.battle-slash{display:none}}
+/* Standalone unit images (v2 placeholders and future per-unit art) use the whole image per layer. */
+.unit-sprite.single-art .sprite-body>span{background-size:contain;background-position:50% 50%}
+/* v1.5: idle becomes a visible march-in-place for every ground troop: alternating leg strides,
+   a double bob per stride cycle and a small forward/back drift. Flyers keep their hover and wingbeats.
+   Still built from the single painted image (clipped layers); real walk frames can replace it later. */
+.unit-sprite:not(:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon])){--stride:calc(var(--idle-period) * .38)}
+.unit-sprite:not(:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon])) .sprite-body{animation:troop-march var(--stride) linear var(--idle-phase) infinite}
+.unit-sprite:not(:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon])) .sprite-leg-left{animation:leg-stride var(--stride) ease-in-out var(--idle-phase) infinite}
+.unit-sprite:not(:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon])) .sprite-leg-right{animation:leg-stride-alt var(--stride) ease-in-out var(--idle-phase) infinite}
+.unit-sprite:not(:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon])) .sprite-upper{animation:torso-stride var(--stride) ease-in-out var(--idle-phase) infinite}
+@keyframes troop-march{0%{translate:-2px 0;rotate:-1.2deg}25%{translate:0 -4px;rotate:0deg}50%{translate:2px 0;rotate:1.2deg}75%{translate:0 -4px;rotate:0deg}100%{translate:-2px 0;rotate:-1.2deg}}
+@keyframes leg-stride{0%,100%{rotate:-15deg;translate:-1px 0}50%{rotate:15deg;translate:1px -2px}}
+@keyframes leg-stride-alt{0%,100%{rotate:15deg;translate:1px -2px}50%{rotate:-15deg;translate:-1px 0}}
+@keyframes torso-stride{0%,100%{rotate:1.5deg}50%{rotate:-1.5deg}}
+/* Heavy and giant troops stride slower and lower. */
+.unit-sprite:is([data-motion=heavy],[data-motion=giant],[data-motion=tree],[data-motion=shambler]){--stride:calc(var(--idle-period) * .5)}

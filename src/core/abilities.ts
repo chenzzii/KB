@@ -13,7 +13,7 @@ export const abilityRules = {
 } as const;
 export type Ability=keyof typeof abilityRules;
 export function hasAbility(s:Stack,key:Ability){return (unit(s.unitId).abilities as string[]).includes(key);}
-export function magicProfile(s:Stack,mode?:'study'|'enhanced'){if(mode==='study')return null;return hasAbility(s,'magic')?{base:unit(s.unitId).sourceTroopId===19?10:25,charges:unit(s.unitId).sourceTroopId===19?3:2}:null;}
+export function magicProfile(s:Stack,mode?:'study'|'enhanced'){if(mode==='study')return null;const own=unit(s.unitId).magic;if(own&&hasAbility(s,'magic'))return {...own};return hasAbility(s,'magic')?{base:unit(s.unitId).sourceTroopId===19?10:25,charges:unit(s.unitId).sourceTroopId===19?3:2}:null;}
 export function abilityLabel(key:string){const r=abilityRules[key as Ability];return r?`${r.name}：已實作 · ${r.evidence}`:`${key}：未實作`;}
 export function damageStack(s:Stack,amount:number){
  const before=s.count;const damage=Math.min(s.hp,Math.max(0,Math.floor(amount)));
