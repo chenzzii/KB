@@ -55,7 +55,7 @@ function titleHTML(){
  const save=hooks.hasSave();
  return `${bg(0)}<div class="title-main"><span class="title-seal" aria-hidden="true">九<br>州</span><p class="eyebrow">JIUZHOU · THE BEACONS RETURN</p><h1>九州兵譜</h1><p class="title-sub">烽火歸途</p>
  <div class="title-menu">${save?'<button class="primary" id="title-continue">繼續旅程</button>':''}<button class="${save?'':'primary'}" id="title-new">開始新旅程</button><button id="title-help">遊戲說明</button><button id="title-options">設定</button></div>
- <p class="title-foot">原創華夏戰略 RPG · v1.3.2</p></div>`;
+ <p class="title-foot">原創華夏戰略 RPG · v1.4</p></div>`;
 }
 function storyHTML(){
  const s=story[page],last=page===story.length-1;

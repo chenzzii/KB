@@ -1,6 +1,6 @@
 import {scores,type Scene} from './score';
 import {Ensemble} from './synth';
-export type Cue='step'|'fly'|'attack'|'shot'|'magic'|'heal'|'victory'|'defeat';
+export type Cue='step'|'fly'|'attack'|'shot'|'magic'|'heal'|'victory'|'defeat'|'coin';
 class Soundtrack{
  private ctx:AudioContext|null=null;private ensemble:Ensemble|null=null;private bus:GainNode|null=null;
  private timer:ReturnType<typeof setInterval>|undefined;private current:Scene|null=null;private enabled=false;private visible=true;private pageVisible=true;
@@ -42,7 +42,11 @@ class Soundtrack{
  }
  cue(kind:Cue){
   if(!this.pageVisible)return;
-  try{const ctx=this.context();void ctx.resume().catch(()=>{});const at=ctx.currentTime+.008;const notes=kind==='victory'?[74,78,81,86]:kind==='defeat'?[62,60,57]:kind==='heal'?[74,78,83]:kind==='magic'?[74,81,86]:kind==='shot'?[81]:kind==='fly'?[86]:kind==='attack'?[45]:[38];
+  try{const ctx=this.context();void ctx.resume().catch(()=>{});const at=ctx.currentTime+.008;if(kind==='coin'){
+    // Two bright coin chimes (叮、噹) with a short metallic shimmer.
+    [[93,0],[100,.07],[96,.19],[103,.25]].forEach(([midi,offset],i)=>this.ensemble!.note({beat:0,duration:i%2?.32:.14,midi,voice:'bell',gain:i%2?.13:.1,pan:i%2?.18:-.18},at+offset,1));
+    this.ensemble!.note({beat:0,duration:.05,midi:84,voice:'shaker',gain:.05,pan:0},at,1);return;}
+   const notes=kind==='victory'?[74,78,81,86]:kind==='defeat'?[62,60,57]:kind==='heal'?[74,78,83]:kind==='magic'?[74,81,86]:kind==='shot'?[81]:kind==='fly'?[86]:kind==='attack'?[45]:[38];
    notes.forEach((midi,i)=>this.ensemble!.note({beat:0,duration:kind==='step'?.08:kind==='attack'?.16:.22,midi,voice:kind==='step'||kind==='attack'?'drum':kind==='shot'?'plucked':'bell',gain:kind==='step'?.065:.12,pan:0},at+i*.12,1));
   }catch{/* Sound must never prevent a command. */}
  }

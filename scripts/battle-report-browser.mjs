@@ -49,6 +49,19 @@ const claim=await page.locator('.report-layer[data-report="claim"] .report-card'
 check('claim report shows gold',claim.includes('+1,200 兩')&&claim.includes('7,500 → 8,700'),claim);
 await page.locator('#report-ok').click();
 check('gold updated',(await page.locator('.journey-stats').innerText()).includes('8,700'));
+// v1.4: 系統 menu and purchase feedback.
+check('system menu closed by default',await page.locator('#system-panel').isHidden());
+check('mode and seed not in header',!(await page.locator('.journey-header').innerText()).includes('華夏改良'));
+check('hero shown beside status bar',await page.locator('.journey-stats .hero-stat .hero-header').count()===1);
+await page.locator('#open-system').click();
+check('system menu holds save/sound controls',await page.locator('#system-panel #campaign-export').isVisible()&&await page.locator('#system-panel #campaign-music').isVisible());
+await page.locator('#close-system').click();
+await page.locator('[data-subtab="spells"]').click();
+const goldBefore=await page.locator('.gold-stat b').textContent();
+await page.locator('[data-buy-spell="2"]').click();
+check('purchase coins fly',await page.locator('.coin-fly').count()>0);
+check('purchase shows amount',(await page.locator('.spend-float').textContent()).includes('兩'));
+check('gold reduced after purchase',(await page.locator('.gold-stat b').textContent())!==goldBefore);
 await writeFile('artifacts/battle-report-verification.json',JSON.stringify({url,checks,errors},null,2));
 await browser.close();
 const failed=checks.filter(c=>!c.ok);
