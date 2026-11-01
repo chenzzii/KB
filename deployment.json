@@ -1,7 +1,7 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.3.2",
-  "sourceCommit": "f323d2610eb28260db2d377e3570889456549e48",
+  "version": "1.4.0",
+  "sourceCommit": "b015c12c5ded99981edfb0a49ea103c718ea564f",
   "mapSize": "32x32",
   "visualAssets": "assets/painted/manifest.json",
   "soundtracks": [
@@ -17,6 +17,7 @@
     "first-time tips",
     "map recruit/battle markers",
     "automatic ranged attack and post-battle reports",
-    "locked-choice explanations and floating error notice"
+    "locked-choice explanations and floating error notice",
+    "larger role portrait, 系統 menu, purchase coin feedback"
   ]
 }
