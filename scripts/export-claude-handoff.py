@@ -23,6 +23,7 @@ EVIDENCE = [
     'recruitment-desktop.png', 'recruitment-mobile.png',
     'map-music-preview.wav', 'battle-music-preview.wav',
     'handoff-extraction-check.json', 'handoff-clean-validation.txt',
+    'title-verification.json', 'title-map-markers.png', 'title-mobile-select.png',
 ]
 EVIDENCE += [f'campaign-{mode}-{route}.json' for mode in ('enhanced', 'study')
              for route in ('conquest', 'alliance', 'trade')]
@@ -91,16 +92,17 @@ def main():
                 raise ValueError(f'Original handoff changed: {relative}')
             originals.append(str(relative))
     args.output.mkdir(parents=True, exist_ok=True)
-    game_commit='d4454a3a706476b129f9dd786b701f5759745a21'
+    game_commit='9f5b803c5d546e54908ffbce979a4d1dcb3611b8'
     status={
-        'game':'九州兵譜：烽火歸途', 'version':'1.2.0',
+        'game':'九州兵譜：烽火歸途', 'version':'1.3.0',
         'exportDate':datetime.now(ZoneInfo('Asia/Taipei')).date().isoformat(),
         'timezone':'Asia/Taipei', 'repository':'https://github.com/chenzzii/KB',
         'sourceBranch':'delivery/jiuzhou-v1', 'gameCommit':game_commit,
         'exportBaseCommit':git('rev-parse','HEAD').decode().strip(),
-        'additionalHandoffFiles':['CLAUDE.md','docs/CLAUDE_HANDOFF.md','scripts/export-claude-handoff.py'],
-        'website':'https://chenzzii.github.io/KB/?v=1.2',
-        'siteBranch':'gh-pages', 'siteCommit':'ac5f9921115c4ce6d98d7e84a82dbda43067d64a',
+        'previousGameCommit':'d4454a3a706476b129f9dd786b701f5759745a21',
+        'additionalHandoffFiles':['CLAUDE.md','docs/CLAUDE_HANDOFF.md','scripts/export-claude-handoff.py','delivery/jiuzhou-v1.3-web.zip'],
+        'website':'https://chenzzii.github.io/KB/?v=1.3',
+        'siteBranch':'gh-pages', 'siteCommit':'5771ef6696c58b5713e6140e94ea0fbe85f7166d',
         'publicHttpDeploymentVerified':False,
         'originalHandoffFileCount':len(originals),
         'originalHandoffZipSHA256':digest(args.original_pack.read_bytes()),
@@ -109,15 +111,16 @@ def main():
         'arenaSave':{'schema':2,'ruleset':'research/abilities-v0.2.0'},
         'unitTestsLastPassed':116,
         'evidenceNotes':{
-            'presentation':'v1.2 browser motion/music checks; WAVs cover first 16 bars, not the complete loop',
+            'onboarding':'v1.3 test:title 27 browser checks (title, story skip, role selection, settings, once-only tips, map recruit/battle markers, resume, mobile); also passed against built gh-pages content and extracted v1.3 web ZIP',
+            'presentation':'v1.2 motion/music browser checks, rerun and passing on v1.3; WAVs cover first 16 bars, not the complete loop',
             'recruitment':'v1.1.1 four classes x two modes browser checks',
-            'campaign':'six normal completion/replay sequences, rechecked by v1.2 browser',
+            'campaign':'six normal completion/replay sequences, rechecked by v1.3 browser (dev server, built site and web ZIP)',
             'batch':'historical 10000 arena replay verification; not rerun for this export',
         },
         'notIncluded':['node_modules','.git','credentials','personal browser saves','source-game executables'],
     }
     with tempfile.TemporaryDirectory(prefix='jiuzhou-export-') as temporary:
-        package=Path(temporary)/'jiuzhou-claude-handoff-v1.2';package.mkdir()
+        package=Path(temporary)/'jiuzhou-claude-handoff-v1.3';package.mkdir()
         copy(ROOT/'delivery/CLAUDE_START_HERE.md',package/'START_HERE.md')
         (package/'VERIFY_PACKAGE.py').write_text(VERIFIER, encoding='utf-8')
         for relative in tracked:
@@ -129,7 +132,7 @@ def main():
             if source.is_file():copy(source,package/'web-build'/source.relative_to(ROOT/'dist'))
         copy(args.original_pack,package/'original_handoff/development_pack_v1.zip')
         for edition in ('full','context-only'):
-            output_root=package if edition=='full' else Path(temporary)/'jiuzhou-claude-context-v1.2'
+            output_root=package if edition=='full' else Path(temporary)/'jiuzhou-claude-context-v1.3'
             if edition=='context-only':
                 output_root.mkdir()
                 for source in package.rglob('*'):
@@ -147,7 +150,7 @@ def main():
                    for p in sorted(output_root.rglob('*')) if p.is_file() and p.name!='SHA256_MANIFEST.json'}
             write_json(output_root/'SHA256_MANIFEST.json',{'algorithm':'SHA-256','manifestExcludesItself':True,'files':files})
             subprocess.run(['python3',str(output_root/'VERIFY_PACKAGE.py')],check=True,cwd=output_root)
-            filename='jiuzhou-claude-handoff-v1.2.zip' if edition=='full' else 'jiuzhou-claude-context-v1.2.zip'
+            filename='jiuzhou-claude-handoff-v1.3.zip' if edition=='full' else 'jiuzhou-claude-context-v1.3.zip'
             archive_path=args.output/filename
             with zipfile.ZipFile(archive_path,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
                 for p in sorted(output_root.rglob('*')):

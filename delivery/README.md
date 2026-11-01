@@ -4,14 +4,14 @@
 
 原始完整程式交接包已有 PNG，位於 project/public/assets/painted/；輕量上下文包沒有 PNG。這份獨立美術包可以搭配兩者使用。
 
-# Claude 交接下載
+# Claude 交接下載：v1.3
 
-- `jiuzhou-claude-handoff-v1.2.zip`：完整原始碼、全部美術、完整靜態成品、原始開發包、測試存檔、畫面與音樂證據，約 42.7 MB。
-- `jiuzhou-claude-context-v1.2.zip`：純文字上下文與程式資料，約 0.36 MB；供 Claude 先閱讀，遊玩／完整開發需另取完整包或 clone 專案。
+- `jiuzhou-claude-handoff-v1.3.zip`：完整原始碼、全部美術、完整靜態成品、原始開發包、測試存檔、畫面與音樂證據（含 v1.3 標題流程驗證與截圖），約 43.4 MB。
+- `jiuzhou-claude-context-v1.3.zip`：純文字上下文與程式資料，約 0.4 MB；供 Claude 先閱讀，遊玩／完整開發需另取完整包或 clone 專案。
 - `CLAUDE_START_HERE.md`：可直接交給 Claude 的接手說明。
 - 同名 `.zip.sha256`：ZIP 的 SHA-256；包內另有逐檔清單與 VERIFY_PACKAGE.py。
 
-已完成全新解壓、重新 npm ci、資料檢查、116 項測試與 build；96 個重建靜態檔與附上的 web-build 一致。遊戲內容與網站 v1.2 相同，本次只新增交接資料。
+遊戲基準為 v1.3 提交 `9f5b803`，與網站及 `jiuzhou-v1.3-web.zip` 同版。已完成全新解壓、重新 npm ci、資料檢查、116 項測試與 build；96 個重建靜態檔與附上的 web-build 逐檔一致。v1.2 交接包已由 v1.3 取代，仍可從 Git 歷史取回。
 
 # 最新靜態成品：v1.3
 
