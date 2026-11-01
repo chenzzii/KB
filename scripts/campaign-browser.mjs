@@ -2,6 +2,8 @@ import {chromium,expect} from '@playwright/test';
 import {mkdir,readFile} from 'node:fs/promises';
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 const page=await browser.newPage({viewport:{width:1440,height:1100}});const errors=[],missing=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)missing.push(r.url());});
+// v1.3 title screen and first-time tips are covered by test:title; older checks start from the journey view.
+await page.addInitScript(()=>localStorage.setItem('jiuzhou-automation-skip-title','1'));
 const go=async(id,name)=>{await page.locator(`[data-destination="${id}"]`).click();await expect(page.locator('.location-body h3')).toHaveText(name,{timeout:20000});};
 try{
  await mkdir('artifacts',{recursive:true});await page.goto(process.env.SMOKE_URL||'http://127.0.0.1:5173/');

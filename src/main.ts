@@ -1,7 +1,8 @@
 import './style.css';
 import {unitFigure} from './art/painted';
 import {gallery} from './art/gallery';
-import {showAdventure,pauseAdventure} from './adventure';
+import {showAdventure,pauseAdventure,openTitle} from './adventure';
+import {settings,automationSkipsTitle} from './settings';
 import {units,unit,warnings,catalogs,dataHash} from './content/load';
 import {alive,control,reachable,rulesetVersion} from './core/engine';
 import {abilityRules,abilityLabel,hasAbility,magicProfile} from './core/abilities';
@@ -16,7 +17,7 @@ let chosenSpell=2,casting=false;let teleportTarget:string|null=null;
 let timer:ReturnType<typeof setTimeout>|undefined;let automatic=false;let aiSteps=0;
 let a=0,b=3,recruitUnit=units[2].id,recruitCount=5,splitCount=5;
 const name=(s:Stack)=>sourceNames?unit(s.unitId).sourceName:unit(s.unitId).name;
-app.innerHTML=`<header><div class="brand"><span class="seal">九州</span><div><p class="eyebrow">JIUZHOU · TACTICAL STUDIES</p><h1>九州兵譜 <small>烽火歸途</small></h1></div></div><div class="tools"><label>演武局（重設套用）<select id="scenario"><option value="skirmish">平地遭遇戰</option><option value="abilities">異能試煉場</option></select></label><label>亂數種子 <input id="seed" value="demo-2026" maxlength="200"></label><button id="reset">重設演武</button></div></header><div class="notice">原創華夏戰略 RPG　<span>數值來源不等於 DOS 規則已驗證；本版採明示的沙盒暫行規則。</span></div><nav aria-label="主要頁籤"><button data-tab="journey">00　烽火歸途</button><button data-tab="battle" class="active">01　演武場</button><button data-tab="roster">02　兵種圖鑑</button><button data-tab="research">03　研究與警告</button><button data-tab="artworks">04　青嵐繪卷</button><label class="name-switch"><input id="names" type="checkbox"> 顯示來源研究名稱</label></nav><div id="message" role="status" aria-live="polite"></div><main id="main"></main><footer>獨立規則引擎 · 固定種子 · 本機重播　<span>v1.2 / 軍隊動作與雙配樂</span></footer>`;
+app.innerHTML=`<header><div class="brand"><span class="seal">九州</span><div><p class="eyebrow">JIUZHOU · TACTICAL STUDIES</p><h1>九州兵譜 <small>烽火歸途</small></h1></div></div><div class="tools"><label>演武局（重設套用）<select id="scenario"><option value="skirmish">平地遭遇戰</option><option value="abilities">異能試煉場</option></select></label><label>亂數種子 <input id="seed" value="demo-2026" maxlength="200"></label><button id="reset">重設演武</button></div></header><div class="notice">原創華夏戰略 RPG　<span>數值來源不等於 DOS 規則已驗證；本版採明示的沙盒暫行規則。</span></div><nav aria-label="主要頁籤"><button data-tab="journey">00　烽火歸途</button><button data-tab="battle" class="active">01　演武場</button><button data-tab="roster">02　兵種圖鑑</button><button data-tab="research">03　研究與警告</button><button data-tab="artworks">04　青嵐繪卷</button><label class="name-switch"><input id="names" type="checkbox"> 顯示來源研究名稱</label></nav><div id="message" role="status" aria-live="polite"></div><main id="main"></main><footer>獨立規則引擎 · 固定種子 · 本機重播　<span>v1.3 / 標題畫面、選角與新手提示</span></footer>`;
 const main=document.querySelector<HTMLDivElement>('#main')!;
 function message(text:string,error=false){const el=document.querySelector('#message')!;el.textContent=text;el.className=text?(error?'error':'success'):'';}
 function stop(){if(timer)clearTimeout(timer);timer=undefined;automatic=false;aiSteps=0;}
@@ -96,4 +97,6 @@ function selectedStackExists(){if(!alive(session.state,'player').some(s=>s.id===
 document.getElementById('names')!.addEventListener('change',e=>{sourceNames=(e.target as HTMLInputElement).checked;render();});
 document.querySelectorAll<HTMLElement>('[data-tab]').forEach(el=>el.addEventListener('click',()=>{tab=el.dataset.tab!;render();}));
 document.getElementById('reset')!.addEventListener('click',()=>{try{const fresh=new Session((document.getElementById('seed') as HTMLInputElement).value,(document.getElementById('scenario') as HTMLSelectElement).value as ScenarioId);stop();session=fresh;casting=false;teleportTarget=null;selected='p0';shot=false;tab='battle';render();message('已依種子重設演武。');}catch(e){message((e as Error).message,true);}});
+document.body.classList.toggle('motion-paused',!settings.motion);
+if(!automationSkipsTitle())openTitle();
 render();

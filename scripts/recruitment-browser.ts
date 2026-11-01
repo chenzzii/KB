@@ -4,6 +4,8 @@ import {Campaign} from '../src/campaign/session';
 import {travel} from './campaign-playthrough';
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors:string[]=[];
+// v1.3 title screen and first-time tips are covered by test:title; older checks start from the journey view.
+await page.addInitScript(()=>localStorage.setItem('jiuzhou-automation-skip-title','1'));
 page.on('pageerror',err=>errors.push(err.message));
 const save=async()=>{const next=page.waitForEvent('download');await page.locator('#campaign-export').click();await (await next).saveAs('artifacts/recruitment-save.json');const value=JSON.parse(await readFile('artifacts/recruitment-save.json','utf8'));await Campaign.load(value);return value;};
 const load=async(game:Campaign)=>{await page.locator('#campaign-import').setInputFiles({name:'recruitment.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(await game.save()))});await expect(page.locator('#message')).toContainText('驗證通過');await page.locator('#open-recruitment').click();};

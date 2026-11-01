@@ -1,0 +1,115 @@
+/* Title, story, role selection, first-time tips. */
+body.title-open{overflow:hidden}
+.title-screen{position:fixed;inset:0;z-index:50;overflow:auto;color:#f6efdc;background:#10231f;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif}
+.title-bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.title-bg span{position:absolute;left:50%;top:50%;width:max(100vw,100vh);height:max(100vw,100vh);translate:-50% -50%;background-size:500% 500%;background-repeat:no-repeat;filter:saturate(.9) brightness(.62)}
+.title-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0d1d1a55 0%,#0d1d1a22 40%,#0d1d1aee 100%)}
+.title-screen h1,.title-screen h2{font-family:"Noto Serif TC","PMingLiU",serif;color:#fbf3dd}
+.title-screen .eyebrow{color:#e0bd7a}
+.title-screen button{background:#f9f2e0e6;border-color:#d5c39a;color:#183f39}
+.title-screen button:hover{background:#fff}
+.title-screen button.primary{background:#a54838;border-color:#d99a6e;color:#fff6e6}
+.title-screen button.primary:hover{background:#b9543f}
+.title-screen button.ghost{background:#10231f99;color:#f6efdc;border-color:#f6efdc66}
+.title-screen button.ghost:hover{background:#10231fcc}
+.title-main{position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 16px}
+.title-seal{display:inline-block;border:3px solid #d36a52;color:#f1a184;font:700 30px/1.15 "Noto Serif TC",serif;padding:8px 10px;transform:rotate(-3deg);margin-bottom:22px;background:#10231f88}
+.title-main h1{font-size:clamp(46px,9vw,92px);letter-spacing:.25em;margin:0 0 0 .25em;text-shadow:0 4px 24px #000a}
+.title-sub{font:400 clamp(18px,3vw,26px) "Noto Serif TC",serif;letter-spacing:.6em;margin:6px 0 36px .6em;color:#ecd9ae}
+.title-menu{display:grid;gap:12px;width:min(280px,100%)}
+.title-menu button{padding:14px;font-size:17px;letter-spacing:.2em}
+.title-foot{margin-top:40px;font-size:12px;color:#d5cbb1;letter-spacing:.1em}
+.story-box{position:relative;min-height:100%;display:flex;flex-direction:column;justify-content:flex-end;max-width:820px;margin:0 auto;padding:40px 16px 56px}
+.story-box p{font:400 clamp(16px,2.2vw,20px)/1.9 "Noto Serif TC",serif;color:#f1e8d0;text-shadow:0 2px 10px #000c;margin-bottom:10px}
+.story-box p.eyebrow{font:700 11px sans-serif;letter-spacing:.2em}
+.story-box p.story-lead{font-size:clamp(22px,3.4vw,32px);color:#fff7e2;letter-spacing:.08em}
+.story-foes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.title-screen .portrait-sprite.story-foe{width:64px;height:64px;border-color:#c55a42;box-shadow:0 0 0 2px #10231f,0 4px 12px #000a}
+.story-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.story-actions button{min-width:110px}
+.select-wrap{position:relative;max-width:1180px;margin:0 auto;padding:28px 16px 40px}
+.select-wrap.narrow{max-width:620px}
+.select-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.select-head h2{margin:0;font-size:30px}
+.select-head div:last-child{display:flex;gap:8px;flex-wrap:wrap}
+.hero-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.title-screen .hero-card{display:flex;gap:12px;align-items:center;text-align:left;padding:10px;background:#10231fcc;color:#f6efdc;border:2px solid #f6efdc33;border-radius:10px}
+.title-screen .hero-card:hover{background:#183b34ee}
+.title-screen .hero-card.chosen{border-color:#e0bd7a;background:#2a4a3fee;box-shadow:0 0 0 3px #e0bd7a44}
+.hero-card span{display:grid;gap:2px;min-width:0}
+.hero-card strong{font:700 18px "Noto Serif TC",serif;letter-spacing:.1em}
+.hero-card small{color:#d6cdb4}
+.hero-card em{font-style:normal;font-size:11px;color:#e0bd7a}
+.title-screen .portrait-sprite.hero-pick{width:60px;height:60px}
+.title-screen .portrait-sprite.hero-big{width:96px;height:96px}
+.select-body{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.hero-detail,.title-settings{background:#f8f2e2f2;color:#253c38;border-radius:12px;padding:20px;box-shadow:0 10px 30px #0006}
+.hero-detail-head{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+.hero-detail-head h3{font:700 22px "Noto Serif TC",serif;margin:0 0 4px;letter-spacing:.08em}
+.hero-detail-head p{margin:0}
+.hero-detail .eyebrow{color:#a5803f;margin-bottom:4px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
+.hero-stats div{background:#fffdf6;border:1px solid #dcd3bb;border-radius:8px;padding:8px;text-align:center}
+.hero-stats dt{font-size:11px;color:#738078}
+.hero-stats dd{margin:2px 0 0;font:700 20px "Noto Serif TC",serif;color:#183f39}
+.hero-traits{margin:0 0 6px;padding-left:20px;line-height:1.8}
+.hero-detail h4{margin:12px 0 8px}
+.hero-army{display:flex;gap:12px;flex-wrap:wrap}
+.hero-army>span{display:grid;justify-items:center;gap:2px;background:#fffdf6;border:1px solid #dcd3bb;border-radius:8px;padding:6px 10px}
+.hero-army small{color:#738078}
+.title-screen .unit-sprite.army-pick{width:72px;height:72px}
+.advanced{margin-top:14px;border-top:1px solid #dcd3bb;padding-top:10px}
+.advanced summary{cursor:pointer;color:#596b60;font-size:13px}
+.advanced label{display:grid;gap:4px;margin-top:10px;font-size:12px;color:#596b60}
+.title-settings h3{margin-bottom:10px}
+.title-settings .switch{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #e3dac4;cursor:pointer}
+.title-settings .switch input{grid-row:span 2;width:20px;height:20px;accent-color:#a54838}
+.title-settings .switch span{font-weight:700}
+.title-settings .switch small{color:#738078;font-size:12px}
+.title-settings .volume{display:flex;gap:10px;align-items:center;padding:6px 0 8px 30px;font-size:13px;color:#596b60}
+.title-settings .volume input{flex:1;accent-color:#a54838}
+.title-screen .title-settings button.ghost{margin-top:12px;background:transparent;color:#596b60;border-color:#c9bea2}
+.select-go{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-top:18px}
+.select-go small{color:#ecd9ae}
+.title-screen button.big{padding:16px 34px;font-size:19px;letter-spacing:.15em}
+.title-help{position:fixed;inset:0;z-index:2;background:#071210cc;display:grid;place-items:center;padding:16px;overflow:auto}
+.title-help-card{background:#f8f2e2;color:#253c38;border-radius:12px;padding:24px;max-width:680px;width:100%;max-height:calc(100vh - 32px);overflow:auto}
+.title-help-card h2{color:#183f39;margin-bottom:12px}
+.title-help-card .eyebrow{color:#a5803f}
+.title-help-card dl{margin:0 0 18px}
+.title-help-card dt{font-weight:700;margin-top:12px;color:#a54838}
+.title-help-card dd{margin:4px 0 0;line-height:1.7}
+@media(max-width:860px){.hero-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.select-body{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,1fr)}.select-go{align-items:stretch}}
+@media(max-width:420px){.title-screen .portrait-sprite.hero-pick{width:44px;height:44px}.hero-card strong{font-size:16px}.title-screen .portrait-sprite.story-foe{width:44px;height:44px}}
+/* First-time tips */
+.tip-layer{position:fixed;inset:0;z-index:60;background:#0b1a1799;display:grid;place-items:center;padding:16px}
+.tip-card{background:#fbf7ec;border:1px solid #d5c39a;border-top:4px solid #a54838;border-radius:10px;max-width:480px;width:100%;padding:20px 22px;box-shadow:0 18px 40px #0007;color:#253c38}
+.tip-card h3{font:700 20px "Noto Serif TC",serif;margin-bottom:10px}
+.tip-card p{margin-bottom:8px;line-height:1.7}
+.tip-card .eyebrow{margin-bottom:4px}
+.tip-off{display:flex;gap:8px;align-items:center;font-size:12px;color:#738078;margin:10px 0 14px}
+.tip-card button.primary{width:100%;background:#a54838;color:#fff6e6;border-color:#a54838}
+.tip-recruit{color:#257a48}
+.tip-battle{color:#b3261e}
+/* Map markers: recruitment sites vs. places where a battle can happen */
+.place-marker{pointer-events:none}
+.place-marker text{font:700 13px "Noto Sans TC",sans-serif;fill:#fff;text-anchor:middle;dominant-baseline:central}
+.marker-battle .marker-ring{animation:battle-pulse 1.6s ease-in-out infinite}
+@keyframes battle-pulse{50%{stroke-opacity:.35}}
+body.motion-paused .marker-battle .marker-ring{animation:none}
+@media(prefers-reduced-motion:reduce){.marker-battle .marker-ring{animation:none}}
+.marker-legend{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:12px;margin:8px 0 4px;color:#3d5c50}
+.marker-legend span{display:inline-flex;align-items:center;gap:6px}
+.marker-legend i{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;font:700 11px sans-serif;color:#fff;font-style:normal}
+.marker-legend .k-recruit i{background:#23864b}
+.marker-legend .k-battle i{background:#b3261e}
+.marker-legend .k-choice i{background:#c27a17}
+.marker-legend .k-event i{background:#7a5bb0}
+.marker-legend .k-done i{background:#7b847d}
+.known-places button.kp-recruit{border-left:5px solid #23864b}
+.known-places button.kp-battle{border-left:5px solid #b3261e}
+.known-places button.kp-choice{border-left:5px solid #c27a17}
+.known-places button.kp-event{border-left:5px solid #7a5bb0}
+.known-places button.kp-done{border-left:5px solid #a9b0aa;color:#7b847d}
+.place-kind{display:inline-block;font-size:11px;font-weight:700;color:#fff;border-radius:4px;padding:2px 8px;margin:0 0 6px;letter-spacing:.1em}
+.place-kind.kp-recruit{background:#23864b}.place-kind.kp-battle{background:#b3261e}.place-kind.kp-choice{background:#c27a17}.place-kind.kp-event{background:#7a5bb0}.place-kind.kp-done{background:#7b847d}

@@ -3,6 +3,8 @@ import {build} from 'vite';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
 const page=await browser.newPage({viewport:{width:1500,height:1100}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+// v1.3 title screen and first-time tips are covered by test:title; older checks start from the journey view.
+await page.addInitScript(()=>localStorage.setItem('jiuzhou-automation-skip-title','1'));
 try{
  await mkdir('artifacts',{recursive:true});
  // Observe real AudioContexts, not a mocked synthesizer.
