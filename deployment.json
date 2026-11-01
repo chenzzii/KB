@@ -1,7 +1,7 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.4.0",
-  "sourceCommit": "b015c12c5ded99981edfb0a49ea103c718ea564f",
+  "version": "1.5.0",
+  "sourceCommit": "b869c1ab151a868d8fd4a7737124e19e3443de9f",
   "mapSize": "32x32",
   "visualAssets": "assets/painted/manifest.json",
   "soundtracks": [
@@ -19,5 +19,6 @@
     "automatic ranged attack and post-battle reports",
     "locked-choice explanations and floating error notice",
     "larger role portrait, 系統 menu, purchase coin feedback"
-  ]
+  ],
+  "campaignRuleset": "campaign-2.0.0 (new journeys); campaign-1.0.0 saves still load"
 }

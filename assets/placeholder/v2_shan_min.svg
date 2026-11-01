@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<title>山民（美術待補）</title>
+<rect x="18" y="14" width="220" height="228" rx="18" fill="#f3e7c8" stroke="#8a6a35" stroke-width="5" stroke-dasharray="14 8"/>
+<path d="M128 46 l22 38 h-44z" fill="#c9b28a" opacity=".55"/>
+<text x="128" y="148" text-anchor="middle" font-family="Noto Serif TC,PMingLiU,serif" font-size="64" font-weight="700" fill="#5a3a12">山民</text>
+<text x="128" y="186" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="20" fill="#7a5a2a">鄉里・四級・山地重錘</text>
+<text x="128" y="220" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="17" fill="#a54838">美術待補</text>
+</svg>
