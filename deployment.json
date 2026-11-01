@@ -1,7 +1,7 @@
 {
   "game": "九州兵譜：烽火歸途",
-  "version": "1.5.0",
-  "sourceCommit": "b869c1ab151a868d8fd4a7737124e19e3443de9f",
+  "version": "1.5.0+art",
+  "sourceCommit": "33a9fa3d7b47d81ef81948c9679e68e7b21edef6",
   "mapSize": "32x32",
   "visualAssets": "assets/painted/manifest.json",
   "soundtracks": [
@@ -20,5 +20,6 @@
     "locked-choice explanations and floating error notice",
     "larger role portrait, 系統 menu, purchase coin feedback"
   ],
-  "campaignRuleset": "campaign-2.0.0 (new journeys); campaign-1.0.0 saves still load"
+  "campaignRuleset": "campaign-2.0.0 (new journeys); campaign-1.0.0 saves still load",
+  "art": "3 new v2 unit paintings and 19 six-frame walk strips (Codex)"
 }
