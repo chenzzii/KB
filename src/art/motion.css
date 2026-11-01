@@ -1,0 +1,46 @@
+/* Existing painted art is articulated with clipped layers. Facing stays on the outer sprite;
+   idle, limbs and command effects each own a different transform to avoid fighting one another. */
+.unit-sprite{position:relative;background-size:0 0!important;isolation:isolate;--action-direction:1}
+.sprite-body{position:absolute;inset:0;background-image:inherit;background-position:inherit;background-size:0 0;transform-origin:50% 94%;animation:troop-breathe var(--idle-period) ease-in-out var(--idle-phase) infinite}
+.sprite-body>span{position:absolute;inset:0;background-image:inherit;background-position:inherit;background-size:500% 500%;background-repeat:no-repeat;transform-origin:50% 64%;pointer-events:none}
+.sprite-upper{clip-path:inset(0 0 37% 0);animation:torso-ready var(--idle-period) ease-in-out var(--idle-phase) infinite}
+.sprite-leg-left{clip-path:polygon(0 62%,50.5% 62%,50.5% 100%,0 100%);transform-origin:35% 64%}
+.sprite-leg-right{clip-path:polygon(49.5% 62%,100% 62%,100% 100%,49.5% 100%);transform-origin:66% 64%}
+.sprite-aura{position:absolute;inset:8% 12%;border-radius:50%;pointer-events:none;z-index:-1;opacity:0}
+@keyframes troop-breathe{0%,100%{translate:0 0;scale:1 1}50%{translate:0 -1px;scale:1.012 1.025}}
+@keyframes torso-ready{0%,100%{rotate:-.8deg}50%{rotate:1deg}}
+@keyframes troop-hover{0%,100%{translate:0 1px;rotate:-1deg}50%{translate:0 -7px;rotate:1.2deg}}
+@keyframes troop-prowl{0%,100%{translate:0 0;scale:1 1;rotate:0deg}45%{translate:2px 1px;scale:1.035 .965;rotate:-1deg}65%{translate:0 -1px;scale:1.01 1.01;rotate:.6deg}}
+@keyframes troop-weight{0%,100%{translate:0 0;rotate:-.5deg}35%{translate:0 1px;rotate:1deg}65%{translate:0 -2px;rotate:.5deg}}
+@keyframes troop-sway{0%,100%{rotate:-1.4deg;translate:-1px 0}50%{rotate:1.4deg;translate:1px -2px}}
+@keyframes troop-rattle{0%,70%,100%{rotate:0deg;translate:0 0}75%{rotate:-1deg;translate:-1px -1px}82%{rotate:1deg;translate:1px 0}90%{rotate:-.4deg;translate:0 -1px}}
+@keyframes wing-left{0%,100%{rotate:-7deg;scale:1 .95}50%{rotate:7deg;scale:1 1.045}}
+@keyframes wing-right{0%,100%{rotate:7deg;scale:1 .95}50%{rotate:-7deg;scale:1 1.045}}
+@keyframes magic-motes{0%,100%{opacity:.15;translate:0 3px;scale:.86}50%{opacity:.6;translate:0 -5px;scale:1.07}}
+.unit-sprite:is([data-motion=beast],[data-motion=cavalry]) .sprite-body{animation-name:troop-prowl}
+.unit-sprite:is([data-motion=heavy],[data-motion=giant],[data-motion=smith]) .sprite-body{animation-name:troop-weight}
+.unit-sprite:is([data-motion=shambler],[data-motion=tree],[data-motion=spear]) .sprite-body{animation-name:troop-sway}
+.unit-sprite[data-motion=skeleton] .sprite-body{animation-name:troop-rattle;animation-timing-function:linear}
+.unit-sprite:is([data-motion=winged],[data-motion=wind],[data-motion=spirit],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon]) .sprite-body{animation-name:troop-hover;transform-origin:50% 60%}
+/* The crane and dragon split across their wing roots rather than the humanoid waist. */
+.unit-sprite:is([data-motion=winged],[data-motion=dragon]) .sprite-upper{clip-path:inset(0 29% 0 29%);animation:none}
+.unit-sprite:is([data-motion=winged],[data-motion=dragon]) .sprite-leg-left{clip-path:inset(0 69% 0 0);transform-origin:32% 46%;animation:wing-left var(--idle-period) ease-in-out var(--idle-phase) infinite}
+.unit-sprite:is([data-motion=winged],[data-motion=dragon]) .sprite-leg-right{clip-path:inset(0 0 0 69%);transform-origin:68% 46%;animation:wing-right var(--idle-period) ease-in-out var(--idle-phase) infinite}
+.unit-sprite:is([data-motion=spirit],[data-motion=shaman],[data-motion=wind],[data-motion=vampire],[data-motion=reaper],[data-motion=dragon]) .sprite-aura{background:radial-gradient(ellipse,#a8e9c833,transparent 68%);box-shadow:8px -10px 18px -15px #b5edd5,-10px 5px 15px -13px #eddfb9;animation:magic-motes var(--idle-period) ease-in-out var(--idle-phase) infinite}
+.unit-sprite[data-motion=dragon] .sprite-aura{background:radial-gradient(ellipse,#f5a45055,transparent 70%)}
+.unit-sprite[data-motion=berserker] .sprite-upper{animation-name:troop-weight}
+.unit-sprite:is([data-motion=archer],[data-motion=crossbow],[data-motion=ranger]) .sprite-upper{transform-origin:43% 63%;animation-name:torso-ready}
+.unit-sprite[data-motion=tree] .sprite-upper{animation-name:troop-sway;transform-origin:50% 80%}
+.troop-visual.motion-frozen .unit-sprite *{animation-play-state:paused!important}.troop-visual.motion-frozen{filter:saturate(.55) hue-rotate(15deg)}
+.troop-visual.motion-walk .sprite-leg-left{animation:march-leg .18s ease-in-out infinite alternate}.troop-visual.motion-walk .sprite-leg-right{animation:march-leg .18s ease-in-out -.18s infinite alternate}
+.troop-visual.motion-walk .sprite-body{animation:travel-bob .18s ease-in-out infinite alternate}
+.troop-visual.motion-fly .sprite-body{animation:flight-dart .3s ease-in-out infinite alternate}
+@keyframes march-leg{from{rotate:-9deg;translate:-1px 0}to{rotate:9deg;translate:1px -1px}}@keyframes travel-bob{from{translate:0 0;rotate:-1deg}to{translate:0 -3px;rotate:1deg}}@keyframes flight-dart{from{translate:0 0;rotate:-4deg}to{translate:0 -5px;rotate:3deg}}
+.troop-visual.motion-strike .sprite-upper{animation:weapon-swing .4s ease-out}.troop-visual.motion-shoot .sprite-upper{animation:bow-recoil .42s ease-out}.troop-visual.motion-cast .sprite-body{animation:cast-rise .55s ease-out}.troop-visual.motion-cast .sprite-aura{opacity:.9;animation:cast-rise .55s ease-out}
+@keyframes weapon-swing{0%,100%{rotate:0deg;translate:0 0}25%{rotate:-11deg;translate:-2px 1px}55%{rotate:13deg;translate:4px -2px}}
+@keyframes bow-recoil{0%,100%{rotate:0deg;translate:0 0}35%{rotate:-5deg;translate:-4px 0}55%{rotate:3deg;translate:2px 0}}
+@keyframes cast-rise{0%,100%{translate:0 0;scale:1}45%{translate:0 -8px;scale:1.04}}
+.battle-slash{position:absolute;inset:12%;border-top:3px solid #ffedba;border-right:2px solid #f5c779;border-radius:50%;pointer-events:none;z-index:18;rotate:-30deg;animation:slash-sweep .38s ease-out forwards;box-shadow:3px -3px 8px #ffe5a66b}
+@keyframes slash-sweep{0%{opacity:0;scale:.4;rotate:-80deg}40%{opacity:1;scale:1.12;rotate:10deg}100%{opacity:0;scale:1.22;rotate:65deg}}
+body.presentation-hidden .unit-sprite *,body.motion-paused .unit-sprite *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.unit-sprite *{animation:none!important}.troop-visual{animation:none!important}.battle-slash{display:none}}

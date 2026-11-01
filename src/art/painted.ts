@@ -1,9 +1,12 @@
 import './painted.css';
+import './motion.css';
+import {motionStyle} from './motion';
 const base=import.meta.env.BASE_URL+'assets/painted/';
 const escape=(text:string)=>text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 /** Whole PNG atlas is used directly; CSS selects a cell, no destructive image slicing. */
 export function unitFigure(sourceId:number,label:string,extra=''){
- return `<span class="unit-sprite ${extra}" role="img" aria-label="${escape(label)}" style="background-image:url('${base}units-v1.png');background-position:${sourceId%5*25}% ${Math.floor(sourceId/5)*25}%"></span>`;
+ const motion=motionStyle(sourceId);
+ return `<span data-motion="${motion.kind}" class="unit-sprite ${extra}" role="img" aria-label="${escape(label)}" style="${motion.style};background-image:url('${base}units-v1.png');background-position:${sourceId%5*25}% ${Math.floor(sourceId/5)*25}%"><span class="sprite-body" aria-hidden="true"><span class="sprite-upper"></span><span class="sprite-leg sprite-leg-left"></span><span class="sprite-leg sprite-leg-right"></span></span><span class="sprite-aura" aria-hidden="true"></span></span>`;
 }
 export function propFigure(index:number){return `<span class="scenery-prop" aria-hidden="true" style="background-image:url('${base}props-v1.png');background-position:${index%2*100}% ${Math.floor(index/2)*100}%"></span>`;}
 export const paintedBackground=base+'courtyard-v1.png';
